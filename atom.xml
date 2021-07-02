@@ -2,42 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://hermitalap.github.io</id>
     <title>imzifeng</title>
-    <updated>2021-07-02T14:27:58.975Z</updated>
+    <updated>2021-07-02T14:32:42.844Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://hermitalap.github.io"/>
     <link rel="self" href="https://hermitalap.github.io/atom.xml"/>
-    <subtitle>无名的自留地. Keep Alive.
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-&lt;div id=&quot;tp-weather-widget&quot;&gt;&lt;/div&gt;
-  &lt;script&gt;
-    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset=&quot;utf-8&quot;;d.async=1;c.parentNode.insertBefore(d,c)};a[&quot;SeniverseWeatherWidgetObject&quot;]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent(&quot;onload&quot;,b)}else{a.addEventListener(&quot;load&quot;,b,false)}}(window,document,&quot;script&quot;,&quot;SeniverseWeatherWidget&quot;,&quot;//cdn.sencdn.com/widget2/static/js/bundle.js?t=&quot;+parseInt((new Date().getTime() / 100000000).toString(),10)));
-    window.SeniverseWeatherWidget(&apos;show&apos;, {
-      flavor: &quot;bubble&quot;,
-      location: &quot;WS0E9D8WN298&quot;,
-      geolocation: true,
-      language: &quot;zh-Hans&quot;,
-      unit: &quot;c&quot;,
-      theme: &quot;auto&quot;,
-      token: &quot;5fd5b254-57fe-4f8a-8a13-f92485efeb0b&quot;,
-      hover: &quot;enabled&quot;,
-      container: &quot;tp-weather-widget&quot;
-    })
-  &lt;/script&gt;
-</subtitle>
+    <subtitle>无名的自留地. Keep Alive.</subtitle>
     <logo>https://hermitalap.github.io/images/avatar.png</logo>
     <icon>https://hermitalap.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, imzifeng</rights>

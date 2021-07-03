@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://hermitalap.github.io</id>
+    <id>https://www.imzifeng.cn</id>
     <title>imzifeng</title>
-    <updated>2021-07-02T15:00:37.687Z</updated>
+    <updated>2021-07-03T12:47:03.447Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://hermitalap.github.io"/>
-    <link rel="self" href="https://hermitalap.github.io/atom.xml"/>
+    <link rel="alternate" href="https://www.imzifeng.cn"/>
+    <link rel="self" href="https://www.imzifeng.cn/atom.xml"/>
     <subtitle>无名的自留地. Keep Alive.</subtitle>
-    <logo>https://hermitalap.github.io/images/avatar.png</logo>
-    <icon>https://hermitalap.github.io/favicon.ico</icon>
+    <logo>https://www.imzifeng.cn/images/avatar.png</logo>
+    <icon>https://www.imzifeng.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, imzifeng</rights>
     <entry>
         <title type="html"><![CDATA[使用Electron为Python应用创建跨平台GUI]]></title>
-        <id>https://hermitalap.github.io/post/shi-yong-electron-wei-python-ying-yong-chuang-jian-kua-ping-tai-gui/</id>
-        <link href="https://hermitalap.github.io/post/shi-yong-electron-wei-python-ying-yong-chuang-jian-kua-ping-tai-gui/">
+        <id>https://www.imzifeng.cn/post/shi-yong-electron-wei-python-ying-yong-chuang-jian-kua-ping-tai-gui/</id>
+        <link href="https://www.imzifeng.cn/post/shi-yong-electron-wei-python-ying-yong-chuang-jian-kua-ping-tai-gui/">
         </link>
         <updated>2021-07-02T12:08:31.000Z</updated>
         <content type="html"><![CDATA[<h2 id="项目最终效果展示">项目最终效果展示</h2>
-<figure data-type="image" tabindex="1"><img src="https://hermitalap.github.io/post-images/1625227845474.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://www.imzifeng.cn/post-images/1625227845474.jpg" alt="" loading="lazy"></figure>
 <h2 id="概览">概览</h2>
 <p>为方便使用开源项目<a href="https://github.com/bytedance/piano_transcription">piano_transcription</a>而创建，原项目可将钢琴音频通过机器学习模型转化为MIDI文件乐谱(.mid)，原项目每次操作均需要通过命令行输入欲转换的音频文件地址，该GUI可将所有操作为简单的chlick&amp;drag。</p>
 <h2 id="结构">结构</h2>
@@ -39,11 +39,11 @@
 </code></pre>
 <p>electron负责前台，不含任何业务逻辑，在main.js中创建python子线程，python子线程被创建后作为一个client监听转换任务，并调用相关的转换业务，二者通过<a href="https://github.com/apache/thrift">Apache Thrift</a>进行通信。</p>
 <h2 id="运行效果">运行效果</h2>
-<p><img src="https://hermitalap.github.io/post-images/1625231984954.jpg" alt="" loading="lazy"><br>
-<img src="https://hermitalap.github.io/post-images/1625231994428.jpg" alt="" loading="lazy"><br>
-<img src="https://hermitalap.github.io/post-images/1625232005218.jpg" alt="" loading="lazy"><br>
-<img src="https://hermitalap.github.io/post-images/1625232013578.jpg" alt="" loading="lazy"><br>
-<img src="https://hermitalap.github.io/post-images/1625232018658.jpg" alt="" loading="lazy"></p>
+<p><img src="https://www.imzifeng.cn/post-images/1625231984954.jpg" alt="" loading="lazy"><br>
+<img src="https://www.imzifeng.cn/post-images/1625231994428.jpg" alt="" loading="lazy"><br>
+<img src="https://www.imzifeng.cn/post-images/1625232005218.jpg" alt="" loading="lazy"><br>
+<img src="https://www.imzifeng.cn/post-images/1625232013578.jpg" alt="" loading="lazy"><br>
+<img src="https://www.imzifeng.cn/post-images/1625232018658.jpg" alt="" loading="lazy"></p>
 <h2 id="mainjs">main.js</h2>
 <p>main.js为程序入口和主线程，负责建立窗口和处理来自渲染线程的窗口操作消息，两个线程通过ipc进行通信。</p>
 <pre><code class="language-javascript">const {app, BrowserWindow, Notification, dialog} = require('electron')
@@ -446,8 +446,8 @@ var thriftClient = thrift.createClient(TranscriptionService,thriftConnection);
     </entry>
     <entry>
         <title type="html"><![CDATA[眼镜新鸟的经验谈]]></title>
-        <id>https://hermitalap.github.io/post/glass/</id>
-        <link href="https://hermitalap.github.io/post/glass/">
+        <id>https://www.imzifeng.cn/post/glass/</id>
+        <link href="https://www.imzifeng.cn/post/glass/">
         </link>
         <updated>2021-06-23T09:05:29.000Z</updated>
         <content type="html"><![CDATA[<h3 id="眼镜新鸟的经验谈">眼镜新鸟的经验谈</h3>
@@ -495,15 +495,15 @@ var thriftClient = thrift.createClient(TranscriptionService,thriftConnection);
 <p>可能有的同学会想，我有钱，任性，虽然我度数不高，但是我就要选最贵的1.74折射率，那减少的零点几克重量对本仙女很重要。这样选择并不理智，这就涉及到一个商家往往不会告诉你的参数--阿贝数（色散系数）。<br>
 ~<br>
 先来复习一下高中物理---同种介质对不同波长的光有不同的折射率。通过这个原理，我们可以造出三棱镜，将不同波长的光分开，衡量这种能力的指标就是阿贝数，色散现象在眼镜中同样存在，一些高度近视的朋友在通过眼镜边缘看物体时有时会发现物体边缘有蓝边，这就是发生了色散。色散程度越低，成像的效果越好，不同折射率的眼镜阿贝数参考如下<br>
-<img src="https://hermitalap.github.io/post-images/1624441713368.png" alt="" loading="lazy"><br>
+<img src="https://www.imzifeng.cn/post-images/1624441713368.png" alt="" loading="lazy"><br>
 ~<br>
 总体来说，1.50折射率的镜片的阿贝数可以达到58，但是一旦用到1.74折射率超超薄以上等级的镜片时，阿贝数会下降到32~36。所以，有好就有坏。如果一味追求镜片的薄，那么就会牺牲镜片的阿贝数，也就是降低了视觉对于颜色的真实感受，以及舒适度。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://hermitalap.github.io/post/hello-gridea/</id>
-        <link href="https://hermitalap.github.io/post/hello-gridea/">
+        <id>https://www.imzifeng.cn/post/hello-gridea/</id>
+        <link href="https://www.imzifeng.cn/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>

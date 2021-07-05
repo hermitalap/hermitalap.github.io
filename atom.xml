@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.imzifeng.cn</id>
     <title>imzifeng</title>
-    <updated>2021-07-03T12:47:03.447Z</updated>
+    <updated>2021-07-05T07:13:52.820Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.imzifeng.cn"/>
     <link rel="self" href="https://www.imzifeng.cn/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://www.imzifeng.cn/images/avatar.png</logo>
     <icon>https://www.imzifeng.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, imzifeng</rights>
+    <entry>
+        <title type="html"><![CDATA[“人类观察报告”--币圈]]></title>
+        <id>https://www.imzifeng.cn/post/ren-lei-guan-cha-bao-gao-bi-quan/</id>
+        <link href="https://www.imzifeng.cn/post/ren-lei-guan-cha-bao-gao-bi-quan/">
+        </link>
+        <updated>2021-07-05T07:04:52.000Z</updated>
+        <content type="html"><![CDATA[<p>pass</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用Electron为Python应用创建跨平台GUI]]></title>
         <id>https://www.imzifeng.cn/post/shi-yong-electron-wei-python-ying-yong-chuang-jian-kua-ping-tai-gui/</id>

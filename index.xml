@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>imzifeng</title>
+        <link>http://example.org/</link>
+        <description>imzifeng</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 13 Jul 2021 17:53:30 &#43;0800</lastBuildDate>
+            <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>青海行</title>
+    <link>http://example.org/posts/qinghai/</link>
+    <pubDate>Tue, 13 Jul 2021 17:53:30 &#43;0800</pubDate><author>
+        <name>作者</name>
+    </author><guid>http://example.org/posts/qinghai/</guid>
+    <description><![CDATA[路线图 第一天 7/17 下午2时降落，乘车到市区，入住酒店（） 必要事项 联系司机，车辆 购买物资：水，干粮、其他防护器具、防晒等 可选市内景点 饮食：莫家街和]]></description>
+</item><item>
+    <title>眼镜新鸟的经验谈</title>
+    <link>http://example.org/posts/glass/</link>
+    <pubDate>Mon, 12 Jul 2021 21:21:52 &#43;0800</pubDate><author>
+        <name>作者</name>
+    </author><guid>http://example.org/posts/glass/</guid>
+    <description><![CDATA[前言 19年4月19日，陪伴我多年的变色眼镜终于光荣退役了，在镜框的纵容下，左眼镜片选择结束自己的使命奔向了自由。 这是我的第三副眼镜，当时心血]]></description>
+</item></channel>
+</rss>

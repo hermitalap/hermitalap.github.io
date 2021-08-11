@@ -1,9 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>所有文章 - imzifeng</title>
-        <link>http://imzifeng.cn/posts/</link>
-        <description>所有文章 | imzifeng</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 13 Jul 2021 21:55:18 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <title>未分类 - 分类 - imzifeng</title>
+        <link>http://imzifeng.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/</link>
+        <description>未分类 - 分类 - imzifeng</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 14 Jul 2021 20:44:53 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>关于</title>
+    <link>http://imzifeng.cn/about/</link>
+    <pubDate>Wed, 14 Jul 2021 20:44:53 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/about/</guid>
+    <description><![CDATA[无名的自留地 Keep Alive. 🏠 为什么有这个破站 想写东西 想写的东西容易被夹 想给人看又不想给太多人看 想有个随时在线用于分享的笔记本 👨‍💻 博主是谁 高倾向INT]]></description>
+</item><item>
     <title>Electron Python</title>
     <link>http://imzifeng.cn/posts/electron-python/</link>
     <pubDate>Tue, 13 Jul 2021 21:55:18 &#43;0800</pubDate><author>

@@ -3,9 +3,16 @@
         <title>imzifeng</title>
         <link>http://imzifeng.cn/</link>
         <description>无名的自留地.</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 14 Jul 2021 20:44:53 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</lastBuildDate>
             <atom:link href="http://imzifeng.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>RNA-seq基础-1-环境配置</title>
+    <link>http://imzifeng.cn/posts/rnaseq-1/</link>
+    <pubDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/rnaseq-1/</guid>
+    <description><![CDATA[<p>Miniconda是Anaconda的基础版，提供环境管理</p>]]></description>
+</item><item>
     <title>Electron Python</title>
     <link>http://imzifeng.cn/posts/electron-python/</link>
     <pubDate>Tue, 13 Jul 2021 21:55:18 &#43;0800</pubDate><author>

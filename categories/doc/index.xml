@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Doc - 分类 - imzifeng</title>
+        <link>http://imzifeng.cn/categories/doc/</link>
+        <description>Doc - 分类 - imzifeng</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/categories/doc/" rel="self" type="application/rss+xml" /><item>
+    <title>Git</title>
+    <link>http://imzifeng.cn/posts/git/</link>
+    <pubDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/git/</guid>
+    <description><![CDATA[<h2 id="git-是一个分布式版本控制系统">Git 是一个分布式版本控制系统.</h2>
+<p>文本，脚本，以及各种基于文本信息的文件可被Git管理
+各软件私有格式、二进制文件、媒体不可被Git管理</p>]]></description>
+</item></channel>
+</rss>

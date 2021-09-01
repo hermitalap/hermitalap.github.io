@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="" />
+<meta property="og:description" content="简介 项目地址：https://github.com/schollz/croc 使用方法：发送端选择需要发送的文件，设置一串口令，或者使用程序自" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="简介 项目地址：https://github.com/schollz/croc 使用方法：发送端选择需要发送的文件，设置一串口令，或者使用程序自"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/" /><link rel="prev" href="http://imzifeng.cn/posts/doc/hugo-%E5%9F%BA%E4%BA%8Ego%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E7%BD%91%E7%AB%99/" /><link rel="next" href="http://imzifeng.cn/posts/glass/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/posts\/doc\/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93\/"
+        },"genre": "posts","wordcount":  1354 ,
+        "url": "http:\/\/imzifeng.cn\/posts\/doc\/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93\/","publisher": {
+            "@type": "Organization",
+            "name": "zifeng"},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {
+            const metas = document.getElementsByTagName('meta');
+            for (let i = 0; i < metas.length; i++)
+                if (metas[i].getAttribute('name') === metaName)
+                    return metas[i];
+            return '';
+        }
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.body.setAttribute("pageStyle", "normal")</script><script>document.body.setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><a href="www.imzifeng.cn" title="Author" rel=" author" class="author"><i class="author fas fa-user-circle fa-fw"></i>zifeng</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1354 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a>
+      <ul>
+        <li><a href="#安装方法">安装方法：</a></li>
+        <li><a href="#使用方法">使用方法：</a></li>
+        <li><a href="#自定义代码短语">自定义代码短语</a></li>
+      </ul>
+    </li>
+    <li><a href="#补充的使用方法">补充的使用方法</a>
+      <ul>
+        <li><a href="#httpsgithubcomschollzcrocallow-overwriting-without-prompt允许在没有提示的情况下覆盖"><a href="https://github.com/schollz/croc#allow-overwriting-without-prompt"></a>允许在没有提示的情况下覆盖</a></li>
+        <li><a href="#httpsgithubcomschollzcrocuse-pipes---stdin-and-stdout使用管道---stdin-和-stdout"><a href="https://github.com/schollz/croc#use-pipes---stdin-and-stdout"></a>使用管道 - stdin 和 stdout</a></li>
+        <li><a href="#httpsgithubcomschollzcrocsend-text发短讯"><a href="https://github.com/schollz/croc#send-text"></a>发短讯</a></li>
+        <li><a href="#httpsgithubcomschollzcrocuse-a-proxy使用代理"><a href="https://github.com/schollz/croc#use-a-proxy"></a>使用代理</a></li>
+        <li><a href="#httpsgithubcomschollzcrocchange-encryption-curve更改加密曲线"><a href="https://github.com/schollz/croc#change-encryption-curve"></a>更改加密曲线</a></li>
+        <li><a href="#httpsgithubcomschollzcrocself-host-relay自主机中继"><a href="https://github.com/schollz/croc#self-host-relay"></a>自主机中继</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="简介">简介</h2>
+<p>项目地址：https://github.com/schollz/croc
+使用方法：发送端选择需要发送的文件，设置一串口令，或者使用程序自动生成的随机口令，接收端输入该口令后，两台设备立即连接，建立点对点传输，完成文件传输。</p>
+<h3 id="安装方法">安装方法：</h3>
+<p>Download <a href="https://github.com/schollz/croc/releases/latest" target="_blank" rel="noopener noreffer">the latest release for your system</a>, or install a release from the command-line:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl https://getcroc.schollz.com | bash
+</code></pre></td></tr></table>
+</div>
+</div><p>On macOS you can install the latest release with <a href="https://brew.sh/" target="_blank" rel="noopener noreffer">Homebrew</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">brew install croc
+</code></pre></td></tr></table>
+</div>
+</div><p>On macOS you can also install the latest release with <a href="https://macports.org/" target="_blank" rel="noopener noreffer">MacPorts</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo port selfupdate
+sudo port install croc
+</code></pre></td></tr></table>
+</div>
+</div><p>On Windows you can install the latest release with <a href="https://scoop.sh/" target="_blank" rel="noopener noreffer">Scoop</a> or <a href="https://chocolatey.org/" target="_blank" rel="noopener noreffer">Chocolatey</a>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">scoop install croc
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">choco install croc
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用方法">使用方法：</h3>
+<p>最简单的传输一个文件或者文件夹:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ croc send [file(s)-or-folder]
+Sending &#39;file-or-folder&#39; (X MB)
+Code is: code-phrase
+</code></pre></td></tr></table>
+</div>
+</div><p>然后在接受设备接受这个文件或者文件夹，只需要：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc code-phrase
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>code-phrase</strong>是自动生成的密文</p>
+<p>代码短语用于建立密码验证密钥协议 ( <a href="https://en.wikipedia.org/wiki/Password-authenticated_key_agreement" target="_blank" rel="noopener noreffer">PAKE</a> )，该协议为发送方和接收方生成用于端到端加密的密钥。</p>
+<p>有许多可配置的选项（请参阅 参考资料<code>--help</code>）。一组选项（如自定义中继、端口和代码短语）可以使用<code>--remember</code>.</p>
+<h3 id="自定义代码短语">自定义代码短语</h3>
+<p>您可以使用自己的密码短语发送（必须超过 6 个字符）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc send --code [code-phrase] [file(s)-or-folder]
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="补充的使用方法">补充的使用方法</h2>
+<h3 id="httpsgithubcomschollzcrocallow-overwriting-without-prompt允许在没有提示的情况下覆盖"><a href="https://github.com/schollz/croc#allow-overwriting-without-prompt" target="_blank" rel="noopener noreffer"></a>允许在没有提示的情况下覆盖</h3>
+<p>默认情况下，croc 会提示是否覆盖文件。您可以使用该<code>--overwrite</code>标志（仅限收件人）自动覆盖文件。例如，接收文件以自动覆盖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --yes --overwrite &lt;code&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="httpsgithubcomschollzcrocuse-pipes---stdin-and-stdout使用管道---stdin-和-stdout"><a href="https://github.com/schollz/croc#use-pipes---stdin-and-stdout" target="_blank" rel="noopener noreffer"></a>使用管道 - stdin 和 stdout</h3>
+<p>您可以通过管道连接到<code>croc</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat [filename] | croc send
+</code></pre></td></tr></table>
+</div>
+</div><p>在这种情况下，<code>croc</code>将自动使用标准输入数据并发送和分配一个文件名，如“croc-stdin-123456789”。要接收到<code>stdout</code>，您可以随时使用<code>--yes</code> will 自动批准转移并将其通过管道发送到<code>stdout</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --yes [code-phrase] &gt; out
+</code></pre></td></tr></table>
+</div>
+</div><p>打印到控制台的所有其他文本<code>stderr</code>都将转到<code>stdout</code>.</p>
+<h3 id="httpsgithubcomschollzcrocsend-text发短讯"><a href="https://github.com/schollz/croc#send-text" target="_blank" rel="noopener noreffer"></a>发短讯</h3>
+<p>有时您想发送 URL 或短文本。除了管道之外，您还可以使用以下命令轻松发送文本<code>croc</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc send --text &#34;hello world&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>这将自动告诉接收者<code>stdout</code>在收到文本时使用，以便显示。</p>
+<h3 id="httpsgithubcomschollzcrocuse-a-proxy使用代理"><a href="https://github.com/schollz/croc#use-a-proxy" target="_blank" rel="noopener noreffer"></a>使用代理</h3>
+<p>您可以通过添加代理地址来使用代理作为与中继的连接<code>--socks5</code>。例如，您可以通过 tor 中继发送：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --socks5 &#34;127.0.0.1:9050&#34; send SOMEFILE
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="httpsgithubcomschollzcrocchange-encryption-curve更改加密曲线"><a href="https://github.com/schollz/croc#change-encryption-curve" target="_blank" rel="noopener noreffer"></a>更改加密曲线</h3>
+<p>您可以使用<code>--curve</code>标志从几个不同的椭圆曲线中进行选择以用于加密。只有收件人可以选择曲线。例如，使用 P-521 曲线接收文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --curve p521 &lt;codephrase&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>可用曲线有 P-256、P-348、P-521 和 SIEC。SIEC 是使用的默认曲线，它是一种鲜为人知的曲线，属于一类“超隔离”曲线，其安全性不会降低到其周围曲线的安全性。(Scholl, Travis. 实验数学 28.4 (2019): 385-397)</p>
+<h3 id="httpsgithubcomschollzcrocself-host-relay自主机中继"><a href="https://github.com/schollz/croc#self-host-relay" target="_blank" rel="noopener noreffer"></a>自主机中继</h3>
+<p>需要继电器来装订并行的传入和传出连接。默认情况下，<code>croc</code>使用公共中继，但您也可以运行自己的中继：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc relay
+</code></pre></td></tr></table>
+</div>
+</div><p>默认情况下，它使用 TCP 端口 9009-9013。确保打开它们。您可以自定义端口（例如<code>croc relay --ports 1111,1112</code>），但必须至少有<strong>2 个</strong>用于中继的端口。第一个端口用于通信，后续端口用于多路复用数据传输。</p>
+<p><code>--relay</code>如果您想自定义主机，您可以通过输入更改您正在使用的中继来使用您的中继发送文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --relay &#34;myrelay.example.com:9009&#34; send [filename]
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，发送时只需要包含第一个端口（通信端口）即可。用于数据传输的后续端口将从中继传输回用户。</p>
+<h4 id="httpsgithubcomschollzcrocself-host-relay-docker自主机中继docker"><a href="https://github.com/schollz/croc#self-host-relay-docker" target="_blank" rel="noopener noreffer"></a>自主机中继（docker）</h4>
+<p>如果更简单，您还可以使用 Docker 运行中继：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -d -p 9009-9013:9009-9013 -e CROC_PASS=&#39;YOURPASSWORD&#39; schollz/croc
+</code></pre></td></tr></table>
+</div>
+</div><p>请务必包含中继的密码，否则任何请求都将被拒绝。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">croc --pass YOURPASSWORD --relay &#34;myreal.example.com:9009&#34; send [filename]
+</code></pre></td></tr></table>
+</div>
+</div><p>注意：当包含时，<code>--pass YOURPASSWORD</code>您可以改为传递带有密码的文件，例如<code>--pass FILEWITHPASSWORD</code>.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 0001-01-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/index.md" target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/" data-title=""><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/" data-title="" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/doc/croc-%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%A4%87%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BC%A0%E8%BE%93/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/doc/hugo-%E5%9F%BA%E4%BA%8Ego%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%94%9F%E6%88%90%E7%BD%91%E7%AB%99/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw"></i></a>
+            <a href="/posts/glass/" class="next" rel="next" title="眼镜新鸟的经验谈">眼镜新鸟的经验谈<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="www.imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+
+</html>

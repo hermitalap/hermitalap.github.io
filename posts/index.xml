@@ -3,7 +3,16 @@
         <title>所有文章 - imzifeng</title>
         <link>http://imzifeng.cn/posts/</link>
         <description>所有文章 | imzifeng</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Git</title>
+    <link>http://imzifeng.cn/posts/git/</link>
+    <pubDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/git/</guid>
+    <description><![CDATA[<h2 id="git-是一个分布式版本控制系统">Git 是一个分布式版本控制系统.</h2>
+<p>文本，脚本，以及各种基于文本信息的文件可被Git管理
+各软件私有格式、二进制文件、媒体不可被Git管理</p>]]></description>
+</item><item>
     <title>RNA-seq基础-1-环境配置</title>
     <link>http://imzifeng.cn/posts/rnaseq-1/</link>
     <pubDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</pubDate><author>

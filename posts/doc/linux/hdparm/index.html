@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="" />
+<meta property="og:description" content="Linux hdparm命令用于显示与设定硬盘的参数。 hdparm可检测，显示与设定IDE或SCSI硬盘的参数。 快速使用 1 2 sudo hdparm -tT /dev/sdb # 一般都会有per" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/posts/doc/linux/hdparm/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Linux hdparm命令用于显示与设定硬盘的参数。 hdparm可检测，显示与设定IDE或SCSI硬盘的参数。 快速使用 1 2 sudo hdparm -tT /dev/sdb # 一般都会有per"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://imzifeng.cn/posts/doc/linux/hdparm/" /><link rel="prev" href="http://imzifeng.cn/posts/doc/linux/tar/" /><link rel="next" href="http://imzifeng.cn/posts/doc/linux/gzip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/posts\/doc\/linux\/hdparm\/"
+        },"genre": "posts","wordcount":  1270 ,
+        "url": "http:\/\/imzifeng.cn\/posts\/doc\/linux\/hdparm\/","publisher": {
+            "@type": "Organization",
+            "name": "zifeng"},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {
+            const metas = document.getElementsByTagName('meta');
+            for (let i = 0; i < metas.length; i++)
+                if (metas[i].getAttribute('name') === metaName)
+                    return metas[i];
+            return '';
+        }
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title">目录</h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.body.setAttribute("pageStyle", "normal")</script><script>document.body.setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><a href="www.imzifeng.cn" title="Author" rel=" author" class="author"><i class="author fas fa-user-circle fa-fw"></i>zifeng</a>
+                </span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1270 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#快速使用">快速使用</a></li>
+        <li><a href="#语法">语法</a></li>
+        <li><a href="#实例">实例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Linux hdparm命令用于显示与设定硬盘的参数。
+hdparm可检测，显示与设定IDE或SCSI硬盘的参数。</p>
+<h3 id="快速使用">快速使用</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo hdparm -tT /dev/sdb
+<span class="c1"># 一般都会有permission限制</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="语法">语法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hdparm <span class="o">[</span>-CfghiIqtTvyYZ<span class="o">][</span>-a &lt;快取分区&gt;<span class="o">][</span>-A &lt;0或1&gt;<span class="o">][</span>-c &lt;I/O模式&gt;<span class="o">][</span>-d &lt;0或1&gt;<span class="o">][</span>-k &lt;0或1&gt;<span class="o">][</span>-K &lt;0或1&gt;<span class="o">][</span>-m &lt;分区数&gt;<span class="o">][</span>-n &lt;0或1&gt;<span class="o">][</span>-p &lt;PIO模式&gt;<span class="o">][</span>-P &lt;分区数&gt;<span class="o">][</span>-r &lt;0或1&gt;<span class="o">][</span>-S &lt;时间&gt;<span class="o">][</span>-u &lt;0或1&gt;<span class="o">][</span>-W &lt;0或1&gt;<span class="o">][</span>-X &lt;传输模式&gt;<span class="o">][</span>设备<span class="o">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>参数说明</strong>：</p>
+<ul>
+<li>-a&lt;快取分区&gt; 设定读取文件时，预先存入块区的分区数，若不加上&lt;快取分区&gt;选项，则显示目前的设定。</li>
+<li>-A&lt;0或1&gt; 启动或关闭读取文件时的快取功能。</li>
+<li>-c&lt;I/O模式&gt; 设定IDE32位I/O模式。</li>
+<li>-C 检测IDE硬盘的电源管理模式。</li>
+<li>-d&lt;0或1&gt; 设定磁盘的DMA模式。</li>
+<li>-f 将内存缓冲区的数据写入硬盘，并清楚缓冲区。</li>
+<li>-g 显示硬盘的磁轨，磁头，磁区等参数。</li>
+<li>-h 显示帮助。</li>
+<li>-i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供。</li>
+<li>-I 直接读取硬盘所提供的硬件规格信息。</li>
+<li>-k&lt;0或1&gt; 重设硬盘时，保留-dmu参数的设定。</li>
+<li>-K&lt;0或1&gt; 重设硬盘时，保留-APSWXZ参数的设定。</li>
+<li>-m&lt;磁区数&gt; 设定硬盘多重分区存取的分区数。</li>
+<li>-n&lt;0或1&gt; 忽略硬盘写入时所发生的错误。</li>
+<li>-p&lt;PIO模式&gt; 设定硬盘的PIO模式。</li>
+<li>-P&lt;磁区数&gt; 设定硬盘内部快取的分区数。</li>
+<li>-q 在执行后续的参数时，不在屏幕上显示任何信息。</li>
+<li>-r&lt;0或1&gt; 设定硬盘的读写模式。</li>
+<li>-S&lt;时间&gt; 设定硬盘进入省电模式前的等待时间。</li>
+<li>-t 评估硬盘的读取效率。</li>
+<li>-T 评估硬盘快取的读取效率。</li>
+<li>-u&lt;0或1&gt; 在硬盘存取时，允许其他中断要求同时执行。</li>
+<li>-v 显示硬盘的相关设定。</li>
+<li>-W&lt;0或1&gt; 关闭/开启磁盘的写入缓存，每个盘都有读取缓存和写入缓存，有时我们关闭磁盘写入缓存的效率高于开启磁盘写入缓存的效率，那当然选择前者了。</li>
+<li>-X&lt;传输模式&gt; 设定硬盘的传输模式。</li>
+<li>-y 使IDE硬盘进入省电模式。</li>
+<li>-Y 使IDE硬盘进入睡眠模式。</li>
+<li>-Z 关闭某些Seagate硬盘的自动省电功能。</li>
+</ul>
+<h3 id="实例">实例</h3>
+<p>显示硬盘的相关设置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hdparm /dev/sda /dev/sda: <span class="nv">IO_support</span> <span class="o">=</span> <span class="m">0</span> <span class="o">(</span>default 16-bit<span class="o">)</span> <span class="nb">readonly</span> <span class="o">=</span> <span class="m">0</span> <span class="o">(</span>off<span class="o">)</span> <span class="nv">readahead</span> <span class="o">=</span> <span class="m">256</span> <span class="o">(</span>on<span class="o">)</span> <span class="nv">geometry</span> <span class="o">=</span> 19929［柱面数］/255［磁头数］/63［扇区数］, <span class="nv">sectors</span> <span class="o">=</span> 320173056［总扇区数］, <span class="nv">start</span> <span class="o">=</span> 0［起始扇区数］
+</code></pre></td></tr></table>
+</div>
+</div><p>显示硬盘的柱面、磁头、扇区数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hdparm -g /dev/sda /dev/sda: <span class="nv">geometry</span> <span class="o">=</span> 19929［柱面数］/255［磁头数］/63［扇区数］, <span class="nv">sectors</span> <span class="o">=</span> 320173056［总扇区数］, <span class="nv">start</span> <span class="o">=</span> 0［起始扇区数］
+</code></pre></td></tr></table>
+</div>
+</div><p>评估硬盘的读取效率</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> hdparm -t /dev/sda /dev/sda: 
+ Timing buffered disk reads: <span class="m">166</span> MB in 3.03 <span class="nv">seconds</span> <span class="o">=</span> 54.85 MB/sec 
+ 
+ hdparm -t /dev/sda /dev/sda: 
+ Timing buffered disk reads: <span class="m">160</span> MB in 3.01 <span class="nv">seconds</span> <span class="o">=</span> 53.11 MB/sec
+ 
+hdparm -t /dev/sda /dev/sda: Timing buffered disk reads: <span class="m">166</span> MB in 3.00 <span class="nv">seconds</span> <span class="o">=</span> 55.31 MB/sec
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 0001-01-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/doc/linux/hdparm/index.md" target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/doc/linux/hdparm/" data-title=""><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/doc/linux/hdparm/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/doc/linux/hdparm/" data-title="" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/doc/linux/hdparm/" data-title=""><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/doc/linux/tar/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw"></i></a>
+            <a href="/posts/doc/linux/gzip/" class="next" rel="next" title=""><i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="www.imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+
+</html>

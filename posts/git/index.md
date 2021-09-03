@@ -1,10 +1,10 @@
 # Git
 
-
-## Git 是一个分布式版本控制系统.
+# Git 是一个分布式版本控制系统.
 文本，脚本，以及各种基于文本信息的文件可被Git管理
+
 各软件私有格式、二进制文件、媒体不可被Git管理
-<!--more-->
+
 
 ## 安装
 官方下载地址，[Git](https://git-scm.com/downloads)
@@ -211,9 +211,15 @@ $ git status -s
 
 ### (reset --hard xxxxxx）回到 commit 之前
 
-在穿梭到过去的 `commit` 之前, 我们必须了解 git 是如何一步一步累加更改的. 我们截取网上的一些图片 [http://bramus.github.io/ws2-sws-course-materials/xx.git.html](http://bramus.github.io/ws2-sws-course-materials/xx.git.html)
+在穿梭到过去的 `commit` 之前, 我们必须了解 git 是如何一步一步累加更改的. 我们截取网上的一些图片
 
-[![2-2-1.png](https://static.mofanpy.com/results-small/git/2-2-1.png "2-2-1.png")](https://static.mofanpy.com/results/git/2-2-1.png)[![2-2-2.png](https://static.mofanpy.com/results-small/git/2-2-2.png "2-2-2.png")](https://static.mofanpy.com/results/git/2-2-2.png)[![2-2-3.png](https://static.mofanpy.com/results-small/git/2-2-3.png "2-2-3.png")](https://static.mofanpy.com/results/git/2-2-3.png)[![2-2-4.png](https://static.mofanpy.com/results-small/git/2-2-4.png "2-2-4.png")](https://static.mofanpy.com/results/git/2-2-4.png)
+![](Pasted%20image%2020210903164629.png " ")
+
+![](Pasted%20image%2020210903164635.png " ")
+
+![](Pasted%20image%2020210903164641.png " ")
+
+![](Pasted%20image%2020210903164647.png " ")
 
 每个 `commit` 都有自己的 `id` 数字号, `HEAD` 是一个指针, 指引当前的状态是在哪个 `commit`. 最近的一次 `commit` 在最右边, 我们如果要回到过去, 就是让 `HEAD` 回到过去并 `reset` 此时的 `HEAD` 到过去的位置.
 
@@ -446,18 +452,23 @@ $ git log --oneline --graph
 同样是合并， `rebase` 的做法和 `merge` 不一样.
 
 假设共享的 branch 是 `branch B`, 而我在 `branch A` 上工作, 有一天我发现`branch B`已经有一些小更新, 我也想试试我的程序和这些小更新兼不兼容, 但我并不想直接合并我的未完成版本到 `branch A`上, 这时就可以用 `rebase` 来补充我的分支`branch B`的内容. 补充完以后, 和后面那张图的 `merge` 不同, 我还是继续在 `C3` 上工作, 不过此时的 `C3` 的本质却不一样了, 因为吸收了那些小更新. 所以我们用 `C3'` 来代替.
-![[Pasted image 20210901175904.png]]
-![[Pasted image 20210901175908.png]]
-![[Pasted image 20210901175912.png]]
-![[Pasted image 20210901175916.png]]
-可以看出 `rebase` 改变了 `C3` 的属性, `C3` 已经不是从 `C1` 衍生而来的了. 这一点和 `merge` 不一样. `merge` 在合并的时候创建了一个新的 `C5` `commit`. 这一点不同, 使得在共享分支中使用 `rebase` 变得危险. 如果是共享分支的历史被改写. 别人之前共享内容的 `commit` 就被你的 `rebase` 修改掉了.
-![[Pasted image 20210901175926.png]]
 
-此外，需要注意的是， **!!! 只能在你自己的分支中使用 rebase, 和别人共享的部分是不能用 !!!**
+![](Pasted%20image%2020210901175904.png "原分支")
+
+![](Pasted%20image%2020210901175908.png "将C3变为变基状态")
+
+![](Pasted%20image%2020210901175912.png "将C3的基变为C4")
+
+![](Pasted%20image%2020210901175916.png "以C4为新的基，原分支A上的修改被合并")
+
+可以看出 `rebase` 改变了 `C3` 的属性, `C3` 已经不是从 `C1` 衍生而来的了. 这一点和 `merge` 不一样. `merge` 在合并的时候创建了一个新的 `C5` `commit`. 这一点不同, 使得在共享分支中使用 `rebase` 变得危险. 如果是共享分支的历史被改写. 别人之前共享内容的 `commit` 就被你的 `rebase` 修改掉了.
+
+![](Pasted%20image%2020210901175926.png "改写历史")
+
+此外，需要注意的是， **!!! 只能在你自己的分支中使用 rebase, 和别人共享的部分是不能用的 !!!**
 
 初始的版本库还是和上回一样, 在 `master` 和 `dev` 分支中都有自己的独立修改.
 
-初始的版本库还是和上回一样, 在 master 和 dev 分支中都有自己的独立修改.
 在 `master`创建一个文件后，产生分支，在 `master`中继续创建第二个文件，然后在dev分支中分两次在文件一中进行修改。
 ```shell 
 # 这是 master 的 log
@@ -613,7 +624,8 @@ $ git status -s
 ### merge
 merge是我们常用的合并分支的命令：
 假如开发中：分叉到两个不同的分支，右各自有新的提交：
-![[Pasted image 20210901183914.png]]
+
+![image](Pasted%20image%2020210901183914.png "原分支")
 
 当我们使用merge命令合并时，它会把两个分支的最新提交历史（`C3` 和 `C4`）和这个两个分支的最近的祖先（`C2`）进行三方合并，合并的结果就是生成一个新的提交历史。
 举例子来说
@@ -621,7 +633,9 @@ merge是我们常用的合并分支的命令：
 甲在master的基础上修改bug，在A中删除了代码，在C中修改了代码
 乙创建新分支来增加功能，在B中新增了代码，在C中修改了代码
 而后进行merge，基于C2来进行三方合并，于是在A中删除部分代码，在B中新增代码，然后讨论解决一下C中的冲突，创建了C5版本，完成合并
-![[Pasted image 20210901183921.png]]
+
+![image](Pasted%20image%2020210901183921.png "基于共同历史C2，进行三方合并")
+
 通过合并操作来整合分叉了的历史。
 
 在将三方合并的时候，总是需要以一个提交历史作为依据的，在这个提交历史的基础上增加其他两个的修改，merge上使用的就是这个两个分支的最近的祖先（`C2`）作为依据。
@@ -644,7 +658,7 @@ rebase同样是通过合并来整合分叉的历史，唯一的不同就是，**
 
 这个过程就相当于改变`C4`的基底为`C3`，并将`C4`上的修改依序应用于`C3` 上，生成新的`C4'`, 这个过程就改变了`C4`的基底，也就是所谓的**变基**。
 
-![[Pasted image 20210901184802.png]]
+![image](Pasted%20image%2020210901184802.png "改变C4的基底为C3，并将C4上的修改依序应用于C3 上，生成新的C4'")
 
 将 `C4` 中的修改变基到 `C3` 上。
 
@@ -665,7 +679,8 @@ Applying: added staged command
 $ git checkout master
 $ git merge experiment
 ```
-![[Pasted image 20210901184906.png]]
+
+![image](Pasted%20image%2020210901184906.png "变基合并可以让最后只剩下一条主线分支")
 
 此时，C4' 指向的快照就和上面使用 merge 命令的例子中 C5 指向的快照一模一样了。
 

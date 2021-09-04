@@ -3,7 +3,14 @@
         <title>所有文章 - imzifeng</title>
         <link>http://imzifeng.cn/posts/</link>
         <description>所有文章 | imzifeng</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Sep 2021 16:33:34 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>U盘不完全防毒</title>
+    <link>http://imzifeng.cn/posts/usbflashdiskantivirus/</link>
+    <pubDate>Sat, 04 Sep 2021 16:33:34 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/usbflashdiskantivirus/</guid>
+    <description><![CDATA[前言 最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步]]></description>
+</item><item>
     <title>Git</title>
     <link>http://imzifeng.cn/posts/git/</link>
     <pubDate>Wed, 01 Sep 2021 16:36:49 &#43;0800</pubDate><author>

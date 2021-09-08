@@ -9,34 +9,1144 @@
     <pubDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/posts/rnaseq-1/</guid>
-    <description><![CDATA[<p>Miniconda是Anaconda的基础版，提供环境管理</p>]]></description>
+    <description><![CDATA[<p>Miniconda是Anaconda的基础版，提供环境管理</p>
+<h3 id="下载">下载</h3>
+<p><a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank" rel="noopener noreffer">Miniconda官网</a>
+使用最新包的地址下载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</code></pre></td></tr></table>
+</div>
+</div><p>下载完成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ ls
+Miniconda3-latest-Linux-x86_64.sh
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="安装">安装</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sh Miniconda3-latest-Linux-x86_64.sh
+  
+Welcome to Miniconda3 py39_4.10.3  
+  
+In order to <span class="k">continue</span> the installation process, please review the license  
+agreement.  
+Please, press ENTER to <span class="k">continue</span>  
+&gt;&gt;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>回车继续，然后按空格直接跳到文档底部，输入yes并回车</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Do you accept the license terms? <span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>  
+<span class="o">[</span>no<span class="o">]</span> &gt;&gt;&gt;yes
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Miniconda3 will now be installed into this location:  
+/home/xxx/miniconda3  
+  
+- Press ENTER to confirm the location  
+- Press CTRL-C to abort the installation  
+- Or specify a different location below  
+  
+<span class="o">[</span>/home/xxx/miniconda3<span class="o">]</span> &gt;&gt;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>之后一路yes回车即可</p>
+<h3 id="添加国内源">添加国内源</h3>
+<p>conda默认从国外服务器上下载包，速度较慢，可换为国内源
+<a href="https://mirror.tuna.tsinghua.edu.cn/help/anaconda/" target="_blank" rel="noopener noreffer">清华源</a></p>
+<h3 id="创建新环境">创建新环境</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">conda create -n rnaseq <span class="nv">python</span><span class="o">==</span>3.7 -y
+</code></pre></td></tr></table>
+</div>
+</div><p>测试python3.7对各种包的支持较好
+完成后，进入该环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ conda activate rnaseq
+<span class="o">(</span>rnaseq<span class="o">)</span> xxx@luo-lab-tower:~$
+</code></pre></td></tr></table>
+</div>
+</div><p>命令提示符前的括号表示当前的环境，只有进入到该环境中才可以使用该环境中的包，可以创建多个环境，多个环境之间互不影响。</p>
+<h3 id="安装hisat2-stringtie分析流程所需的软件包">安装hisat2-stringtie分析流程所需的软件包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>rnaseq<span class="o">)</span> xxx@luo-lab-tower:~$ conda install fastqc -y
+</code></pre></td></tr></table>
+</div>
+</div><p>fastqc 用于检验reads读数质量
+用相同办法继续安装：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hisat2
+samtools
+stringtie
+htseq-count
+tqdm
+</code></pre></td></tr></table>
+</div>
+</div><p>参照该博文<a href="https://blog.csdn.net/guguaihezi/article/details/81240916" target="_blank" rel="noopener noreffer">安装sratoolkit最新版</a>
+官方安装包地址：https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/
+最新的应该是2.11.0</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">完成以上后，自行google了解这些包的主要用途和基本使用方法。</div>
+        </div>
+    </div>]]></description>
 </item><item>
     <title>关于</title>
     <link>http://imzifeng.cn/about/</link>
     <pubDate>Wed, 14 Jul 2021 20:44:53 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/about/</guid>
-    <description><![CDATA[无名的自留地 Keep Alive. 🏠 为什么有这个破站 想写东西 想写的东西容易被夹 想给人看又不想给太多人看 想有个随时在线用于分享的笔记本 👨‍💻 博主是谁 高倾向INT]]></description>
+    <description><![CDATA[<blockquote>
+<p>无名的自留地  Keep Alive.</p>
+</blockquote>
+<h2 id="-为什么有这个破站">🏠 为什么有这个破站</h2>
+<ul>
+<li>想写东西</li>
+<li>想写的东西容易被夹</li>
+<li>想给人看又不想给太多人看</li>
+<li>想有个随时在线用于分享的笔记本</li>
+</ul>
+<h2 id="-博主是谁">👨‍💻 博主是谁</h2>
+<ul>
+<li>高倾向INTP-T(低Fe)</li>
+<li>P社甲级战犯</li>
+<li>天坑专业受害者</li>
+<li>内耗自嗨型选手</li>
+<li>低电容“warmest machine”</li>
+<li>前人类观察者联盟成员</li>
+</ul>
+<h2 id="补充说明">⭐️补充说明</h2>
+<p>警告！本站可能含有以下不适合所有年龄段群体查看的内容:</p>
+<ul>
+<li>⚠️无病呻吟</li>
+<li>⚠️政治暴论</li>
+<li>⚠️种族歧视</li>
+<li>⚠️物种歧视</li>
+<li>⚠️逃亡主义</li>
+<li>⚠️异常模因</li>
+<li>⚠️SCP污染</li>
+</ul>
+<p>如还未施加思想钢印，请酌情查看。</p>
+<!-- more -->
+<h2 id="政治危害声明">❌政治危害声明</h2>
+<p>如果您属于以下任一群体，请立即退出：</p>
+<ul>
+<li>夏皮罗主义者</li>
+<li>霍普自由主义者</li>
+<li>共有达尔文主义者</li>
+<li>科维英主义者</li>
+<li>道德达尔文主义者</li>
+<li>反动灵魂主义者</li>
+<li>虫群意志族群</li>
+</ul>
+<p>但本站不包含对任何政治流派的讨论或评价</p>
+]]></description>
 </item><item>
     <title>Electron Python</title>
     <link>http://imzifeng.cn/posts/electron-python/</link>
     <pubDate>Tue, 13 Jul 2021 21:55:18 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/posts/electron-python/</guid>
-    <description><![CDATA[项目最终效果展示 概览 为方便使用开源项目piano_transcription而创建，原项目可将钢琴音频通过机器学习模型转化为MIDI文件乐谱]]></description>
+    <description><![CDATA[<h2 id="项目最终效果展示">项目最终效果展示</h2>
+<p></p>
+<h2 id="概览">概览</h2>
+<p>为方便使用开源项目<a href="https://github.com/bytedance/piano_transcription" target="_blank" rel="noopener noreffer">piano_transcription</a>而创建，原项目可将钢琴音频通过机器学习模型转化为MIDI文件乐谱(.mid)，原项目每次操作均需要通过命令行输入欲转换的音频文件地址，该GUI可将所有操作为简单的chlick&amp;drag。</p>
+<h2 id="结构">结构</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">start
+ |
+ V
++--------------------+
+|                    | start
+|  electron          +-------------&gt; +------------------+
+|                    | sub process   |                  |
+| (browser or)       |               | python server    |
+|  desktop app       |               |                  |
+| (all html/css/js)  |               | (business logic) |
+|                    |    thrift     |                  |
+| (node.js runtime,  | &lt;-----------&gt; | (thrift server)  |
+|  thrift client)    | communication |                  |
+|                    |               |                  |
++--------------------+               +------------------+
+</code></pre></td></tr></table>
+</div>
+</div><p>electron负责前台，不含任何业务逻辑，在main.js中创建python子线程，python子线程被创建后作为一个client监听转换任务，并调用相关的转换业务，二者通过<a href="https://github.com/apache/thrift" target="_blank" rel="noopener noreffer">Apache Thrift</a>进行通信。</p>
+<h2 id="运行效果">运行效果</h2>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2 id="mainjs">main.js</h2>
+<p>main.js为程序入口和主线程，负责建立窗口和处理来自渲染线程的窗口操作消息，两个线程通过ipc进行通信。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="p">{</span><span class="nx">app</span><span class="p">,</span> <span class="nx">BrowserWindow</span><span class="p">,</span> <span class="nx">Notification</span><span class="p">,</span> <span class="nx">dialog</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;electron&#39;</span><span class="p">)</span>
+
+  <span class="c1">// Keep a global reference of the window object, if you don&#39;t, the window will
+</span><span class="c1"></span>  <span class="c1">// be closed automatically when the JavaScript object is garbage collected.
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">win</span>
+
+  <span class="kd">function</span> <span class="nx">createWindow</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 创建浏览器窗口。
+</span><span class="c1"></span>    <span class="nx">win</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BrowserWindow</span><span class="p">({</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span> 
+      <span class="nx">height</span><span class="o">:</span> <span class="mi">800</span><span class="p">,</span> 
+      <span class="nx">webPreferences</span><span class="o">:</span><span class="p">{</span><span class="nx">nodeIntegration</span><span class="o">:</span><span class="kc">true</span><span class="p">},</span>
+      <span class="nx">transparent</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">frame</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nx">resizable</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+      <span class="c1">// backgroundColor: &#39;#00000000&#39;,
+</span><span class="c1"></span>    <span class="p">})</span>
+
+    <span class="c1">// 然后加载应用的 index.html。
+</span><span class="c1"></span>    <span class="nx">win</span><span class="p">.</span><span class="nx">loadFile</span><span class="p">(</span><span class="s1">&#39;new_index.html&#39;</span><span class="p">)</span>
+
+    <span class="c1">// 打开开发者工具
+</span><span class="c1"></span>    <span class="c1">// win.webContents.openDevTools()
+</span><span class="c1"></span>
+    <span class="c1">// 当 window 被关闭，这个事件会被触发。
+</span><span class="c1"></span>    <span class="nx">win</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;closed&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// 取消引用 window 对象，如果你的应用支持多窗口的话，
+</span><span class="c1"></span>      <span class="c1">// 通常会把多个 window 对象存放在一个数组里面，
+</span><span class="c1"></span>      <span class="c1">// 与此同时，你应该删除相应的元素。
+</span><span class="c1"></span>      <span class="nx">win</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Electron 会在初始化后并准备
+</span><span class="c1"></span>  <span class="c1">// 创建浏览器窗口时，调用这个函数。
+</span><span class="c1"></span>  <span class="c1">// 部分 API 在 ready 事件触发后才能使用。
+</span><span class="c1"></span>  <span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="nx">createWindow</span><span class="p">)</span>
+
+  <span class="c1">// 当全部窗口关闭时退出。
+</span><span class="c1"></span>  <span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;window-all-closed&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
+</span><span class="c1"></span>    <span class="c1">// 否则绝大部分应用及其菜单栏会保持激活。
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">platform</span> <span class="o">!==</span> <span class="s1">&#39;darwin&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">app</span><span class="p">.</span><span class="nx">quit</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;activate&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 在macOS上，当单击dock图标并且没有其他窗口打开时，
+</span><span class="c1"></span>    <span class="c1">// 通常在应用程序中重新创建一个窗口。
+</span><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">win</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">createWindow</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+
+  <span class="c1">// 在这个文件中，可以续写应用剩下主进程代码。
+</span><span class="c1"></span>  <span class="c1">// 也可以拆分成几个文件，然后用 require 导入。
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">path</span><span class="o">=</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">pyProc</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="kd">let</span> <span class="nx">pyPort</span> <span class="o">=</span> <span class="kc">null</span>
+
+
+<span class="kr">const</span> <span class="nx">createPyProc</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// let port = &#39;4242&#39;
+</span><span class="c1"></span>  <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="mi">__</span><span class="nx">dirname</span><span class="p">,</span> <span class="s1">&#39;py&#39;</span><span class="p">,</span> <span class="s1">&#39;thrift_server.py&#39;</span><span class="p">)</span>
+  <span class="nx">pyProc</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;child_process&#39;</span><span class="p">).</span><span class="nx">spawn</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">script</span><span class="p">])</span>
+  <span class="c1">// let script = path.join(__dirname, &#39;py&#39;, &#39;dist&#39;,&#39;thrift_server&#39;, &#39;thrift_server.exe&#39;)
+</span><span class="c1"></span>  <span class="c1">// pyProc = require(&#39;child_process&#39;).execFile(script)
+</span><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">pyProc</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;child process success&#39;</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kr">const</span> <span class="nx">exitPyProc</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">pyProc</span><span class="p">.</span><span class="nx">kill</span><span class="p">()</span>
+  <span class="nx">pyProc</span> <span class="o">=</span> <span class="kc">null</span>
+  <span class="nx">pyPort</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">ipcMain</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;electron&#39;</span><span class="p">).</span><span class="nx">ipcMain</span><span class="p">;</span>
+<span class="c1">//接收最小化命令
+</span><span class="c1"></span><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;window-min&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">win</span><span class="p">.</span><span class="nx">minimize</span><span class="p">();</span>
+<span class="p">})</span>
+<span class="c1">//接收最大化命令
+</span><span class="c1"></span><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;window-max&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">win</span><span class="p">.</span><span class="nx">isMaximized</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nx">win</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">win</span><span class="p">.</span><span class="nx">maximize</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+<span class="c1">//接收关闭命令
+</span><span class="c1"></span><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;window-close&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">win</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+<span class="p">})</span>
+
+<span class="c1">//拖动保存文件
+</span><span class="c1"></span><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ondragstart&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">filePath</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">event</span><span class="p">.</span><span class="nx">sender</span><span class="p">.</span><span class="nx">startDrag</span><span class="p">({</span>
+    <span class="nx">file</span><span class="o">:</span> <span class="nx">filePath</span><span class="p">,</span>
+    <span class="nx">icon</span><span class="o">:</span> <span class="s1">&#39;./icon.png&#39;</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+
+<span class="c1">//显示通知
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">showNotification</span> <span class="p">(){</span>
+  <span class="kr">const</span> <span class="nx">notification</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Piano transcription E&#39;</span><span class="p">,</span>
+    <span class="nx">body</span><span class="o">:</span> <span class="s1">&#39;转换任务已完成&#39;</span>
+  <span class="p">}</span>
+  <span class="k">new</span> <span class="nx">Notification</span><span class="p">(</span><span class="nx">notification</span><span class="p">).</span><span class="nx">show</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;showNotification&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">showNotification</span><span class="p">();</span>
+<span class="p">})</span>
+
+<span class="c1">//接收打开对话框事件，完成后，回传获取到的文件路径到渲染线程
+</span><span class="c1"></span><span class="nx">ipcMain</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;openDialog&#39;</span><span class="p">,(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">dialog</span><span class="p">.</span><span class="nx">showOpenDialog</span><span class="p">({</span> <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;openFile&#39;</span><span class="p">,</span> <span class="s1">&#39;multiSelections&#39;</span><span class="p">]</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="p">=&gt;{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">filePaths</span><span class="p">);</span>        <span class="c1">//输出结果
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">filePaths</span><span class="p">.</span><span class="nx">length</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nx">reply</span><span class="p">(</span><span class="s1">&#39;selectedItem&#39;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">filePaths</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+
+<span class="c1">//设置应用启动关闭时联动python子线程
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;ready&#39;</span><span class="p">,</span> <span class="nx">createPyProc</span><span class="p">)</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;will-quit&#39;</span><span class="p">,</span> <span class="nx">exitPyProc</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="renderjs">render.js</h2>
+<p>render线程作为页面逻辑元素被加载，负责建立thrift子线程，与子线程通信，并相应鼠标点击事件转换为事件信息传入主线程以控制桌面应用下的窗口。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// renderer.js
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">thrift</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;thrift&#39;</span><span class="p">);</span>
+<span class="c1">// 调用win10下thrift命令自动生成的依赖包
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">TranscriptionService</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gen-nodejs/TranscriptionService.js&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ttypes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gen-nodejs/trans_types.js&#39;</span><span class="p">);</span>
+<span class="c1">// thrift 通信会占用一个本地端口
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">thriftConnection</span> <span class="o">=</span> <span class="nx">thrift</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">thriftClient</span> <span class="o">=</span> <span class="nx">thrift</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="nx">TranscriptionService</span><span class="p">,</span><span class="nx">thriftConnection</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+
+<span class="c1">//建立thrift子线程
+</span><span class="c1"></span><span class="nx">thriftConnection</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;error&#34;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// let name = document.querySelector(&#39;#name&#39;)
+</span><span class="c1">// let result = document.querySelector(&#39;#result&#39;)
+</span><span class="c1"></span>
+<span class="kd">let</span> <span class="nx">ipcRenderer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;electron&#39;</span><span class="p">).</span><span class="nx">ipcRenderer</span><span class="p">;</span>
+
+<span class="c1">//响应点击最大化按钮
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">max</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">max</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="c1">//发送最大化命令
+</span><span class="c1"></span>        <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;window-max&#39;</span><span class="p">);</span>
+        <span class="c1">//最大化图形切换
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="nx">max</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;images/max.png&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">max</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;images/maxed.png&#39;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">max</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;images/max.png&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">//响应点击最小化按钮
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">min</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;min&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">min</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">min</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="c1">//发送最小化命令
+</span><span class="c1"></span>        <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;window-min&#39;</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">//响应点击关闭按钮
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">close</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">close</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">close</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="c1">//发送关闭命令
+</span><span class="c1"></span>        <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;window-close&#39;</span><span class="p">);</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">//拖动保存文件
+</span><span class="c1"></span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;drag_save&#39;</span><span class="p">).</span><span class="nx">ondragstart</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+    <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;ondragstart&#39;</span><span class="p">,</span> <span class="nx">dragTosavePath</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">//响应点击开始转换按钮
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">dragTosavePath</span> <span class="o">=</span> <span class="s1">&#39;C:/Development/Projects/piano_transcription/output/test.mid&#39;</span>
+<span class="kd">var</span> <span class="nx">transcript</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">transcript</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">transcript</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="c1">// document.getElementById(&#34;progressDiv&#34;).innerHTML=&#39;&lt;div class=&#34;progress-bar progress-bar-striped progress-bar-animated bg-primary&#34; role=&#34;progressbar&#34; style=&#34;width: 100% ;height: 20px;&#34; aria-valuenow=&#34;25&#34; aria-valuemin=&#34;0&#34; aria-valuemax=&#34;100&#34;&gt;&lt;/div&gt;&#39;
+</span><span class="c1"></span>            <span class="c1">// document.getElementById(&#34;progressDiv&#34;).setAttribute(&#34;hidden&#34;,true);
+</span><span class="c1"></span>            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;progressDiv&#34;</span><span class="p">).</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">&#34;hidden&#34;</span><span class="p">)</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&#34;disabled&#34;</span><span class="p">)</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&#34;processing...&#34;</span>
+            <span class="kd">var</span> <span class="nx">dic</span> <span class="o">=</span> <span class="p">{</span><span class="nx">paths</span><span class="o">:</span> <span class="nx">filePaths</span><span class="p">}</span>
+            <span class="nx">dic</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dic</span><span class="p">)</span>
+            <span class="nx">thriftClient</span><span class="p">.</span><span class="nx">music2mid</span><span class="p">(</span><span class="nx">dic</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="s2">&#34;完成!&#34;</span><span class="p">,</span> <span class="s2">&#34;您的所有转换任务已完成!&#34;</span><span class="p">,</span> <span class="s2">&#34;success&#34;</span><span class="p">);</span>
+                    <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;showNotification&#39;</span><span class="p">);</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;disabled&#34;</span><span class="p">)</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&#34;start&#34;</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;progressDiv&#34;</span><span class="p">).</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">&#34;hidden&#34;</span><span class="p">,</span><span class="kc">true</span><span class="p">)</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;drag_save&#34;</span><span class="p">).</span><span class="nx">removeAttribute</span><span class="p">(</span><span class="s2">&#34;hidden&#34;</span><span class="p">)</span>
+                    <span class="nx">midPaths</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">res</span><span class="p">)[</span><span class="s1">&#39;output_paths&#39;</span><span class="p">]</span>
+                    <span class="nx">dragTosavePath</span> <span class="o">=</span> <span class="nx">midPaths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">dragTosavePath</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            
+        <span class="p">})</span>
+    <span class="p">};</span>
+
+<span class="c1">//响应点击以打开文件
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">openDialog</span><span class="p">(){</span>
+    <span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;openDialog&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">ipcRenderer</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;selectedItem&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">paths</span><span class="p">)=&gt;{</span>
+    <span class="c1">// console.log(&#39;render:&#39;);
+</span><span class="c1"></span>    <span class="c1">// console.log(paths);
+</span><span class="c1"></span>    <span class="nx">fileNum</span> <span class="o">+=</span> <span class="nx">paths</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">filePaths</span> <span class="o">=</span> <span class="nx">filePaths</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">paths</span><span class="p">)</span>
+    <span class="nx">refreshFileNum</span><span class="p">()</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">clickOpen</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;drag_open&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">clickOpen</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">clickOpen</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">openDialog</span><span class="p">()</span>
+    <span class="p">})</span>
+<span class="p">};</span>
+
+<span class="c1">//拖拽打开功能
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">dragWrapper</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;drag_open&#34;</span><span class="p">);</span>
+<span class="c1">//添加拖拽事件监听器
+</span><span class="c1"></span><span class="nx">dragWrapper</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;drop&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">//阻止默认行为
+</span><span class="c1"></span>    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="c1">//获取文件列表
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">dataTransfer</span><span class="p">.</span><span class="nx">files</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">paths</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">file</span> <span class="k">of</span> <span class="nx">files</span><span class="p">){</span>
+        <span class="c1">//获取文件路径
+</span><span class="c1"></span>        <span class="nx">paths</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">path</span><span class="p">)</span> 
+    <span class="p">}</span>
+    <span class="c1">// console.log(paths);
+</span><span class="c1"></span>    <span class="nx">fileNum</span> <span class="o">+=</span> <span class="nx">paths</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">filePaths</span> <span class="o">=</span> <span class="nx">filePaths</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">paths</span><span class="p">)</span>
+    <span class="nx">refreshFileNum</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="c1">//阻止拖拽结束事件默认行为
+</span><span class="c1"></span><span class="nx">dragWrapper</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;dragover&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">fileNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">filePaths</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">fileNumLabel</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;fileNumLabel&#34;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">fileList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;fileList&#34;</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">refreshFileNum</span><span class="p">(){</span>
+    <span class="nx">fileNumLabel</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;已选择&#39;</span><span class="o">+</span><span class="nx">fileNum</span><span class="o">+</span><span class="s1">&#39;个文件&#39;</span>
+    <span class="nx">fileList</span><span class="p">.</span><span class="nx">innerHTML</span><span class="o">=</span><span class="s1">&#39;&lt;span&gt;支持导入单个或多个音频文件&lt;/span&gt;&#39;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">file</span> <span class="k">of</span> <span class="nx">filePaths</span><span class="p">){</span>
+        <span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span>  <span class="nx">file</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;\\&#34;</span><span class="p">)</span>
+        <span class="kd">let</span> <span class="nx">fileSpan</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
+        <span class="nx">fileSpan</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nx">fileList</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fileSpan</span><span class="p">)</span>
+    <span class="p">};</span>
+    
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">clickOpen</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;check&#39;</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">clickOpen</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">clickOpen</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;transcript&#34;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&#34;disabled&#34;</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fileNum</span><span class="p">,</span> <span class="nx">filePaths</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="thriftpy">thrift.py</h2>
+<p>thrift.py负责处理业务逻辑部分，并创建thrift服务端，相应转换指令，需要注意的是，前台传入的仅为欲转换音频文件的路径，python完成转换后传回生成的mid文件路径。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">thrift.transport</span> <span class="kn">import</span> <span class="n">TSocket</span>
+<span class="kn">from</span> <span class="nn">thrift.transport</span> <span class="kn">import</span> <span class="n">TTransport</span>
+<span class="kn">from</span> <span class="nn">thrift.protocol</span> <span class="kn">import</span> <span class="n">TBinaryProtocol</span>
+<span class="kn">from</span> <span class="nn">thrift.server</span> <span class="kn">import</span> <span class="n">TServer</span>
+
+<span class="kn">from</span> <span class="nn">gen_py.trans</span> <span class="kn">import</span> <span class="n">TranscriptionService</span>
+
+<span class="kn">from</span> <span class="nn">piano_transcription_inference</span> <span class="kn">import</span> <span class="n">PianoTranscription</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">,</span> <span class="n">load_audio</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="s1">&#39;py/piano_transcription_inference_data/note_F1=0.9677_pedal_F1=0.9186.pth&#39;</span>
+<span class="k">class</span> <span class="nc">Transcription</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">music2mid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dic</span><span class="p">):</span>
+        <span class="n">output_files_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">mp32mid</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+            <span class="c1"># Load audio</span>
+            <span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">load_audio</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="n">sample_rate</span><span class="p">,</span> <span class="n">mono</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;loaded&#39;</span><span class="p">)</span>
+            <span class="c1"># Transcriptor</span>
+            <span class="n">transcriptor</span> <span class="o">=</span> <span class="n">PianoTranscription</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>  <span class="c1"># &#39;cuda&#39; | &#39;cpu&#39;</span>
+            <span class="n">fname</span><span class="o">=</span><span class="n">fp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">fname</span><span class="o">+</span><span class="s1">&#39; is processing...&#39;</span><span class="p">)</span>
+            <span class="c1"># Transcribe and write out to MIDI file</span>
+            <span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">py</span><span class="se">\\</span><span class="s1">output</span><span class="se">\\</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;.mid&#39;</span>
+            <span class="n">transcribed_dict</span> <span class="o">=</span> <span class="n">transcriptor</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="n">audio</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>  <span class="c1"># 设置输出路径（文件名）</span>
+            <span class="k">return</span> <span class="n">output_file</span>
+
+        <span class="n">dic</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">dic</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">[</span><span class="s2">&#34;paths&#34;</span><span class="p">]:</span>
+            <span class="n">output_files_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mp32mid</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&#34;output_paths&#34;</span><span class="p">:</span><span class="n">output_files_list</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s1">&#39;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="s2">&#34;127.0.0.1&#34;</span>
+    <span class="c1"># 创建服务端</span>
+    <span class="n">handler</span> <span class="o">=</span> <span class="n">Transcription</span><span class="p">()</span>  <span class="c1"># 自定义类</span>
+    <span class="n">processor</span> <span class="o">=</span> <span class="n">TranscriptionService</span><span class="o">.</span><span class="n">Processor</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>  <span class="c1"># userService为python接口文件自动生成</span>
+    <span class="c1"># 监听端口</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">TSocket</span><span class="o">.</span><span class="n">TServerSocket</span><span class="p">(</span><span class="n">ip</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>  <span class="c1"># ip与port位置不可交换</span>
+    <span class="c1"># 选择传输层</span>
+    <span class="n">tfactory</span> <span class="o">=</span> <span class="n">TTransport</span><span class="o">.</span><span class="n">TBufferedTransportFactory</span><span class="p">()</span>
+    <span class="c1"># 选择传输协议</span>
+    <span class="n">pfactory</span> <span class="o">=</span> <span class="n">TBinaryProtocol</span><span class="o">.</span><span class="n">TBinaryProtocolFactory</span><span class="p">()</span>
+    <span class="c1"># 创建服务端</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">TServer</span><span class="o">.</span><span class="n">TThreadedServer</span><span class="p">(</span><span class="n">processor</span><span class="p">,</span> <span class="n">transport</span><span class="p">,</span> <span class="n">tfactory</span><span class="p">,</span> <span class="n">pfactory</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;start server in python&#34;</span><span class="p">)</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">serve</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Done&#34;</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="thrift接口文件的生成">thrift接口文件的生成</h2>
+<p>由于thrift接口连接两种语言，所以需要对接口进行定义</p>
+<h2 id="transthrift">trans.thrift</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">service TranscriptionService {
+    string music2mid(1:string name)
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>然后使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">thrift.exe -out ./gen_py -gen py  trans.thrift
+<span class="s1">&#39;&#39;&#39;
+</span><span class="s1">./gen_py
+</span><span class="s1">│__init__.py
+</span><span class="s1">│
+</span><span class="s1">└trans
+</span><span class="s1">   │  constants.py
+</span><span class="s1">   │  TranscriptionService-remote
+</span><span class="s1">   │  TranscriptionService.py
+</span><span class="s1">   │  ttypes.py
+</span><span class="s1">   └  __init__.py
+</span><span class="s1">&#39;&#39;&#39;</span>
+thrift.exe -out ./gen_nodejs --gen js:node  trans.thrift
+<span class="s1">&#39;&#39;</span><span class="err">&#39;</span>
+./gen_nodejs
+├─TranscriptionService.js
+└─trans_types.js
+</code></pre></td></tr></table>
+</div>
+</div><p>生成对应语言的接口程序供调用
+Python中的调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">from thrift.transport import TSocket
+from thrift.transport import TTransport
+from thrift.protocol import TBinaryProtocol
+from thrift.server import TServer
+</code></pre></td></tr></table>
+</div>
+</div><p>Electron(node.js)中的调用：
+JavaScript中的调用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">thrift</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;thrift&#39;</span><span class="p">);</span>
+<span class="c1">// 调用win10下thrift命令自动生成的依赖包
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">TranscriptionService</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gen-nodejs/TranscriptionService.js&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ttypes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./gen-nodejs/trans_types.js&#39;</span><span class="p">);</span>
+<span class="c1">// thrift 通信会占用一个本地端口
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">thriftConnection</span> <span class="o">=</span> <span class="nx">thrift</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">8000</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">thriftClient</span> <span class="o">=</span> <span class="nx">thrift</span><span class="p">.</span><span class="nx">createClient</span><span class="p">(</span><span class="nx">TranscriptionService</span><span class="p">,</span><span class="nx">thriftConnection</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
 </item><item>
     <title>青海行</title>
     <link>http://imzifeng.cn/posts/qinghai/</link>
     <pubDate>Tue, 13 Jul 2021 17:53:30 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/posts/qinghai/</guid>
-    <description><![CDATA[路线图 第一天 7/17 下午2时降落，乘车到市区，入住酒店（） 必要事项 联系司机，车辆 购买物资：水，干粮、其他防护器具、防晒等 可选市内景点 饮食：莫家街和]]></description>
+    <description><![CDATA[<h3 id="路线图">路线图</h3>
+<div class="mermaid" id="id-1"></div>
+<h3 id="第一天-717">第一天 7/17</h3>
+<div class="mapbox" id="id-2" style="width: 100%; height: 20rem;"></div>
+<p>下午2时降落，乘车到市区，入住酒店（）
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>必要事项<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>联系司机，车辆</p>
+<p>购买物资：水，干粮、其他防护器具、防晒等</p>
+</div>
+        </div>
+    </div></p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>可选市内景点<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>饮食：莫家街和饮马街</p>
+<p>夜景，地标建筑：浦宁之珠</p>
+</div>
+        </div>
+    </div>
+<h3 id="第二天-718">第二天 7/18</h3>
+<p>西宁出发，前往塔尔寺
+<div class="mapbox" id="id-3" style="width: 100%; height: 20rem;"></div>
+拉脊山
+<div class="mapbox" id="id-4" style="width: 100%; height: 20rem;"></div>
+青海湖
+<div class="mapbox" id="id-5" style="width: 100%; height: 20rem;"></div>
+茶卡镇
+<div class="mapbox" id="id-6" style="width: 100%; height: 20rem;"></div></p>
+<h3 id="第三天-719">第三天 7/19</h3>
+]]></description>
 </item><item>
     <title>眼镜新鸟的经验谈</title>
     <link>http://imzifeng.cn/posts/glass/</link>
     <pubDate>Mon, 12 Jul 2021 21:21:52 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/posts/glass/</guid>
-    <description><![CDATA[前言 19年4月19日，陪伴我多年的变色眼镜终于光荣退役了，在镜框的纵容下，左眼镜片选择结束自己的使命奔向了自由。 这是我的第三副眼镜，当时心血]]></description>
+    <description><![CDATA[<h3 id="前言">前言</h3>
+<p>19年4月19日，陪伴我多年的变色眼镜终于光荣退役了，在镜框的纵容下，左眼镜片选择结束自己的使命奔向了自由。</p>
+<p>这是我的第三副眼镜，当时心血来潮选择的变色片，变色片虽然用着舒服，但是因为如下原因不太想用第二次：</p>
+<ol>
+<li>镜片变色取决于紫外线强度，所以，开车没用（挡风玻璃有过滤紫外线作用），下雨天或者阴天却有可能变色，你能想到在一个阴郁的傍晚看一个戴墨镜的人有多傻叼吗？</li>
+<li>墨镜自带一丢丢的装逼属性，虽然很多时候都是为了眼睛舒服，别人觉得装逼就装吧，反正戴上墨镜别人认不出（还可以遮挡视线看可爱的小姐姐），但是，变色片不一样，它会变色，但是却不会像墨镜那样黑，别人还是能看见你，认出你（还挡不了视线）。所以你有时会看到走在路上别人会看你，毕竟变色片还不是特别主流。</li>
+<li>变色片恢复时间还是比较长，突然从阳光下进入室内会很不适应，相当于室内戴墨镜你还没法取，而且如果在眼镜还是半黑的情况下去见长辈或者老师感觉很不礼貌</li>
+</ol>
+<p>变色片就当是个玩具，如果有长时间的室外工作需求还是可以弄一副，比墨镜还是方便一点，虽然没有墨镜帅。</p>
+<p>高度近视患者没有备用镜，简直生活都没办法自理，虽然我还有一个争气的右眼200度能撑一下，之前一直觉得眼镜是个暴利行业，一副普普通通的框一堆名词忽悠来就敢买一两千，毛利率甚至超过95%，但是看了一个“挺着暴利光环挣扎在温饱线上的眼镜店主”写的帖子，对这个行业有了不一样的看法，眼镜确实是单品利率高，但是店铺利率低，为什么？卖的少啊，眼镜又不像手机，隔一两年还搞个更新换代，如果不是出什么问题或者度数猛涨，一般人戴个十年八年没有任何问题，很多店撑死两三天卖一副，水电气加房租一减，维持温饱还是很轻松，真不是别人想坑你钱，实在是运营模式下没办法。</p>
+<p>有人一听好耳熟，水电房租这好办，网购啊，网店不就是摆脱了这些固定成本吗？其实尝试的人还真不少，国内几家大牌都有网上商城，但是眼镜作为一个定制化程度极高的产品，在网购中处处水土不服。验光问题&ndash;要去医院，选框问题&ndash;好吧别人寄几幅您挑，挑好了还得给别人退回去，然后都选妥了别人再工厂生产完给您寄过去，一来二去大半个月就没了，我还不如直接去街上找家眼镜店呢。</p>
+<p>这次配镜和以前不一样，大学里终于有充足的时间去配一副眼镜了，不像以前老妈带着，火速完事儿。在网上查资料做了很多功课，算是小有心得，在这里做个分享记录。</p>
+<h3 id="快时尚品牌">“快时尚品牌”？</h3>
+<p>眼镜行业发展到现在，还有突破的可能吗？</p>
+<p>还真有，既然实体店面临成本高风险等压力，还是可以沿用互联网那一套，定位年轻市场，重设计，打造网红体验，走量来保证利率。所以一批“快时尚”品牌迅速兴起，以&quot;快、狠、准&quot;为主要特征，换成直接体验就是店铺的装修时尚气息浓厚、购物氛围自由、服务贴心；其次，产品时尚潮流度较高，更新速度快，同时价格亲民，不会像普通眼镜店那样一直有一个店员跟着你碎碎念（社恐噩梦），镜架不会锁在玻璃柜子里而是摆在货架上可以随意试戴，有需要店员也会给你一些建议，体验好了不少。目前国内比较火的快时尚品牌有JINS(睛姿)、LOHO眼镜生活、木九十、ZOFF(佐芙)、Aojo(艾镜)、EXE镜自由、eGG、URAKU(乐顾)、Zele、LookOptical等。</p>
+<p>在小红书和什么值得买上，Jins可以说是众人的心头好，具体购买帖自己去搜，不在累述。定位年轻和高性价比的标签深得我心，所以就选它家的眼镜了，先是打算网购，但是没有办法试戴让我这个脸形不好撘的人知难而退。一搜发现成都的店面还真不太少，大概有七八家，选了从图片上看店面最大的环球中心店。</p>
+<p>环球中心巨无霸的体积着实让我这个处于半失明状态的人找了好一阵，到了店门口就发现和外面那些妖艳贱货果然不一样，和周围的时装大牌完美融为一体，温馨的装修和开放的镜架让一些不打算配镜的人都有进去逛逛的冲动。</p>
+<p>最后在店员小姐姐的推荐下选了一个999的钛框，考虑到左眼500的度数,加300元上了1.67，搞活动再优惠一百，到手价1199.由于需要定制镜片，5-7天后才能取镜或者邮寄，开箱图待补</p>
+<p>下面是重点，在近几年一些媒体的刻意引导下，消费者和商家之间的信息不对等被刻意放大，很多人都觉得“商家的嘴，骗人的鬼”，当然一些无良商家也对造成这样的局面功不可没，我还是相信世界上还是好人多，有些商家还是会很贴心地帮你选择商品的，如果你还是觉得不太保险，那么最好的办法就是消除问题的根源&ndash;信息不平等，如果你能够分辨出商家嘴里每个晦涩难懂的词语的意思，那再没人能够骗到你。</p>
+<h3 id="156-160-167">1.56? 1.60? 1.67？</h3>
+<p>眼镜是通过折射改变入射光线，从而使外界的光线能够在视网膜上清晰成像，以达到矫正视力的目的。每人需要矫正的程度，或者说近视（远视）的度数不一样，通过改变镜片的形状或者折射率就可以实现不同的矫正度数。而商家在选择镜片时所说的1.56\1.67就是指的镜片折射率，一般来说，折射率越高，镜片就越薄，随之重量下降和美观度也会提升。但对于低度数的同学来说，不同折射率之间的镜片薄厚差距微乎其微，而价格之间的差距就比较大了。高折射率的优势只有在高倍镜中才能体现出来。</p>
+<p>1、100度以下的近视或平光，或者100度以下的远视，建议选择1.50折射率的镜片；</p>
+<p>2、100~300度的近视，或者100~300度以下的远视，建议选择1.56折射率的镜片；</p>
+<p>3、300~600度的近视，或者300度~600度以下的远视，建议选择1.60折射率的镜片；</p>
+<p>4、600~800度的近视，建议选择1.67折射率的镜片；</p>
+<p>5、800度以上的近视，建议选择1.74折射率的镜片。</p>
+<h3 id="阿贝数">阿贝数？</h3>
+<p>可能有的同学会想，我有钱，任性，虽然我度数不高，但是我就要选最贵的1.74折射率，那减少的零点几克重量对本仙女很重要。这样选择并不理智，这就涉及到一个商家往往不会告诉你的参数&ndash;阿贝数（色散系数）。</p>
+<p>先来复习一下高中物理&mdash;同种介质对不同波长的光有不同的折射率。通过这个原理，我们可以造出三棱镜，将不同波长的光分开，衡量这种能力的指标就是阿贝数，色散现象在眼镜中同样存在，一些高度近视的朋友在通过眼镜边缘看物体时有时会发现物体边缘有蓝边，这就是发生了色散。色散程度越低，成像的效果越好，不同折射率的眼镜阿贝数参考如下</p>
+<p></p>
+<p>总体来说，1.50折射率的镜片的阿贝数可以达到58，但是一旦用到1.74折射率超超薄以上等级的镜片时，阿贝数会下降到32~36。所以，有好就有坏。如果一味追求镜片的薄，那么就会牺牲镜片的阿贝数，也就是降低了视觉对于颜色的真实感受，以及舒适度。</p>
+]]></description>
 </item></channel>
 </rss>

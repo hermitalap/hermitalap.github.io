@@ -9,6 +9,70 @@
     <pubDate>Sat, 04 Sep 2021 16:33:34 &#43;0800</pubDate><author>
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/posts/usbflashdiskantivirus/</guid>
-    <description><![CDATA[前言 最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步]]></description>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步骤。加上显微镜室的电脑还有其他实验室的在使用，众多使用者的U盘很容易出现交叉感染的情况。</p>
+<p>现将本人收集的除了安装杀毒软件以外的U盘防毒方法整理如下</p>
+<h3 id="使用带有写保护功能的u盘">使用带有写保护功能的U盘</h3>
+<p>病毒植入U盘必然伴随着写入，带有硬件写保护功能的U盘能够有效防御学校打印店，公共演示电脑上带有的病毒。可以说是目前唯一能够100%防御病毒的方法，缺点是但是款式较少，且主要面向商务用户，价格较高。且不适用于需要向U盘内拷贝文件的场合。</p>
+<h3 id="关闭自动播放功能">关闭自动播放功能</h3>
+<p>部分U盘病毒的传播方法是伪造autorun.inf文件，该文件定义了硬件被接入电脑后会以何种方式自动运行哪个程序，打开自动播放可能会导致病毒程序被系统自动运行。
+以win10为例，依次打开设置-&gt;设备-&gt;自动播放-&gt;关闭自动播放
+<figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" data-sub-html="<h2>设置-&gt;设备-&gt;自动播放-&gt;关闭自动播放</h2>">
+        
+    </a><figcaption class="image-caption">设置->设备->自动播放->关闭自动播放</figcaption>
+    </figure></p>
+<h3 id="构建不可修改的autoruninf">构建不可修改的autorun.inf</h3>
+<p>即便是关闭了自动播放，在资源管理器双击U盘图标时，系统也会按照autorun.inf中的指示自动运行病毒程序，所以安全的做法是右键U盘图标然后点击“打开”，并注意是否有可疑的自动播放选项。考虑到使用个人U盘的过程中很少会用到autorun.inf，所以我们可以创建一个不可被病毒程序修改的“autorun.inf”来抵御所有依赖这种传播方式的病毒。</p>
+<p>我在网上看到有人说，“既然病毒需要使用autorun.inf，那我们预先创建一个autorun.inf，病毒就无法传播了”，这完全是来搞笑的，凭什么你会觉得病毒不会覆盖或者删除原有的antorun.inf文件？不过这个馊主意也给了我一些灵感，经过尝试和使用一些骚操作，我还是实现对autorun.inf的被动防御。</p>
+<p>这里主要运用了两种机制</p>
+<ul>
+<li>windows下，同一目录下不可出现相同名称的文件和文件夹</li>
+<li>如果目录下存在畸形目录，那么父目录不可被删除。</li>
+</ul>
+<p>首先在U盘根目录下创建“autorun.inf”文件夹，当这个文件夹存在的时候，病毒就无法创建“autorun.inf”文件了
+<figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" data-sub-html="<h2>windows下，同一目录下不可出现相同名称的文件和文件夹</h2>">
+        
+    </a><figcaption class="image-caption">windows下，同一目录下不可出现相同名称的文件和文件夹</figcaption>
+    </figure>
+但是病毒可能会删除这个文件夹，所以我们要让这个文件夹不可被删除。
+首先进入“autorun.inf”文件夹，右键，点击“在终端/cmd中打开”，你也可以说win+r，输入cmd后回车，然后手动cd到U盘的这个目录下。然后</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\a</span>utorun.inf&gt;md imzifeng.cn..<span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在该目录下创建一个文件夹，在任意名称的后面跟上两个或多个点（.）,这种带有两个或多个点的目录就是一个畸形目录，它无法通过常规方法删除
+<figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-sub-html="<h2>常规删除方法</h2>">
+        
+    </a><figcaption class="image-caption">常规删除方法</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" data-sub-html="<h2>无法删除</h2>">
+        
+    </a><figcaption class="image-caption">无法删除</figcaption>
+    </figure>
+同样的，由于它是“autorun.inf”目录的子目录，导致“autorun.inf”也无法正常删除和访问。
+<figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" data-sub-html="<h2>无法删除的autorun.inf</h2>">
+        
+    </a><figcaption class="image-caption">无法删除的autorun.inf</figcaption>
+    </figure>
+这样就构建了一个不可删除的“autorun.inf”目录</p>
+<p>如果之后需要删除，可以在终端中输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\a</span>utorun.inf&gt;rd imzifeng.cn..<span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是，这个方法只能阻止利用了autorun.inf文件的病毒，现在很多病毒都比较高级，比如把U盘下的文件全部隐藏，然后复刻一个一摸一样的目录，不过把所有文件以及文件夹都替换为exe可执行文件，一点就中招，不过我一般都是开启了显示隐藏文件以及显示文件扩展名。</p>
+<h3 id="各类u盘保险箱程序">各类U盘保险箱程序</h3>
+<p>治标不治本，还有可能导致重要文件团灭。</p>
+<h3 id="反正不是我的电脑">反正不是我的电脑</h3>
+<p>拷贝几个杀毒软件的安装包，遇到没有安装杀毒软件的可疑电脑，就给他安排上，然后拔U盘前把U盘查杀一遍。不过这年头，电脑上有好几个杀毒软件炼蛊的一定是小白，但是一个杀毒软件都没装的也可能是高手，所以做好被打的准备。不过装火绒可能被打得轻一点。</p>
+]]></description>
 </item></channel>
 </rss>

@@ -480,7 +480,10 @@ A[方形] --&gt;B(圆角)
 <blockquote>
 <p>需求图提供了需求及其相互之间和其他文档化元素之间的联系的可视化。建模规范遵循 SysML v1.6 定义的规范。</p>
 </blockquote>
-<div class="mermaid" id="id-15"></div>
+<p><figure><a class="lightgallery" href="./requirement_graph.png" title="./requirement_graph.png" data-thumbnail="./requirement_graph.png" data-sub-html="<h2>需求图</h2>">
+        
+    </a><figcaption class="image-caption">需求图</figcaption>
+    </figure></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1

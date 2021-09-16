@@ -17,6 +17,7 @@ graph TD;
     B-->D;
     C-->D;
 {{< /mermaid >}}
+```code
 graph TD;
     A-->B;
     A-->C;
@@ -441,8 +442,22 @@ erDiagram
 ### 需求图
 >需求图提供了需求及其相互之间和其他文档化元素之间的联系的可视化。建模规范遵循 SysML v1.6 定义的规范。
 
-![](requirement_graph.png "需求图")
+{{< mermaid >}}
+requirementDiagram
 
+    requirement test_req {
+    id: 1
+    text: the test text.
+    risk: high
+    verifymethod: test
+    }
+
+    element test_entity {
+    type: simulation
+    }
+
+    test_entity - satisfies -> test_req
+{{< /mermaid >}}
 ```code
 requirementDiagram
 

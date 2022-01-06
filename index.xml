@@ -81,7 +81,7 @@ guest ok = no
 </code></pre></td></tr></table>
 </div>
 </div><p>这其中比较重要的参数为path和valid users, path指定了samba服务器的根目录，可以任意指定合法路径，不要设置在根目录； valid users表示可以访问samba服务器的合法用户，这个用户最好是你在主机端的用户名；</p>
-<h4 id="完整配置参数">完整配置参数</h4>
+<h4 id="完整配置参数仅供参考不要全部都放配置文件里">完整配置参数（仅供参考，不要全部都放配置文件里）</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">  1

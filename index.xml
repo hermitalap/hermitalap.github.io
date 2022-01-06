@@ -3,9 +3,640 @@
         <title>imzifeng</title>
         <link>http://imzifeng.cn/</link>
         <description>无名的自留地.</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 11 Dec 2021 22:27:08 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 06 Jan 2022 20:22:59 &#43;0800</lastBuildDate>
             <atom:link href="http://imzifeng.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>用Samba来远程管理服务器上的文件</title>
+    <link>http://imzifeng.cn/posts/samba/</link>
+    <pubDate>Thu, 06 Jan 2022 20:22:59 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/samba/</guid>
+    <description><![CDATA[<h3 id="主机端安装">主机端安装</h3>
+<h4 id="ubuntu">Ubuntu</h4>
+<p>可直接用apt安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install samba
+</code></pre></td></tr></table>
+</div>
+</div><p>安装完后运行软件确认</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ samba
+<span class="o">[</span>2022/01/06 19:46:18.477419, 0<span class="o">]</span> ../../lib/util/debug.c:1104<span class="o">(</span>reopen_one_log<span class="o">)</span>  
+reopen_one_log: Unable to open new log file <span class="s1">&#39;/var/log/samba/log.samba&#39;</span>: Permission denied  
+<span class="o">[</span>2022/01/06 19:46:18.477521, 0<span class="o">]</span> ../../source4/smbd/server.c:644<span class="o">(</span>binary_smbd_main<span class="o">)</span>  
+samba version 4.13.14-Ubuntu started.  
+Copyright Andrew Tridgell and the Samba Team 1992-2020
+</code></pre></td></tr></table>
+</div>
+</div><p>我这里因为已经在运行了所以会提示访问受限</p>
+<h3 id="主机端配置">主机端配置</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.backup
+sudo vim /etc/samba/smb.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>添加如下配置项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[global]  
+server min protocol = CORE  
+[My_data]  
+comment = My_Data  
+path = /media/dell/data/your_data_path 
+public = no  
+browseable = yes  
+writeable = yes  
+valid users = zhangsan  
+guest ok = no
+</code></pre></td></tr></table>
+</div>
+</div><p>这其中比较重要的参数为path和valid users, path指定了samba服务器的根目录，可以任意指定合法路径，不要设置在根目录； valid users表示可以访问samba服务器的合法用户，这个用户最好是你在主机端的用户名；</p>
+<h4 id="完整配置参数">完整配置参数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">主配置文件由两部分构成
+
+    Global Settings <span class="o">(</span>55-245行<span class="o">)</span>
+
+　　该设置都是与Samba服务整体运行环境有关的选项，它的设置项目是针对所有共享资源的。
+
+    Share Definitions （246-尾行）
+
+　　该设置针对的是共享目录个别的设置，只对当前的共享资源起作用。
+
+全局参数：
+
+<span class="c1">#==================Global Settings ===================</span>
+<span class="o">[</span>global<span class="o">]</span>
+
+config <span class="nv">file</span> <span class="o">=</span> /usr/local/samba/lib/smb.conf.%m
+说明：config file可以让你使用另一个配置文件来覆盖缺省的配置文件。如果文件不存在，则该项无效。这个参数很有用，可以使得samba配置更灵活，可以让一台 samba服务器模拟多台不同配置的服务器。比如，你想让PC1（主机名）这台电脑在访问Samba Server时使用它自己的配置文件，那么先在/etc/samba/host/下为PC1配置一个名为smb.conf.pc1的文件，然后在 smb.conf中加入：config <span class="nv">file</span> <span class="o">=</span> /etc/samba/host/smb.conf.%m。这样当PC1请求连接Samba Server时，smb.conf.%m就被替换成smb.conf.pc1。这样，对于PC1来说，它所使用的Samba服务就是由 smb.conf.pc1定义的，而其他机器访问Samba Server则还是应用smb.conf。
+
+<span class="nv">workgroup</span> <span class="o">=</span> WORKGROUP
+说明：设定 Samba Server 所要加入的工作组或者域。
+
+server <span class="nv">string</span> <span class="o">=</span> Samba Server Version %v
+说明：设定 Samba Server 的注释，可以是任何字符串，也可以不填。宏%v表示显示Samba的版本号。
+
+netbios <span class="nv">name</span> <span class="o">=</span> smbserver
+说明：设置Samba Server的NetBIOS名称。如果不填，则默认会使用该服务器的DNS名称的第一部分。netbios name和workgroup名字不要设置成一样了。
+
+<span class="nv">interfaces</span> <span class="o">=</span> lo eth0 192.168.12.2/24 192.168.13.2/24
+说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。
+
+hosts <span class="nv">allow</span> <span class="o">=</span> 127. 192.168.1. 192.168.10.1
+说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。hosts deny 与hosts allow 刚好相反。
+例如：hosts <span class="nv">allow</span><span class="o">=</span>172.17.2.EXCEPT172.17.2.50
+表示容许来自172.17.2.*的主机连接，但排除172.17.2.50
+hosts <span class="nv">allow</span><span class="o">=</span>172.17.2.0/255.255.0.0
+表示容许来自172.17.2.0/255.255.0.0子网中的所有主机连接
+hosts <span class="nv">allow</span><span class="o">=</span>M1，M2
+表示容许来自M1和M2两台计算机连接
+hosts <span class="nv">allow</span><span class="o">=</span>@pega
+表示容许来自pega网域的所有计算机连接
+
+max <span class="nv">connections</span> <span class="o">=</span> <span class="m">0</span>
+说明：max connections用来指定连接Samba Server的最大连接数目。如果超出连接数目，则新的连接请求将被拒绝。0表示不限制。
+
+<span class="nv">deadtime</span> <span class="o">=</span> <span class="m">0</span>
+说明：deadtime用来设置断掉一个没有打开任何文件的连接的时间。单位是分钟，0代表Samba Server不自动切断任何连接。
+
+<span class="nb">time</span> <span class="nv">server</span> <span class="o">=</span> yes/no
+说明：time server用来设置让nmdb成为windows客户端的时间服务器。
+
+log <span class="nv">file</span> <span class="o">=</span> /var/log/samba/log.%m
+说明：设置Samba Server日志文件的存储位置以及日志文件名称。在文件名后加个宏%m（主机名），表示对每台访问Samba Server的机器都单独记录一个日志文件。如果pc1、pc2访问过Samba Server，就会在/var/log/samba目录下留下log.pc1和log.pc2两个日志文件。
+
+max log <span class="nv">size</span> <span class="o">=</span> <span class="m">50</span>
+说明：设置Samba Server日志文件的最大容量，单位为kB，0代表不限制。
+
+<span class="nv">security</span> <span class="o">=</span> user
+说明：设置用户访问Samba Server的验证方式，一共有四种验证方式。
+1. share：用户访问Samba Server不需要提供用户名和口令, 安全性能较低。
+2. user：Samba Server共享目录只能被授权的用户访问,由Samba Server负责检查账号和密码的正确性。账号和密码要在本Samba Server中建立。
+3. server：依靠其他Windows NT/2000或Samba Server来验证用户的账号和密码,是一种代理验证。此种安全模式下,系统管理员可以把所有的Windows用户和口令集中到一个NT系统上,使用 Windows NT进行Samba认证, 远程服务器可以自动认证全部用户和口令,如果认证失败,Samba将使用用户级安全模式作为替代的方式。
+4. domain：域安全级别,使用主域控制器<span class="o">(</span>PDC<span class="o">)</span>来完成认证。
+
+passdb <span class="nv">backend</span> <span class="o">=</span> tdbsam
+说明：passdb backend就是用户后台的意思。目前有三种后台：smbpasswd、tdbsam和ldapsam。sam应该是security account manager（安全账户管理）的简写。
+1.smbpasswd：该方式是使用smb自己的工具smbpasswd来给系统用户（真实用户或者虚拟用户）设置一个Samba密码，客户端就用这个密码来访问Samba的资源。smbpasswd文件默认在/etc/samba目录下，不过有时候要手工建立该文件。
+2.tdbsam： 该方式则是使用一个数据库文件来建立用户数据库。数据库文件叫passdb.tdb，默认在/etc/samba目录下。passdb.tdb用户数据库 可以使用smbpasswd –a来建立Samba用户，不过要建立的Samba用户必须先是系统用户。我们也可以使用pdbedit命令来建立Samba账户。pdbedit命令的 参数很多，我们列出几个主要的。
+　　pdbedit –a username：新建Samba账户。
+　　pdbedit –x username：删除Samba账户。
+　　pdbedit –L：列出Samba用户列表，读取passdb.tdb数据库文件。
+　　pdbedit –Lv：列出Samba用户列表的详细信息。
+　　pdbedit –c “<span class="o">[</span>D<span class="o">]</span>” –u username：暂停该Samba用户的账号。
+　　pdbedit –c “<span class="o">[]</span>” –u username：恢复该Samba用户的账号。
+3.ldapsam：该方式则是基于LDAP的账户管理方式来验证用户。首先要建立LDAP服务，然后设置“passdb <span class="nv">backend</span> <span class="o">=</span> ldapsam:ldap://LDAP Server”
+
+encrypt <span class="nv">passwords</span> <span class="o">=</span> yes/no
+说明：是否将认证密码加密。因为现在windows操作系统都是使用加密密码，所以一般要开启此项。不过配置文件默认已开启。
+
+smb passwd <span class="nv">file</span> <span class="o">=</span> /etc/samba/smbpasswd
+说明：用来定义samba用户的密码文件。smbpasswd文件如果没有那就要手工新建。
+
+username <span class="nv">map</span> <span class="o">=</span> /etc/samba/smbusers
+说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。比如：root <span class="o">=</span> administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。
+
+guest <span class="nv">account</span> <span class="o">=</span> nobody
+说明：用来设置guest用户名。
+
+socket <span class="nv">options</span> <span class="o">=</span> TCP_NODELAY <span class="nv">SO_RCVBUF</span><span class="o">=</span><span class="m">8192</span> <span class="nv">SO_SNDBUF</span><span class="o">=</span><span class="m">8192</span>
+说明：用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度。
+
+domain <span class="nv">master</span> <span class="o">=</span> yes/no
+说明：设置Samba服务器是否要成为网域主浏览器，网域主浏览器可以管理跨子网域的浏览服务。
+
+<span class="nb">local</span> <span class="nv">master</span> <span class="o">=</span> yes/no
+说明：local master用来指定Samba Server是否试图成为本地网域主浏览器。如果设为no，则永远不会成为本地网域主浏览器。但是即使设置为yes，也不等于该Samba Server就能成为主浏览器，还需要参加选举。
+
+preferred <span class="nv">master</span> <span class="o">=</span> yes/no
+说明：设置Samba Server一开机就强迫进行主浏览器选举，可以提高Samba Server成为本地网域主浏览器的机会。如果该参数指定为yes时，最好把domain master也指定为yes。使用该参数时要注意：如果在本Samba Server所在的子网有其他的机器（不论是windows NT还是其他Samba Server）也指定为首要主浏览器时，那么这些机器将会因为争夺主浏览器而在网络上大发广播，影响网络性能。
+如果同一个区域内有多台Samba Server，将上面三个参数设定在一台即可。
+
+os <span class="nv">level</span> <span class="o">=</span> <span class="m">200</span>
+说明：设置samba服务器的os level。该参数决定Samba Server是否有机会成为本地网域的主浏览器。os level从0到255，winNT的os level是32，win95/98的os level是1。Windows 2000的os level是64。如果设置为0，则意味着Samba Server将失去浏览选择。如果想让Samba Server成为PDC，那么将它的os level值设大些。
+
+domain <span class="nv">logons</span> <span class="o">=</span> yes/no
+说明：设置Samba Server是否要做为本地域控制器。主域控制器和备份域控制器都需要开启此项。
+
+logon <span class="nv">script</span> <span class="o">=</span> %u.bat
+说明：当使用者用windows客户端登陆，那么Samba将提供一个登陆档。如果设置成%u.bat，那么就要为每个用户提供一个登陆档。如果人比较多， 那就比较麻烦。可以设置成一个具体的文件名，比如start.bat，那么用户登陆后都会去执行start.bat，而不用为每个用户设定一个登陆档了。 这个文件要放置在<span class="o">[</span>netlogon<span class="o">]</span>的path设置的目录路径下。
+
+wins <span class="nv">support</span> <span class="o">=</span> yes/no
+说明：设置samba服务器是否提供wins服务。
+
+wins <span class="nv">server</span> <span class="o">=</span> wins服务器IP地址
+说明：设置Samba Server是否使用别的wins服务器提供wins服务。
+
+wins <span class="nv">proxy</span> <span class="o">=</span> yes/no
+说明：设置Samba Server是否开启wins代理服务。
+
+dns <span class="nv">proxy</span> <span class="o">=</span> yes/no
+说明：设置Samba Server是否开启dns代理服务。
+
+load <span class="nv">printers</span> <span class="o">=</span> yes/no
+说明：设置是否在启动Samba时就共享打印机。
+
+printcap <span class="nv">name</span> <span class="o">=</span> cups
+说明：设置共享打印机的配置文件。
+
+<span class="nv">printing</span> <span class="o">=</span> cups
+说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx
+
+共享参数：
+<span class="c1">#================== Share Definitions ==================</span>
+<span class="o">[</span>共享名<span class="o">]</span>
+
+<span class="nv">comment</span> <span class="o">=</span> 任意字符串
+说明：comment是对该共享的描述，可以是任意字符串。
+
+<span class="nv">path</span> <span class="o">=</span> 共享目录路径
+说 明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于<span class="o">[</span>homes<span class="o">]</span> 共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目 录，这样path就可以写成：path <span class="o">=</span> /home/share/%u<span class="p">;</span> 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用 户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以 这样写：path <span class="o">=</span> /home/share/%m 。
+
+<span class="nv">browseable</span> <span class="o">=</span> yes/no
+说明：browseable用来指定该共享是否可以浏览。
+
+<span class="nv">writable</span> <span class="o">=</span> yes/no
+说明：writable用来指定该共享路径是否可写。
+
+<span class="nv">available</span> <span class="o">=</span> yes/no
+说明：available用来指定该共享资源是否可用。
+
+admin <span class="nv">users</span> <span class="o">=</span> 该共享的管理者
+说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security<span class="o">=</span>share”时，此项无效。
+例如：admin <span class="nv">users</span> <span class="o">=</span>david，sandy（多个用户中间用逗号隔开）。
+
+valid <span class="nv">users</span> <span class="o">=</span> 允许访问该共享的用户
+说明：valid users用来指定允许访问该共享资源的用户。
+例如：valid <span class="nv">users</span> <span class="o">=</span> david，@dave，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@组名”表示。）
+
+invalid <span class="nv">users</span> <span class="o">=</span> 禁止访问该共享的用户
+说明：invalid users用来指定不允许访问该共享资源的用户。
+例如：invalid <span class="nv">users</span> <span class="o">=</span> root，@bob（多个用户或者组中间用逗号隔开。）
+
+write <span class="nv">list</span> <span class="o">=</span> 允许写入该共享的用户
+说明：write list用来指定可以在该共享下写入文件的用户。
+例如：write <span class="nv">list</span> <span class="o">=</span> david，@dave
+
+<span class="nv">public</span> <span class="o">=</span> yes/no
+说明：public用来指定该共享是否允许guest账户访问。
+
+guest <span class="nv">ok</span> <span class="o">=</span> yes/no
+说明：意义同“public”。
+
+几个特殊共享：
+<span class="o">[</span>homes<span class="o">]</span>
+<span class="nv">comment</span> <span class="o">=</span> Home Directories
+<span class="nv">browseable</span> <span class="o">=</span> no
+<span class="nv">writable</span> <span class="o">=</span> yes
+valid <span class="nv">users</span> <span class="o">=</span> %S
+<span class="p">;</span> valid <span class="nv">users</span> <span class="o">=</span> MYDOMAIN<span class="se">\%</span>S
+
+<span class="o">[</span>printers<span class="o">]</span>
+<span class="nv">comment</span> <span class="o">=</span> All Printers
+<span class="nv">path</span> <span class="o">=</span> /var/spool/samba
+<span class="nv">browseable</span> <span class="o">=</span> no
+guest <span class="nv">ok</span> <span class="o">=</span> no
+<span class="nv">writable</span> <span class="o">=</span> no
+<span class="nv">printable</span> <span class="o">=</span> yes
+
+<span class="o">[</span>netlogon<span class="o">]</span>
+<span class="nv">comment</span> <span class="o">=</span> Network Logon Service
+<span class="nv">path</span> <span class="o">=</span> /var/lib/samba/netlogon
+guest <span class="nv">ok</span> <span class="o">=</span> yes
+<span class="nv">writable</span> <span class="o">=</span> no
+share <span class="nv">modes</span> <span class="o">=</span> no
+
+<span class="o">[</span>Profiles<span class="o">]</span>
+<span class="nv">path</span> <span class="o">=</span> /var/lib/samba/profiles
+<span class="nv">browseable</span> <span class="o">=</span> no
+guest <span class="nv">ok</span> <span class="o">=</span> yes
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="验证配置是否正确">验证配置是否正确</h4>
+<p>Samba配置好后，使用testparm命令可以测试smb.conf配置是否正确。使用testparm –v命令可以详细的列出smb.conf支持的配置参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ testparm  
+Load smb config files from /etc/samba/smb.conf  
+Loaded services file OK.  
+Weak crypto is allowed  
+Server role: ROLE_STANDALONE  
+  
+Press enter to see a dump of your service definitions
+</code></pre></td></tr></table>
+</div>
+</div><p>确认无误后重启服务</p>
+<h4 id="配置密码">配置密码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo smbpasswd -a zhangsan
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="重启服务">重启服务</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo service smbd restart
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="客户端配置">客户端配置</h3>
+<h4 id="windows">windows</h4>
+<p>确定你的服务器内网IP
+打开浏览器
+在地址栏中输入主机端ip，如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">//192.168.0.101
+</code></pre></td></tr></table>
+</div>
+</div><p>回车，输入你在主机端配置的用户名和密码，即可访问你的路径。</p>
+<p>默认由客户端传入的文件默认权限为rwxr&ndash;r&ndash;，可在配置文件中添加如下配置项修改这一默认文件权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">create <span class="nv">mask</span> <span class="o">=</span> <span class="m">0777</span>  
+directory <span class="nv">mask</span> <span class="o">=</span> <span class="m">0777</span>
+</code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item><item>
+    <title>Blender五分钟出图</title>
+    <link>http://imzifeng.cn/posts/blender-diamond/</link>
+    <pubDate>Tue, 04 Jan 2022 15:24:24 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/posts/blender-diamond/</guid>
+    <description><![CDATA[<h3 id="下载并安装blender">下载并安装blender</h3>
+<p><a href="https://www.blender.org/download/">https://www.blender.org/download/</a> 仅200M</p>
+<h3 id="从diamond里导出格式为obj">从diamond里导出格式为.obj</h3>
+<h3 id="导入模型到blender">导入模型到blender</h3>
+<p>打开blender，如果是第一打开，可以在初始页面更改软件语言为中文</p>
+<p>然后你会进入到如图的初始场景</p>
+<p></p>
+<p>单击中间的正方体，按键盘Del删除</p>
+<p></p>
+<p>然后在如图位置导入你上一步导出的模型</p>
+<p></p>
+<p>然后就来了</p>
+<p></p>
+<p>和之前一样，删除不需要的原子</p>
+<p>然后看界面右上角</p>
+<p></p>
+<p>包含你所有的原子
+首先单击第一个</p>
+<p></p>
+<p>然后按下shift，再单击最后一个原子</p>
+<p></p>
+<p>这样就选中了所有原子</p>
+<p></p>
+<p>在场景中的原子上右键，选中平滑着色</p>
+<p></p>
+<p>这样原子就变光滑了。</p>
+<h3 id="调整-视角灯光和材质">调整 视角，灯光，和材质</h3>
+<p>现在按下F12，进行渲染</p>
+<p></p>
+<p>可以看到视角，灯光，和材质都有问题</p>
+<p>在整个界面的右下角</p>
+<p></p>
+<p>点这个像相机一样的图标，进入渲染属性中</p>
+<p></p>
+<p>选中这三个复选框</p>
+<p>然后在下面的胶片中选中透明</p>
+<p></p>
+<p>完成以后，看到场景框的左上角</p>
+<p>单击最右侧的视图着色方式，即进入实时渲染界面</p>
+<blockquote>
+<p>现在你所见的场景就是你最终得到的效果，方便你调整</p>
+</blockquote>
+<p>点击左下角像地球一样的图标，进入世界属性</p>
+<p></p>
+<p>把颜色改成白色光，强度降到0.2（最终的亮度，如果觉得不够亮可以再加）</p>
+<p></p>
+<p>然后现在开始改材质</p>
+<p>单击一个原子选中</p>
+<p></p>
+<p>然后点击右下角的材质属性</p>
+<p></p>
+<p>更改基础色</p>
+<p></p>
+<p>由于同一种类型的原子是绑定的，所以只需要更改一次，所有的同类型原子颜色都会变</p>
+<p></p>
+<p>然后同样的方法改其他颜色</p>
+<p>还可以改改金属度什么的</p>
+<p></p>
+<p>改好以后，你所看到的样子就是最终出图的样子</p>
+<p></p>
+<p>然后就是最后一步渲染出图了</p>
+<p>按F12渲染，可以看到视角不对</p>
+<p></p>
+<p>关掉渲染框，然后按住鼠标中键旋转视图调到合适的位置，在右上角的场景物体列表里选中摄像机，</p>
+<p></p>
+<p>再按下“<strong>ctrl+alt+0</strong>”</p>
+<p></p>
+<p>把摄像头视角确定为当前视角，</p>
+<p></p>
+<p>在右边调一下焦距,把整个结构放进去，按下F12渲染</p>
+<p></p>
+<p>然后保存就可以了</p>
+<p></p>
+<p>背景是透明的，可以直接放进文档</p>
+<p></p>
+<p>然后具体效果你再慢慢调，尤其是亮度和金属光泽度什么的</p>
+]]></description>
+</item><item>
     <title>【转载】kkndme天涯预言贴</title>
     <link>http://imzifeng.cn/posts/kkndme-tianya/</link>
     <pubDate>Sat, 11 Dec 2021 22:27:08 &#43;0800</pubDate><author>

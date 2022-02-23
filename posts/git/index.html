@@ -190,11 +190,11 @@
 <p>设置个人信息，用于将修改与人对应</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global user.name &#34;username&#34;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ git config --global user.name &#34;username&#34;
 $ git config --global user.email &#34;email@example.com&#34;
 </code></pre></td></tr></table>
 </div>
@@ -203,7 +203,7 @@ $ git config --global user.email &#34;email@example.com&#34;
 然后创建</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -217,7 +217,7 @@ $ git config --global user.email &#34;email@example.com&#34;
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">git init
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">git init
 <span class="c1"># Initialized empty Git repository in somefoloers/.git/</span>
 
 <span class="c1"># 提示：使用 &#39;master&#39; 作为初始分支的名称。这个默认分支名称可能会更改。要在新仓库中</span>
@@ -236,16 +236,16 @@ $ git config --global user.email &#34;email@example.com&#34;
 <p>建立一个新的 1.py 文件:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ touch first.py
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ touch first.py
 </code></pre></td></tr></table>
 </div>
 </div><p>现在 <code>first.py</code> 并没有被放入版本库中 (unstaged), 所以我们要使用 <code>add</code> 把它添加进版本库 (staged):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -258,7 +258,7 @@ $ git config --global user.email &#34;email@example.com&#34;
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add first.py
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add first.py
 
 <span class="c1"># 再次查看状态 status</span>
 $ git status
@@ -274,17 +274,17 @@ $ git status
 </div><p>如果想一次性添加文件夹中所有未被添加的文件, 可以使用这个:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add .
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add .
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="commit提交改变">(commit）提交改变</h3>
 <p>我们已经添加好了 <code>first.py</code> 文件, 最后一步就是提交这次的改变, 并在 <code>-m</code> 自定义这次改变的信息:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -294,7 +294,7 @@ $ git status
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git commit -m <span class="s2">&#34;create first.py&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git commit -m <span class="s2">&#34;create first.py&#34;</span>
 
 <span class="c1"># 输出</span>
 <span class="o">[</span>master（根提交） d722a66<span class="o">]</span> create first.py  
@@ -308,7 +308,7 @@ $ git commit -am <span class="s2">&#34;change 3 in dev&#34;</span> <span class="
 <p>查看</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -323,7 +323,7 @@ $ git commit -am <span class="s2">&#34;change 3 in dev&#34;</span> <span class="
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git log
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git log
 
 <span class="c1"># 输出</span>
 commit d722a6689063eebd44a4584c07c7bf613520b5d5 <span class="o">(</span>HEAD -&gt; master<span class="o">)</span>  
@@ -342,7 +342,7 @@ d722a66 create first.py
 <p>如果想要查看这次还没 <code>add</code> (unstaged) 的修改部分 和上个已经 <code>commit</code> 的文件有何不同, 我们将使用 <code>$ git diff</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -353,7 +353,7 @@ d722a66 create first.py
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git diff
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git diff
 
 <span class="c1"># 输出</span>
 diff --git a/first.py b/first.py  
@@ -369,7 +369,7 @@ index e69de29..1337a53 <span class="m">100644</span>
 <p>如果你已经 <code>add</code> 了这次修改, 文件变成了 “可提交状态 (staged)”, 我们可以在 <code>diff</code> 中添加参数 <code>--cached</code> 来查看修改:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,7 +383,7 @@ index e69de29..1337a53 <span class="m">100644</span>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add .   <span class="c1"># add 全部修改文件</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add .   <span class="c1"># add 全部修改文件</span>
 $ git diff --cached
 
 <span class="c1"># 输出</span>
@@ -402,7 +402,7 @@ index 1337a53..ff7c36c <span class="m">100644</span>
 <p>目前 <code>a = 2</code> 和 <code>b = 1</code> 已被 <code>add</code>, <code>c = b</code> 是新的修改, 还没被 <code>add</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -426,7 +426,7 @@ index 1337a53..ff7c36c <span class="m">100644</span>
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 对比三种不同 diff 形式</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 对比三种不同 diff 形式</span>
 $ git diff HEAD     <span class="c1"># staged &amp; unstaged</span>
 
 @@ -1 +1,3 @@
@@ -454,7 +454,7 @@ $ git diff --cached <span class="c1"># staged</span>
 <p>有时候我们总会忘了什么, 比如已经提交了 <code>commit</code> 却发现在这个 <code>commit</code> 中忘了附上另一个文件. 接下来我们模拟这种情况. 上节内容中, 我们最后一个 <code>commit</code> 是 <code>change 2</code>, 我们将要添加另外一个文件, 将这个修改也 <code>commit</code> 进 <code>change 2</code>. 所以我们复制 <code>1.py</code> 这个文件, 改名为 <code>2.py</code>. 并把 <code>2.py</code> 变成 <code>staged</code>, 然后使用 <code>--amend</code> 将这次改变合并到之前的 <code>change 2</code> 中.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -464,7 +464,7 @@ $ git diff --cached <span class="c1"># staged</span>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add 2.py
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add 2.py
 $ git commit --amend --no-edit   <span class="c1"># &#34;--no-edit&#34;: 不编辑, 直接合并到上一个 commit</span>
 $ git log --oneline    <span class="c1"># &#34;--oneline&#34;: 每个 commit 内容显示在一行</span>
 
@@ -478,16 +478,16 @@ c6762a1 change <span class="m">1</span>
 <p>有时我们添加 <code>add</code> 了修改, 但是又后悔, 并想补充一些内容再 <code>add</code>. 这时, 我们有一种方式可以回到 <code>add</code> 之前. 比如在 <code>1.py</code> 文件中添加这一行:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">d = 3
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">d = 3
 </code></pre></td></tr></table>
 </div>
 </div><p>然后 <code>add</code> 去 <code>staged</code> 再返回到 <code>add</code> 之前:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -502,7 +502,7 @@ c6762a1 change <span class="m">1</span>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
 $ git status -s <span class="c1"># &#34;-s&#34;: status 的缩写模式</span>
 <span class="c1"># 输出</span>
 M  1.py     <span class="c1"># staged，绿色M</span>
@@ -562,7 +562,7 @@ $ git status -s
 <p>每个 <code>commit</code> 都有自己的 <code>id</code> 数字号, <code>HEAD</code> 是一个指针, 指引当前的状态是在哪个 <code>commit</code>. 最近的一次 <code>commit</code> 在最右边, 我们如果要回到过去, 就是让 <code>HEAD</code> 回到过去并 <code>reset</code> 此时的 <code>HEAD</code> 到过去的位置.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -588,7 +588,7 @@ $ git status -s
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不管我们之前有没有做了一些 add 工作, 这一步让我们回到 上一次的 commit</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 不管我们之前有没有做了一些 add 工作, 这一步让我们回到 上一次的 commit</span>
 $ git reset --hard HEAD    
 <span class="c1"># 输出</span>
 HEAD is now at 904e1ba change <span class="m">2</span>
@@ -617,7 +617,7 @@ c6762a1 change <span class="m">1</span>
 </div><p>此时回到了<code>change 1</code>, 在此之后的修改都消失了，我们可以查看 <code>$ git reflog</code> 里面最近做的所有 <code>HEAD</code> 的改动, 并选择想要回到的 <code>commit id</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -626,7 +626,7 @@ c6762a1 change <span class="m">1</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git reflog
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git reflog
 <span class="c1"># 输出</span>
 c6762a1 HEAD@<span class="o">{</span>0<span class="o">}</span>: reset: moving to c6762a1
 904e1ba HEAD@<span class="o">{</span>1<span class="o">}</span>: commit <span class="o">(</span>amend<span class="o">)</span>: change <span class="m">2</span>
@@ -638,7 +638,7 @@ c6762a1 HEAD@<span class="o">{</span>3<span class="o">}</span>: commit: change <
 </div><p>重复 <code>reset</code> 步骤就能回到 <code>commit (amend): change 2</code> (id=904e1ba)这一步了:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -646,7 +646,7 @@ c6762a1 HEAD@<span class="o">{</span>3<span class="o">}</span>: commit: change <
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git reset --hard 904e1ba
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git reset --hard 904e1ba
 $ git log --oneline
 <span class="c1"># 输出</span>
 904e1ba change <span class="m">2</span>
@@ -660,12 +660,12 @@ c6762a1 change <span class="m">1</span>
 <p>我们现在的版本库中有两个文件:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">- gitTUT
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">- gitTUT
     - 1.py
     - 2.py
 </code></pre></td></tr></table>
@@ -673,7 +673,7 @@ c6762a1 change <span class="m">1</span>
 </div><p>我们仅仅要对 <code>1.py</code> 进行回到过去操作, 回到 <code>c6762a1 change 1</code> 这一个 <code>commit</code>. 使用 <code>checkout</code> + id <code>c6762a1</code> + <code>--</code> + 文件目录 <code>1.py</code>, 我们就能将 <code>1.py</code> 的指针 <code>HEAD</code> 放在这个时刻 <code>c6762a1</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -682,7 +682,7 @@ c6762a1 change <span class="m">1</span>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline
 <span class="c1"># 输出</span>
 904e1ba change <span class="m">2</span>
 c6762a1 change <span class="m">1</span>
@@ -694,16 +694,16 @@ $ git checkout c6762a1 -- 1.py
 </div><p>这时 <code>1.py</code> 文件的内容就变成了:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">a = 1
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a = 1
 </code></pre></td></tr></table>
 </div>
 </div><p>我们在 <code>1.py</code> 加上一行内容 <code># I went back to change 1</code> 然后 <code>add</code> 并 <code>commit</code> <code>1.py</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -714,7 +714,7 @@ $ git checkout c6762a1 -- 1.py
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
 $ git commit -m <span class="s2">&#34;back to change 1 and add comment for 1.py&#34;</span>
 $ git log --oneline
 
@@ -731,7 +731,7 @@ c6762a1 change <span class="m">1</span>
 <p>我们建立另一个分支 <code>dev</code>, 并查看所有分支:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -739,7 +739,7 @@ c6762a1 change <span class="m">1</span>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git branch dev    <span class="c1"># 建立 dev 分支</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git branch dev    <span class="c1"># 建立 dev 分支</span>
 $ git branch        <span class="c1"># 查看当前分支</span>
 
 <span class="c1"># 输出</span>
@@ -750,13 +750,13 @@ $ git branch        <span class="c1"># 查看当前分支</span>
 </div><p>当我们想把 <code>HEAD</code> 切换去 <code>dev</code> 分支的时候, 我们可以用到上次说的 <code>checkout</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout dev
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout dev
 
 <span class="c1"># 输出</span>
 Switched to branch <span class="s1">&#39;dev&#39;</span>
@@ -765,7 +765,7 @@ Switched to branch <span class="s1">&#39;dev&#39;</span>
 </div><h3 id="log---oneline---graph使用graph观看分支">(log &ndash;oneline &ndash;graph）使用graph观看分支</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -779,7 +779,7 @@ Switched to branch <span class="s1">&#39;dev&#39;</span>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git branch
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git branch
 
 <span class="c1"># 输出</span>
 * dev       <span class="c1"># 这时 HEAD 已经被切换至 dev 分支</span>
@@ -797,7 +797,7 @@ $ git log --oneline --graph
 <p>使用 <code>checkout -b</code> + 分支名, 就能直接创建和切换到新建的分支:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -809,7 +809,7 @@ $ git log --oneline --graph
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout -b  dev
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout -b  dev
 
 <span class="c1"># 输出</span>
 Switched to a new branch <span class="s1">&#39;dev&#39;</span>
@@ -825,7 +825,7 @@ $ git branch
 <p>们 <code>dev</code> 中的修改推送到 <code>master</code> 中，首先要切换到 <code>master</code>, 再将 <code>dev</code> 推送过来.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -838,7 +838,7 @@ $ git branch
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master   <span class="c1"># 切换至 master 才能把其他分支合并过来</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master   <span class="c1"># 切换至 master 才能把其他分支合并过来</span>
 
 $ git merge dev         <span class="c1"># 将 dev merge 到 master 中</span>
 $ git log --oneline --graph
@@ -854,7 +854,7 @@ $ git log --oneline --graph
 </div><p>要注意的是, 如果直接 <code>git merge dev</code>, git 会采用默认的 <code>Fast forward</code> 格式进行 <code>merge</code>, 这样 <code>merge</code> 的这次操作不会有 <code>commit</code> 信息. <code>log</code> 中也不会有分支的图案. 我们可以采取 <code>--no-ff</code> 这种方式保留 <code>merge</code> 的 <code>commit</code> 信息.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -868,7 +868,7 @@ $ git log --oneline --graph
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git merge --no-ff -m <span class="s2">&#34;keep merge info&#34;</span> dev         <span class="c1"># 保留 merge 信息</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git merge --no-ff -m <span class="s2">&#34;keep merge info&#34;</span> dev         <span class="c1"># 保留 merge 信息</span>
 $ git log --oneline --graph
 
 <span class="c1"># 输出</span>
@@ -886,16 +886,16 @@ $ git log --oneline --graph
 <p>如果对于同一个文件，master和dev进行了不同的修改，也就是说在 <code>master</code> 和 <code>dev</code> 上的版本是不同的，此时<code>merge</code> 就会有冲突，提示为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">Auto-merging 1.py CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict in 1.py Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then</span> commit the result.
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">Auto-merging 1.py CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict in 1.py Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then</span> commit the result.
 </code></pre></td></tr></table>
 </div>
 </div><p>此时分支其实已经合并了，但是存在冲突的文件会被git自动进行标注，以方便我们解决冲突，打开1.py可以看到</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -904,7 +904,7 @@ $ git log --oneline --graph
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>
 <span class="c1"># I went back to change 1</span>
 <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD
 <span class="c1"># edited in master</span>
@@ -917,16 +917,16 @@ $ git log --oneline --graph
 然后再 <code>commit</code> 现在的文件, 冲突就解决啦.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git commit -am <span class="s2">&#34;solve conflict&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git commit -am <span class="s2">&#34;solve conflict&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>再来看看 <code>master</code> 的 <code>log</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -940,7 +940,7 @@ $ git log --oneline --graph
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline --graph
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline --graph
 
 <span class="c1"># 输出</span>
 *   <span class="m">7810065</span> solve conflict
@@ -1014,7 +1014,7 @@ $ git log --oneline --graph
 <p>在 <code>master</code>创建一个文件后，产生分支，在 <code>master</code>中继续创建第二个文件，然后在dev分支中分两次在文件一中进行修改。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1024,7 +1024,7 @@ $ git log --oneline --graph
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 这是 master 的 log</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 这是 master 的 log</span>
 * bf75fad <span class="o">(</span>HEAD -&gt; master<span class="o">)</span> create <span class="m">2</span>  
 * f1e708f create <span class="m">1</span>
 -----------------------------
@@ -1037,7 +1037,7 @@ $ git log --oneline --graph
 </div><p>当我们想要用 rebase 合并 master 到 dev的时候:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1062,7 +1062,7 @@ $ git log --oneline --graph
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git branch
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git branch
 
 <span class="c1"># 输出</span>
  *dev
@@ -1090,7 +1090,7 @@ To check out the original branch and stop rebasing, run <span class="s2">&#34;gi
 </div><p>git 发现的我们的 1.py 在 master 和 dev 上的版本是不同的, 所以提示 merge 有冲突. 具体的冲突, git 已经帮我们标记出来, 我们打开 1.py 就能看到:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1099,7 +1099,7 @@ To check out the original branch and stop rebasing, run <span class="s2">&#34;gi
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">a</span> <span class="o">=</span> <span class="m">1</span>
 <span class="c1"># I went back to change 1</span>
 <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; f7d2e3a047be4624e83c1265a0946e2e8790f79c
 <span class="c1"># edited in dev</span>
@@ -1111,13 +1111,13 @@ To check out the original branch and stop rebasing, run <span class="s2">&#34;gi
 </div><p>这时 HEAD 并没有指向 master 或者 dev, 而是停在了 rebase 模式上:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git branch
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git branch
 * <span class="o">(</span>no branch, rebasing master<span class="o">)</span> <span class="c1"># HEAD 在这</span>
   dev
   master
@@ -1126,13 +1126,13 @@ To check out the original branch and stop rebasing, run <span class="s2">&#34;gi
 </div><p>所以我们打开 1.py, 手动合并一下两者的不同.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">a = 1
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a = 1
 # I went back to change 1
 ​
 # edited in master and dev
@@ -1141,24 +1141,24 @@ To check out the original branch and stop rebasing, run <span class="s2">&#34;gi
 </div><p>然后执行 git add 和 git rebase &ndash;continue 就完成了 rebase 的操作了.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git add 1.py
 $ git rebase --continue
 </code></pre></td></tr></table>
 </div>
 </div><p>此时来看看dev的log</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">* 7f28382 <span class="o">(</span>HEAD -&gt; dev<span class="o">)</span> add <span class="m">2</span> in dev  
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">* 7f28382 <span class="o">(</span>HEAD -&gt; dev<span class="o">)</span> add <span class="m">2</span> in dev  
 * 7f26325 add <span class="m">1</span> in dev  <span class="c1"># 基于现在最新的bf75fad进行修改</span>
 * bf75fad <span class="o">(</span>master<span class="o">)</span> create <span class="m">2</span>  
 * f1e708f create <span class="m">1</span>
@@ -1167,7 +1167,7 @@ $ git rebase --continue
 </div><p>!! 注意 !! 这个例子也说明了使用 rebase 要万分小心, 千万不要在共享的 branch 中 rebase, 不然就像上面那样, 现在 dev 的历史已经被 rebase 改变了. dev 当中别人提交的 change 就被你无情地修改掉了, 所以千万不要在共享分支中使用 rebase.但你可以选择在rebase后merge到master中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1176,7 +1176,7 @@ $ git rebase --continue
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master
 切换到分支 <span class="s1">&#39;master&#39;</span>
 $ git merge dev
 更新 bf75fad..7f28382  
@@ -1188,7 +1188,7 @@ Fast-forward
 </div><p>再来看看 master 的 log:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1198,7 +1198,7 @@ Fast-forward
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline --graph
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git log --oneline --graph
 
 <span class="c1"># 输出</span>
 7f28382 <span class="o">(</span>HEAD -&gt; master, dev<span class="o">)</span> add <span class="m">2</span> in dev <span class="c1"># dev中的修改被合并到master中，且没有产生分支</span>
@@ -1212,7 +1212,7 @@ f1e708f create <span class="m">1</span>
 <p>假如我们正在进行任务A，但是突然有一个紧急bug修改任务B，但是我并不想把我现在的未完成任务A一起提交或者丢弃，此时我们就可以使用<code>stash</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1227,7 +1227,7 @@ f1e708f create <span class="m">1</span>
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git status -s
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git status -s
 <span class="c1"># 输出</span>
  M 1.py
 ------------------ 
@@ -1246,14 +1246,14 @@ nothing to commit, working directory clean  <span class="c1"># 干净得很</spa
 完成了, 现在可以继续开心的在 <code>dev</code> 上刷代码了.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout dev
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout dev
 $ git stash list    <span class="c1"># 查看在 stash 中的缓存</span>
 
 <span class="c1"># 输出</span>
@@ -1263,7 +1263,7 @@ stash@<span class="o">{</span>0<span class="o">}</span>: WIP on dev: f7d2e3a cha
 </div><p>上面说明在 <code>dev</code> 中, 我们的确有 <code>stash</code> 的工作. 现在可以通过 <code>pop</code> 来提取这个并继续工作了.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1281,7 +1281,7 @@ stash@<span class="o">{</span>0<span class="o">}</span>: WIP on dev: f7d2e3a cha
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git stash pop
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git stash pop
 
 <span class="c1"># 输出</span>
 On branch dev
@@ -1358,13 +1358,13 @@ $ git status -s
 <p><code>git rebase [basebranch][topicbranch]</code> ， 以basebranch为基，将topicbranch的修改应用于basebranch上。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout experiment
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout experiment
 $ git rebase master
 First, rewinding head to replay your work on top of it...
 Applying: added staged <span class="nb">command</span>
@@ -1374,11 +1374,11 @@ Applying: added staged <span class="nb">command</span>
 <p>现在回到 <code>master</code> 分支，进行一次快进合并。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ git checkout master
 $ git merge experiment
 </code></pre></td></tr></table>
 </div>
@@ -1433,7 +1433,7 @@ $ git merge experiment
                 Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
         </div></footer></div>
 

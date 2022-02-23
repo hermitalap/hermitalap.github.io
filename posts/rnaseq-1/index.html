@@ -145,27 +145,27 @@
 使用最新包的地址下载</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 </code></pre></td></tr></table>
 </div>
 </div><p>下载完成：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ ls
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ ls
 Miniconda3-latest-Linux-x86_64.sh
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="安装">安装</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -175,7 +175,7 @@ Miniconda3-latest-Linux-x86_64.sh
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ sh Miniconda3-latest-Linux-x86_64.sh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ sh Miniconda3-latest-Linux-x86_64.sh
   
 Welcome to Miniconda3 py39_4.10.3  
   
@@ -188,17 +188,17 @@ Please, press ENTER to <span class="k">continue</span>
 </div><p>回车继续，然后按空格直接跳到文档底部，输入yes并回车</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Do you accept the license terms? <span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>  
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Do you accept the license terms? <span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>  
 <span class="o">[</span>no<span class="o">]</span> &gt;&gt;&gt;yes
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -208,7 +208,7 @@ Please, press ENTER to <span class="k">continue</span>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">Miniconda3 will now be installed into this location:  
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Miniconda3 will now be installed into this location:  
 /home/xxx/miniconda3  
   
 - Press ENTER to confirm the location  
@@ -225,21 +225,21 @@ Please, press ENTER to <span class="k">continue</span>
 <h3 id="创建新环境">创建新环境</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">conda create -n rnaseq <span class="nv">python</span><span class="o">==</span>3.7 -y
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">conda create -n rnaseq <span class="nv">python</span><span class="o">==</span>3.7 -y
 </code></pre></td></tr></table>
 </div>
 </div><p>测试python3.7对各种包的支持较好
 完成后，进入该环境</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ conda activate rnaseq
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ conda activate rnaseq
 <span class="o">(</span>rnaseq<span class="o">)</span> xxx@luo-lab-tower:~$
 </code></pre></td></tr></table>
 </div>
@@ -247,24 +247,24 @@ Please, press ENTER to <span class="k">continue</span>
 <h3 id="安装hisat2-stringtie分析流程所需的软件包">安装hisat2-stringtie分析流程所需的软件包</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>rnaseq<span class="o">)</span> xxx@luo-lab-tower:~$ conda install fastqc -y
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>rnaseq<span class="o">)</span> xxx@luo-lab-tower:~$ conda install fastqc -y
 </code></pre></td></tr></table>
 </div>
 </div><p>fastqc 用于检验reads读数质量
 用相同办法继续安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">hisat2
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hisat2
 samtools
 stringtie
 htseq-count
@@ -313,7 +313,7 @@ tqdm
                 Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.85.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
         </div></footer></div>
 

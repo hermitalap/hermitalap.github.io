@@ -61,7 +61,7 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 取消选择“安装TeXworkds前端”，这是一个比较老旧的Tex编辑器，有很多更好的选择，点击右下角的`Advanced`进入更详细的配置
 ![image](Pasted%20image%2020220407201501.png "详细配置页")
 
-点击左下的Customize
+点击左下的`Customize`
 
 ![image](Pasted%20image%2020220407201535.png "左侧语言安装选项")
 
@@ -69,11 +69,11 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 
 ### 升级各个包到最新
 
-在开始菜单栏中找到TeX Live 2022，运行其中的 TLShell TeX Live Manager，即包管理器
+在开始菜单栏中找到 TeX Live 2022，运行其中的 TLShell TeX Live Manager，即包管理器
 
 ![image](Pasted%20image%2020220407214158.png "运行 TLShell TeX Live Manager")
 
-打开后如图所示，注意每次打开后软件需要联网加载信息，打开后不要操作，等待加载完成，首先可以在上方菜单中的 GUI language中更改默认语言
+打开后如图所示，注意每次打开后软件需要联网加载信息，打开后不要操作，等待加载完成，首先可以在上方菜单中的 GUI language 中更改默认语言
 
 ![image](Pasted%20image%2020220407201632.png "界面")
 
@@ -91,7 +91,7 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 
 ![image](Pasted%20image%2020220407212550.png "更新完成后")
 
-完成更新，关闭包管理器，此时 LaTeX 后端已完成配置。接下来配置vscode前端
+完成更新，关闭包管理器，此时 LaTeX 后端已完成配置。接下来配置 vscode 前端
 
 # 使用vscode搭建LaTeX写作环境
 
@@ -136,13 +136,13 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 
 ![image](Pasted%20image%2020220407215843.png "安装结束" )
 
-可勾选运行，此时点击完成后会直接运行Visual Studio Code 代码编辑器
+可勾选运行，此时点击完成后会直接运行 Visual Studio Code 代码编辑器
 
 ### 安装 LaTeX Workshop
 
 vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTeX Workshop。
 
-为方便使用，可先把界面改为中文，点击vscode左侧像俄罗斯方块一样的图标，然后在输入框中输入chinese，安装第一个简体中文包，然后点击重新加载软件。
+为方便使用，可先把界面改为中文，点击vscode左侧像俄罗斯方块一样的图标，然后在输入框中输入`chinese`，安装第一个简体中文包，然后点击重新加载软件。
 
 ![image](Pasted%20image%2020220407220529.png "安装中文")
 
@@ -152,7 +152,7 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 ![image](Pasted%20image%2020220407220722.png "安装LaTeX Workshop插件")
 
-然后你就拥有了一个vscode下的 LaTeX 编辑器，这个插件提供了相当丰富的功能。
+然后你就拥有了一个 vscode 下的 LaTeX 编辑器，这个插件提供了相当丰富的功能。
 
 ### 配置 LaTeX Workshop
 
@@ -202,7 +202,7 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 ![image](Pasted%20image%2020220407222256.png "编译成功")
 
-至此安装配置已完成，但是这只是LaTeX学习的开始，语法部分自行Google学习。
+至此安装配置已完成，但是这只是 LaTeX 学习的开始，语法部分自行 Google 学习。
 
 ### 其他配置
 
@@ -220,11 +220,11 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 发现该模板仅支持仅支持 XELATEX 或 LuaLATEX 引擎，其他编译方式会直接报错
 
-进入vscode，打开 LaTeX Workshop，在左侧的菜单的编译项中可以发现两种编译方式都支持，但是使用的是 latexmk 里的参数， LaTeX Workshop仅仅是帮你自动运行了编译命令来进行编译，调用的是你之前安装的 TeXLive 中的latexmk引擎。
+进入vscode，打开 LaTeX Workshop，在左侧的菜单的编译项中可以发现两种编译方式都支持，但是使用的是 latexmk 里的参数， LaTeX Workshop仅仅是帮你自动运行了编译命令来进行编译，调用的是你之前安装的 TeXLive 中的 latexmk 引擎。
 
-注意到模板的文档中有使用多行`xelatex` 或 `lualatex`命令来进行编译或者一行`latexmk`，这里只需要知道 latexmk 会自动帮你解决引用问题，无需重复编译，所以优先使用`latexmk`即可，这也是官方推荐的方式。
+注意到模板的文档中有使用多行`xelatex` 或`lualatex`命令来进行编译或者一行`latexmk`，这里只需要知道 latexmk 会自动帮你解决引用问题，无需重复编译，所以优先使用`latexmk`即可，这也是官方推荐的方式。
 
-在vscode中打开 "whu-thesis-demo.tex" ，点击左侧的菜单的编译项中的`latexmk (xelatex)`，LaTeX Workshop 会自动运行下面的命令进行编译：
+在vscode中打开 `whu-thesis-demo.tex` ，点击左侧的菜单的编译项中的`latexmk (xelatex)`，LaTeX Workshop 会自动运行下面的命令进行编译：
 
 ```shell
 latexmk -xelatex 你现在的文档名
@@ -260,11 +260,11 @@ latexmk -xelatex 你现在的文档名
 
 ### 双向搜索
 
-由于 LaTeX 是从源文件编译为pdf进行预览，有时候在阅读pdf时发现需要修改某些部分，就得去源文件中找到该段落，或者需要从源文件中找到pdf中的位置，都很不方便，所以需要进行双向搜索。
+由于 LaTeX 是从源文件编译为 PDF 进行预览，有时候在阅读 PDF 时发现需要修改某些部分，就得去源文件中找到该段落，或者需要从源文件中找到 PDF 中的位置，都很不方便，所以需要进行双向搜索。
 
-LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，那么你双击pdf中的段落（默认是`Ctrl+单击`），左侧的源文件会自动定位到这一行：
+LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，那么你双击 PDF 中的段落（默认是`Ctrl+单击`），左侧的源文件会自动定位到这一行：
 
 ![image](Pasted%20image%2020220410023341.png "双击右侧需要修改的文字，左侧源文件自动定位")
 
-然后左键单击左侧的源文件中的一行，按下快捷键`Ctrl + Alt + j`,右侧会定位到pdf中的位置，并用红点标记。
+然后左键单击左侧的源文件中的一行，按下快捷键`Ctrl + Alt + j`,右侧会定位到 PDF 中的位置，并用红点标记。
 

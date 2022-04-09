@@ -11,14 +11,14 @@
     </author><guid>http://imzifeng.cn/posts/latex/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/featuredImage.png" referrerpolicy="no-referrer">
-            </div><h2 id="前言">前言</h2>
+            </div><h1 id="前言">前言</h1>
 <p>最近在尝试入坑 LaTeX，然后发现网上的教程大多停留在18年以前，甚至有14年的，非常的不适用现在的最新版软件，尤其是 vscode 部分，故整理此文，适用于2022年4月的最新软件。</p>
-<h3 id="什么是latex">什么是LaTeX？</h3>
+<h2 id="什么是latex">什么是LaTeX？</h2>
 <p>LaTeX 是一种基于 ΤeΧ 的排版系统，由美国计算机学家莱斯利·兰伯特（Leslie Lamport）在20世纪80年代初期开发，利用这种排版系统，即使使用者没有排版和程序设计的知识也可以充分发挥由 TeX 所提供的强大功能，这是一种用于高质量排版的文档准备系统。常用于大中型技术或科学文档，但它几乎可以用于任何形式的出版。</p>
 <p>如果你使用过 Markdown，你应该知道 Markdown 可以让写作者更专注于写作，而不是文字的排版上。LaTeX 和它相似，它使用精准的语法让文档的格式统一而高效，尤其是生成复杂表格与数学公式。但在轻格式写作这一领域，最近被 Markdown 抢去半壁江山（因为 Markdown 的入门更简单），如果你只是厌倦了 Microsoft Word 重复性的更改字体、字号、格式这些工作，想要专注于写作，那建议你去用 Markdown，本网站所有文档都是用 Markdown 写的。</p>
 <p>注：LaTeX 发音为 «Lah-tech» 或 «Lay-tech»（与 «blech» 或 «Bertolt Brecht» 押韵，不要像我一样一直把 &ldquo;X&rdquo; 的读音读出来丢人）</p>
-<h3 id="我是否需要使用-latex-">我是否需要使用 LaTeX ？</h3>
-<h4 id="如果你符合以下条件建议你花一些时间学习并使用-latex-">如果你符合以下条件，建议你花一些时间学习并使用 LaTeX ：</h4>
+<h2 id="我是否需要使用-latex-">我是否需要使用 LaTeX ？</h2>
+<h3 id="如果你符合以下条件建议你花一些时间学习并使用-latex-">如果你符合以下条件，建议你花一些时间学习并使用 LaTeX ：</h3>
 <ul>
 <li>我需要写书或者写毕业论文这种巨型文档，涉及大量的图片、公式与文献引用</li>
 <li>我需要写计算机领域的论文</li>
@@ -28,7 +28,7 @@
 <li>我需要与别人协同完成文档，我希望有版本控制并且在最后合并工作时省心高效</li>
 <li>我需要在在 Linux 和 Mac 下写文章</li>
 </ul>
-<h4 id="如果你符合以下条件建议你不要浪费时间学习-latex-">如果你符合以下条件，建议你不要浪费时间学习 LaTeX ：</h4>
+<h3 id="如果你符合以下条件建议你不要浪费时间学习-latex-">如果你符合以下条件，建议你不要浪费时间学习 LaTeX ：</h3>
 <ul>
 <li>我只是想编辑一些简单的文档，尽管需要图文并茂并且有格式要求，但很少超过五千字</li>
 <li>我仅进行写作工作，或者进行一些简单的文字记录，对于格式完全不在意</li>
@@ -39,10 +39,10 @@
 <p>看到这里说明你已经决定入坑 LaTeX 了，首先要告诉你一个好消息和一个坏消息，</p>
 <p>坏消息是，如果你并没有计算机的背景知识，那你必须要经历一段繁琐且晦涩难懂的配置过程，你将接触一种你从未接触过的文档生成方式——编写源码并用编译器编译生成文档。</p>
 <p>好消息是，配置过程你只需要进行一次，一劳永逸，并且完全不懂每一步在干什么也没关系，只需要照做即可。</p>
-<h3 id="安装-tex-live">安装 TeX Live</h3>
+<h2 id="安装-tex-live">安装 TeX Live</h2>
 <p>之后的所有教程都默认你是一个 Windows 用户，Mac 用户建议另寻网络上其他的详细教程。Linux 用户默认不用教。</p>
 <p>TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程序、宏包和免费软件字体。宏包是TeX系统的一个重要概念，不同的宏包提供了对不同文档格式或者功能的支持，安装TeX Live 预计会占用4~5个GB的磁盘空间。如果你嫌它太大，还可以尝试另一个主要的（免费软件）TeX 发行版<a href="https://miktex.org/" target="_blank" rel="noopener noreffer">MiKTeX</a>，它会检测你用到的包，然后在使用中仅安装你需要的包，但实际上经过我的测试，即便是满足基本功能MiKTeX也会占用3个GB左右的空间，如果你不想为了这节省的一点点空间去承受可能的各种奇奇怪怪的问题，那建议你还是老老实实去安装 TeX Live。</p>
-<h4 id="下载并安装-texlive-iso-镜像">下载并安装 TeXLive ISO 镜像</h4>
+<h3 id="下载并安装-texlive-iso-镜像">下载并安装 TeXLive ISO 镜像</h3>
 <p><a href="https://www.tug.org/texlive/" target="_blank" rel="noopener noreffer">TeXLive官网</a>上提供了多种 TeXLive的安装方式，包括在线安装与 ISO 镜像。在线安装会逐个下载并安装宏包，如果你对你的网络没有信心，那我建议还是使用 ISO 镜像，镜像包含了所有所需的文件，可以把下载过程一次性完成。</p>
 <p>从<a href="https://mirror.las.iastate.edu/tex-archive/systems/texlive/Images/texlive.iso" target="_blank" rel="noopener noreffer">这里</a>下载最新的ISO文件，完成下载后，双击该文件将其挂载为虚拟光驱，之后你会在电脑的资源管理器中看到该光盘，一般盘符为E，双击进入该光盘看到如下文件目录，如果无法成功挂载可以用压缩软件将其解压，解压后的文件夹等同于挂载。</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220407201358.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220407201358.png" data-sub-html="<h2>挂载的虚拟光驱盘符</h2><p>image</p>">
@@ -65,7 +65,7 @@
     </a><figcaption class="image-caption">左侧语言安装选项</figcaption>
     </figure></p>
 <p>点前面的勾去掉你不需要的语言，节省磁盘空间占用，一般来说保留中英文即可，你要是嫌以后安装麻烦就不取消选择。完成后点确定，然后点开始安装，等待安装完成，耗时30分钟到两个小时左右。</p>
-<h4 id="升级各个包到最新">升级各个包到最新</h4>
+<h3 id="升级各个包到最新">升级各个包到最新</h3>
 <p>在开始菜单栏中找到TeX Live 2022，运行其中的 TLShell TeX Live Manager，即包管理器</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220407214158.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220407214158.png" data-sub-html="<h2>运行 TLShell TeX Live Manager</h2><p>image</p>">
         
@@ -96,16 +96,16 @@
     </a><figcaption class="image-caption">更新完成后</figcaption>
     </figure></p>
 <p>完成更新，关闭包管理器，此时 LaTeX 后端已完成配置。接下来配置vscode前端</p>
-<h2 id="使用vscode搭建latex写作环境">使用vscode搭建LaTeX写作环境</h2>
-<h3 id="安装-vscode">安装 vscode</h3>
-<h4 id="下载安装包">下载安装包</h4>
+<h1 id="使用vscode搭建latex写作环境">使用vscode搭建LaTeX写作环境</h1>
+<h2 id="安装-vscode">安装 vscode</h2>
+<h3 id="下载安装包">下载安装包</h3>
 <p>打开<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer">官网</a></p>
 <p>点击 Download for Windows 下载</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220407220049.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220407220049.png" data-sub-html="<h2>点击下载</h2><p>image</p>">
         
     </a><figcaption class="image-caption">点击下载</figcaption>
     </figure></p>
-<h4 id="开始安装">开始安装</h4>
+<h3 id="开始安装">开始安装</h3>
 <ol>
 <li>
 <p>双击下载后的可执行文件，安装</p>
@@ -156,7 +156,7 @@
     </a><figcaption class="image-caption">安装结束</figcaption>
     </figure></p>
 <p>可勾选运行，此时点击完成后会直接运行Visual Studio Code 代码编辑器</p>
-<h4 id="安装-latex-workshop">安装 LaTeX Workshop</h4>
+<h3 id="安装-latex-workshop">安装 LaTeX Workshop</h3>
 <p>vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTeX Workshop。</p>
 <p>为方便使用，可先把界面改为中文，点击vscode左侧像俄罗斯方块一样的图标，然后在输入框中输入chinese，安装第一个简体中文包，然后点击重新加载软件。</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220407220529.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220407220529.png" data-sub-html="<h2>安装中文</h2><p>image</p>">
@@ -170,7 +170,7 @@
     </a><figcaption class="image-caption">安装LaTeX Workshop插件</figcaption>
     </figure></p>
 <p>然后你就拥有了一个vscode下的 LaTeX 编辑器，这个插件提供了相当丰富的功能。</p>
-<h4 id="配置-latex-workshop">配置 LaTeX Workshop</h4>
+<h3 id="配置-latex-workshop">配置 LaTeX Workshop</h3>
 <p>安装完成后，在左侧找到<code>TEX</code>图标，点击进入 LaTeX Workshop</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220407220929.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220407220929.png" data-sub-html="<h2>LaTeX Workshop入口图标</h2><p>image</p>">
         
@@ -236,7 +236,7 @@
     </a><figcaption class="image-caption">编译成功</figcaption>
     </figure></p>
 <p>至此安装配置已完成，但是这只是LaTeX学习的开始，语法部分自行Google学习。</p>
-<h4 id="其他配置">其他配置</h4>
+<h3 id="其他配置">其他配置</h3>
 <p>这里包含了如何最快在完成上面工作后进入产出，如果你不想学复杂的语法，或者你直接想开始写论文，就看下面的内容。</p>
 <p>以 <a href="https://github.com/whutug/whu-thesis" target="_blank" rel="noopener noreffer">武汉大学毕业论文 LaTeX 模板</a>为例，进入到GitHub页面，点击<a href="https://github.com/whutug/whu-thesis/archive/refs/heads/master.zip" target="_blank" rel="noopener noreffer">下载</a>，然后解压压缩包。</p>
 <p>得到模板与实例文件：</p>
@@ -296,7 +296,7 @@
     </figure></p>
 <p>按下快捷键<code>Ctrl + s</code>保存设置，关闭 json 文件，你的设置 json 文件中可能与我的有出入，这是因为我还用了其他插件，只要粘贴后格式正确即可。</p>
 <p>第一次使用了<code>latexmk (xelatex)</code>后，之后每次编译都会自动使用这个编译方式。</p>
-<h4 id="双向搜索">双向搜索</h4>
+<h3 id="双向搜索">双向搜索</h3>
 <p>由于 LaTeX 是从源文件编译为pdf进行预览，有时候在阅读pdf时发现需要修改某些部分，就得去源文件中找到该段落，或者需要从源文件中找到pdf中的位置，都很不方便，所以需要进行双向搜索。</p>
 <p>LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，那么你双击pdf中的段落（默认是<code>Ctrl+单击</code>），左侧的源文件会自动定位到这一行：</p>
 <p><figure><a class="lightgallery" href="/posts/latex/Pasted%20image%2020220410023341.png" title="image" data-thumbnail="/posts/latex/Pasted%20image%2020220410023341.png" data-sub-html="<h2>双击右侧需要修改的文字，左侧源文件自动定位</h2><p>image</p>">

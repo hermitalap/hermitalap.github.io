@@ -1,4 +1,5 @@
-# 
+# LaTeX使用指南
+
 
 ## 前言
 
@@ -51,42 +52,42 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 
 从[这里](https://mirror.las.iastate.edu/tex-archive/systems/texlive/Images/texlive.iso)下载最新的ISO文件，完成下载后，双击该文件将其挂载为虚拟光驱，之后你会在电脑的资源管理器中看到该光盘，一般盘符为E，双击进入该光盘看到如下文件目录，如果无法成功挂载可以用压缩软件将其解压，解压后的文件夹等同于挂载。
 
-![挂载的虚拟光驱盘符](Pasted%20image%2020220407201358.png)
+![image](Pasted%20image%2020220407201358.png "挂载的虚拟光驱盘符")
 
 双击盘符或者运行其中的install-tl-windows.bat打开安装程序
 
-![安装界面](Pasted%20image%2020220407201445.png)
+![image](Pasted%20image%2020220407201445.png "安装界面")
 取消选择“安装TeXworkds前端”，这是一个比较老旧的Tex编辑器，有很多更好的选择，点击右下角的`Advanced`进入更详细的配置
-![详细配置页](Pasted%20image%2020220407201501.png)
+![image](Pasted%20image%2020220407201501.png "详细配置页")
 
 点击左下的Customize
 
-![左侧语言安装选项](Pasted%20image%2020220407201535.png)
+![image](Pasted%20image%2020220407201535.png "左侧语言安装选项")
 
 点前面的勾去掉你不需要的语言，节省磁盘空间占用，一般来说保留中英文即可，你要是嫌以后安装麻烦就不取消选择。完成后点确定，然后点开始安装，等待安装完成，耗时30分钟到两个小时左右。
 
 #### 升级各个包到最新
 在开始菜单栏中找到TeX Live 2022，运行其中的 TLShell TeX Live Manager，即包管理器
 
-![运行 TLShell TeX Live Manager](Pasted%20image%2020220407214158.png)
+![image](Pasted%20image%2020220407214158.png "运行 TLShell TeX Live Manager")
 
 打开后如图所示，注意每次打开后软件需要联网加载信息，打开后不要操作，等待加载完成，首先可以在上方菜单中的 GUI language中更改默认语言
 
-![界面](Pasted%20image%2020220407201632.png)
+![image](Pasted%20image%2020220407201632.png "界面")
 
 然后点击选项菜单，点击 `Repository` 更改源，将其更改为中国任意一个镜像源，更换后下载速度会显著提升
 
-![更换源](Pasted%20image%2020220407201710.png)
+![image](Pasted%20image%2020220407201710.png "更换源")
 
 等待更新完成
 
-![源更新完成后](Pasted%20image%2020220407201803.png)
+![image](Pasted%20image%2020220407201803.png "源更新完成后")
 
 然后点击左侧的 `Updatable` 等待加载完成，此时会在下面显示可以更新的包，然后点右侧，更新全部。
 
-![加载可更新包](Pasted%20image%2020220407201819.png)
+![image](Pasted%20image%2020220407201819.png "加载可更新包")
 
-![更新完成后](Pasted%20image%2020220407212550.png)
+![image](Pasted%20image%2020220407212550.png "更新完成后")
 
 完成更新，关闭包管理器，此时 LaTeX 后端已完成配置。接下来配置vscode前端
 
@@ -98,37 +99,37 @@ TeX Live 是一个全面的 TeX 系统，它包括所有主要的 TeX 相关程�
 
 点击 Download for Windows 下载
 
-![点击下载](Pasted%20image%2020220407220049.png)
+![image](Pasted%20image%2020220407220049.png "点击下载")
 
 #### 开始安装
 1. 双击下载后的可执行文件，安装
 
 2. 勾选同意，然后点击下一步
 
-![](Pasted%20image%2020220407215812.png)
+![image](Pasted%20image%2020220407215812.png "同意")
 
 3. 选择安装位置，我这里选择的是D盘
 
-![](Pasted%20image%2020220407215818.png)
+![image](Pasted%20image%2020220407215818.png "修改安装位置")
 
 选择后安装位置后 然后点击下一步
 
 4. 下一步
 不创建开始菜单可以不勾选
 
-![](Pasted%20image%2020220407215825.png)
+![image](Pasted%20image%2020220407215825.png "下一步")
 
 5. 勾选创建快捷方式，下一步
 
-![](Pasted%20image%2020220407215833.png)
+![image](Pasted%20image%2020220407215833.png "快捷方式")
 
 6. 点击安装，开始安装
 
-![](Pasted%20image%2020220407215838.png)
+![image](Pasted%20image%2020220407215838.png "开始安装")
 
 7. 等待安装结束
 
-![](Pasted%20image%2020220407215843.png)
+![image](Pasted%20image%2020220407215843.png "安装结束" )
 
 可勾选运行，此时点击完成后会直接运行Visual Studio Code 代码编辑器
 
@@ -138,13 +139,13 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 为方便使用，可先把界面改为中文，点击vscode左侧像俄罗斯方块一样的图标，然后在输入框中输入chinese，安装第一个简体中文包，然后点击重新加载软件。
 
-![安装中文](Pasted%20image%2020220407220529.png)
+![image](Pasted%20image%2020220407220529.png "安装中文")
 
 然后界面就变成了中文。
 
 然后安装 LaTeX Workshop，在输入框中输入LaTeX Workshop，点击安装
 
-![安装LaTeX Workshop](Pasted%20image%2020220407220722.png)
+![image](Pasted%20image%2020220407220722.png "安装LaTeX Workshop插件")
 
 然后你就拥有了一个vscode下的 LaTeX 编辑器，这个插件提供了相当丰富的功能。
 
@@ -152,18 +153,18 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 安装完成后，在左侧找到`TEX`图标，点击进入 LaTeX Workshop
 
-![LaTeX Workshop入口图标](Pasted%20image%2020220407220929.png)
+![image](Pasted%20image%2020220407220929.png "LaTeX Workshop入口图标")
 
 进入如下界面，左侧是功能区，右侧是编辑区
 
-![LaTeX Workshop](Pasted%20image%2020220407221000.png)
+![image](Pasted%20image%2020220407221000.png "LaTeX Workshop")
 
 在左上角依次选择 `文件-新建文件` ，点击`选择编程语言`
 输入`latex`，选择为 LaTeX 文件
 
-![选择编程语言](Pasted%20image%2020220407221222.png)
+![image](Pasted%20image%2020220407221222.png "选择编程语言")
 
-![选择为 LaTeX 文件](Pasted%20image%2020220407221320.png)
+![image](Pasted%20image%2020220407221320.png "选择为 LaTeX 文件")
 
 然后复制粘贴进如下内容
 
@@ -178,23 +179,23 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 如图所示：
 
-![测试代码](Pasted%20image%2020220407221656.png)
+![image](Pasted%20image%2020220407221656.png "测试代码")
 
 然后进行编译测试，点击左侧的`Recipe: latexmk 🔁`，然后会发现软件左下角出现了一个 `↻`
 
-![点击进行编译](Pasted%20image%2020220407221745.png)
+![image](Pasted%20image%2020220407221745.png "点击进行编译")
 
 等待其编译完成，变成 `√`，
 
-![编译完成](Pasted%20image%2020220407222131.png)
+![image](Pasted%20image%2020220407222131.png "编译完成")
 
 然后点击右上角的绿色箭头旁边的符号，预览
 
-![编译完成](Pasted%20image%2020220407222123.png)
+![image](Pasted%20image%2020220407222123.png "编译完成")
 
 然后你就可以看到你编译完成的第一个 LaTeX 文档了
 
-![编译成功](Pasted%20image%2020220407222256.png)
+![image](Pasted%20image%2020220407222256.png "编译成功")
 
 至此安装配置已完成，但是这只是LaTeX学习的开始，语法部分自行Google学习。
 
@@ -206,11 +207,11 @@ vscode功能强大的原因是拥有丰富的社区插件，其中就包括 LaTe
 
 得到模板与实例文件：
 
-![压缩包内容](Pasted%20image%2020220410020222.png)
+![image](Pasted%20image%2020220410020222.png "压缩包内容")
 
 阅读模板的文档(whu-thesis-doc.pdf)
 
-![模板说明](Pasted%20image%2020220410020200.png)
+![image](Pasted%20image%2020220410020200.png "模板说明")
 
 发现该模板仅支持仅支持 XELATEX 或 LuaLATEX 引擎，其他编译方式会直接报错
 
@@ -226,13 +227,13 @@ latexmk -xelatex 你现在的文档名
 
 编译状态与预览同上
 
-![编译完成](Pasted%20image%2020220410021902.png)
+![image](Pasted%20image%2020220410021902.png "编译完成")
 
 需要注意的一点是，LaTeX Workshop 默认会在你每次保存后启动编译，实时刷新预览视图，但是默认会运行编译项中的第一个，也就是 `latexmk 🔃`，这个编译方法由于没有使用`-xelatex`参数，所以编译这个模板的文档会失败。所以我们要进行一些设置。
 
 按`F1`，输入`打开设置`，点击`首选项：打开设置(json)`
 
-![打开设置](Pasted%20image%2020220410022122.png)
+![image](Pasted%20image%2020220410022122.png "打开设置")
 
 在新打开的文件中加入下列键：
 
@@ -246,7 +247,7 @@ latexmk -xelatex 你现在的文档名
 
 如图：
 
-![添加设置项](Pasted%20image%2020220410022648.png)
+![image](Pasted%20image%2020220410022648.png "添加设置项")
 
 按下快捷键`Ctrl + s`保存设置，关闭 json 文件，你的设置 json 文件中可能与我的有出入，这是因为我还用了其他插件，只要粘贴后格式正确即可。
 
@@ -258,7 +259,7 @@ latexmk -xelatex 你现在的文档名
 
 LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，那么你双击pdf中的段落（默认是`Ctrl+单击`），左侧的源文件会自动定位到这一行：
 
-![双击右侧需要修改的文字，左侧源文件自动定位](Pasted%20image%2020220410023341.png)
+![image](Pasted%20image%2020220410023341.png "双击右侧需要修改的文字，左侧源文件自动定位")
 
 然后左键单击左侧的源文件中的一行，按下快捷键`Ctrl + Alt + j`,右侧会定位到pdf中的位置，并用红点标记。
 

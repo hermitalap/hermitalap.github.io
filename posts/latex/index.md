@@ -1,4 +1,4 @@
-# LaTeX使用指南
+# LaTeX入门指南
 
 
 # 前言
@@ -267,7 +267,7 @@ LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，�
 
 然后左键单击左侧的源文件中的一行，按下快捷键`Ctrl + Alt + j`,右侧会定位到 PDF 中的位置，并用红点标记。
 
-以上就是安装配置 LaTeX，并使用模板进行写作的基本内容，请从网络教程中获取更多使用方法，练习使用。
+以上就是安装配置 LaTeX，并使用模板进行写作的基本内容，本文只带你入了门，详细使用请从网络教程中获取更多知识，并练习使用。
 
 [Begin-Latex-in-minutes](https://github.com/luong-komorebi/Begin-Latex-in-minutes/blob/master/Translation-Chinese.md)
 

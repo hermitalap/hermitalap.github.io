@@ -4,7 +4,7 @@
         <link>http://imzifeng.cn/categories/doc/</link>
         <description>Doc - 分类 - imzifeng</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 10 Apr 2022 02:41:30 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/categories/doc/" rel="self" type="application/rss+xml" /><item>
-    <title>LaTeX使用指南</title>
+    <title>LaTeX入门指南</title>
     <link>http://imzifeng.cn/posts/latex/</link>
     <pubDate>Sun, 10 Apr 2022 02:41:30 &#43;0800</pubDate><author>
         <name>zifeng</name>
@@ -287,7 +287,7 @@
     </a><figcaption class="image-caption">双击右侧需要修改的文字，左侧源文件自动定位</figcaption>
     </figure></p>
 <p>然后左键单击左侧的源文件中的一行，按下快捷键<code>Ctrl + Alt + j</code>,右侧会定位到 PDF 中的位置，并用红点标记。</p>
-<p>以上就是安装配置 LaTeX，并使用模板进行写作的基本内容，请从网络教程中获取更多使用方法，练习使用。</p>
+<p>以上就是安装配置 LaTeX，并使用模板进行写作的基本内容，本文只带你入了门，详细使用请从网络教程中获取更多知识，并练习使用。</p>
 <p><a href="https://github.com/luong-komorebi/Begin-Latex-in-minutes/blob/master/Translation-Chinese.md" target="_blank" rel="noopener noreffer">Begin-Latex-in-minutes</a></p>
 <p><a href="https://github.com/whutug/whu-thesis" target="_blank" rel="noopener noreffer">武汉大学毕业论文 LaTeX 模板</a> 模板 Demo 中有常见文章格式示例</p>
 ]]></description>

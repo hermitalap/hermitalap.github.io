@@ -270,5 +270,6 @@ LaTeX Workshop 支持这一功能，如果你加入了我上面的设置项，�
 以上就是安装配置 LaTeX，并使用模板进行写作的基本内容，请从网络教程中获取更多使用方法，练习使用。
 
 [Begin-Latex-in-minutes](https://github.com/luong-komorebi/Begin-Latex-in-minutes/blob/master/Translation-Chinese.md)
+
 [武汉大学毕业论文 LaTeX 模板](https://github.com/whutug/whu-thesis) 模板 Demo 中有常见文章格式示例
 

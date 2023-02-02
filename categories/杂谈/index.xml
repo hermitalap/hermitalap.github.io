@@ -41,8 +41,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\a</span>utorun.inf&gt;md imzifeng.cn..<span class="se">\
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\a</span>utorun.inf&gt;md imzifeng.cn..<span class="se">\
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>在该目录下创建一个文件夹，在任意名称的后面跟上两个或多个点（.）,这种带有两个或多个点的目录就是一个畸形目录，它无法通过常规方法删除
 <figure><a class="lightgallery" href="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" title="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-thumbnail="/posts/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-sub-html="<h2>常规删除方法</h2>">
@@ -65,8 +65,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">D:<span class="se">\a</span>utorun.inf&gt;rd imzifeng.cn..<span class="se">\
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\a</span>utorun.inf&gt;rd imzifeng.cn..<span class="se">\
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>需要注意的是，这个方法只能阻止利用了autorun.inf文件的病毒，现在很多病毒都比较高级，比如把U盘下的文件全部隐藏，然后复刻一个一摸一样的目录，不过把所有文件以及文件夹都替换为exe可执行文件，一点就中招，不过我一般都是开启了显示隐藏文件以及显示文件扩展名。</p>
 <h3 id="各类u盘保险箱程序">各类U盘保险箱程序</h3>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Obsidian-免费的多设备同步 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="Obsidian-免费的多设备同步" />
+<meta property="og:description" content="将vault备份到GitHub 一个新的库，包含一些文档和图片 首先关闭安全模式 安装第三方插件，关闭安全模式 关闭安全模式 然后在第三方插件库中下载" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/obsidian-sync/" /><meta property="og:image" content="http://imzifeng.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-23T16:49:45+08:00" />
+<meta property="article:modified_time" content="2022-02-23T16:49:45+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/logo.png"/>
+
+<meta name="twitter:title" content="Obsidian-免费的多设备同步"/>
+<meta name="twitter:description" content="将vault备份到GitHub 一个新的库，包含一些文档和图片 首先关闭安全模式 安装第三方插件，关闭安全模式 关闭安全模式 然后在第三方插件库中下载"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/obsidian-sync/" /><link rel="prev" href="http://imzifeng.cn/samba/" /><link rel="next" href="http://imzifeng.cn/latex/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Obsidian-免费的多设备同步",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/obsidian-sync\/"
+        },"genre": "posts","wordcount":  691 ,
+        "url": "http:\/\/imzifeng.cn\/obsidian-sync\/","datePublished": "2022-02-23T16:49:45+08:00","dateModified": "2022-02-23T16:49:45+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Obsidian-免费的多设备同步</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-23">2022-02-23</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-02-23">2022-02-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 691 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/obsidian-sync/" class="leancloud_visitors" data-flag-title="Obsidian-免费的多设备同步">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/obsidian-sync/" class="comment_count" data-flag-title="Obsidian-免费的多设备同步">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        
+        loading="eager"
+        src="/obsidian-sync/Pasted%20image%2020210907165301.png"
+        srcset="/obsidian-sync/Pasted%20image%2020210907165301.png, /obsidian-sync/Pasted%20image%2020210907165301.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165301.png 2x"
+        sizes="auto"
+        alt="/obsidian-sync/Pasted%20image%2020210907165301.png"
+        title="/obsidian-sync/Pasted%20image%2020210907165301.png" height="1200" width="1536"></div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#将vault备份到github">将vault备份到GitHub</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="将vault备份到github" class="headerLink">
+    <a href="#%e5%b0%86vault%e5%a4%87%e4%bb%bd%e5%88%b0github" class="header-mark"></a>将vault备份到GitHub</h3><p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907165301.png" title="/obsidian-sync/Pasted%20image%2020210907165301.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907165301.png" data-sub-html="<h2>一个新的库，包含一些文档和图片</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907165301.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907165301.png, Pasted%20image%2020210907165301.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165301.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907165301.png">
+    </a><figcaption class="image-caption">一个新的库，包含一些文档和图片</figcaption>
+    </figure></p>
+<p>首先关闭安全模式</p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907165412.png" title="/obsidian-sync/Pasted%20image%2020210907165412.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907165412.png" data-sub-html="<h2>安装第三方插件，关闭安全模式</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907165412.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907165412.png, Pasted%20image%2020210907165412.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165412.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907165412.png">
+    </a><figcaption class="image-caption">安装第三方插件，关闭安全模式</figcaption>
+    </figure></p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907165453.png" title="/obsidian-sync/Pasted%20image%2020210907165453.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907165453.png" data-sub-html="<h2>关闭安全模式</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907165453.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907165453.png, Pasted%20image%2020210907165453.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165453.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907165453.png">
+    </a><figcaption class="image-caption">关闭安全模式</figcaption>
+    </figure></p>
+<p>然后在第三方插件库中下载这个插件</p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907165611.png" title="/obsidian-sync/Pasted%20image%2020210907165611.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907165611.png" data-sub-html="<h2>搜索关键词git，安装Obsidian Git</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907165611.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907165611.png, Pasted%20image%2020210907165611.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165611.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907165611.png">
+    </a><figcaption class="image-caption">搜索关键词git，安装Obsidian Git</figcaption>
+    </figure></p>
+<p>启用插件</p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907165715.png" title="/obsidian-sync/Pasted%20image%2020210907165715.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907165715.png" data-sub-html="<h2> 记得启用</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907165715.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907165715.png, Pasted%20image%2020210907165715.png 1.5x, /obsidian-sync/Pasted%20image%2020210907165715.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907165715.png">
+    </a><figcaption class="image-caption"> 记得启用</figcaption>
+    </figure></p>
+<p>然后需要注意的是该插件不能自己创建git repository，需要你自己先创建一个。</p>
+<p>因为我们需要上传备份到GitHub，所以直接下载<a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer">GitHub Desktop</a></p>
+<p>如果还没有账号，需要注册一个自己的GitHub账号</p>
+<p>进入GitHub Desktop后，先登录自己的账号，然后左上角File-New repository</p>
+<p><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907170850.png" title="/obsidian-sync/Pasted%20image%2020210907170850.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907170850.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907170850.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907170850.png, Pasted%20image%2020210907170850.png 1.5x, /obsidian-sync/Pasted%20image%2020210907170850.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907170850.png">
+    </a></p>
+<p>Path定位到你的库文件夹<strong>所在的父文件夹</strong>，然后Name需要和你的vault文件夹名称<strong>完全相同</strong>，其他的随便填。</p>
+<p><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907172037.png" title="/obsidian-sync/Pasted%20image%2020210907172037.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907172037.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907172037.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907172037.png, Pasted%20image%2020210907172037.png 1.5x, /obsidian-sync/Pasted%20image%2020210907172037.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907172037.png">
+    </a></p>
+<p>现在需要把你的这个repository发布到GitHub的服务器上，点击<code>Publish repository</code></p>
+<p><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907171540.png" title="/obsidian-sync/Pasted%20image%2020210907171540.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907171540.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907171540.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907171540.png, Pasted%20image%2020210907171540.png 1.5x, /obsidian-sync/Pasted%20image%2020210907171540.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907171540.png">
+    </a></p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907172445.png" title="/obsidian-sync/Pasted%20image%2020210907172445.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907172445.png" data-sub-html="<h2>勾选Keep this code private</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907172445.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907172445.png, Pasted%20image%2020210907172445.png 1.5x, /obsidian-sync/Pasted%20image%2020210907172445.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907172445.png">
+    </a><figcaption class="image-caption">勾选Keep this code private</figcaption>
+    </figure></p>
+<p>此时登录GitHub，已经可以看到你的repository了。</p>
+<p><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907173231.png" title="/obsidian-sync/Pasted%20image%2020210907173231.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907173231.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907173231.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907173231.png, Pasted%20image%2020210907173231.png 1.5x, /obsidian-sync/Pasted%20image%2020210907173231.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907173231.png">
+    </a></p>
+<p>现在回到Obsidian，进入设置，左边拉到最下面进入Obsidian Git设置项，设置你的自动保存间隔分钟（第一项，Commit git，相当于保存一个可回溯的存档，push：指将这次commit上传到GitHub的服务器上）和自动pull间隔（第二项，即几分钟从服务器上同步到本地一次）</p>
+<p><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907173450.png" title="/obsidian-sync/Pasted%20image%2020210907173450.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907173450.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907173450.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907173450.png, Pasted%20image%2020210907173450.png 1.5x, /obsidian-sync/Pasted%20image%2020210907173450.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907173450.png">
+    </a></p>
+<p>然后现在就可以自动备份了，但有时你可能会注意到报错</p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907172948.png" title="/obsidian-sync/Pasted%20image%2020210907172948.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907172948.png" data-sub-html="<h2>报错，无法自动push到GitHub</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907172948.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907172948.png, Pasted%20image%2020210907172948.png 1.5x, /obsidian-sync/Pasted%20image%2020210907172948.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907172948.png">
+    </a><figcaption class="image-caption">报错，无法自动push到GitHub</figcaption>
+    </figure></p>
+<p>这是因为众所周知的原因，git间歇性无法在大陆正常使用，但是如果你有梯子，就可以解决，但是这个插件底端不走梯子的代理，那么手动用GitHub Desktop的push是走梯子的代理的。进入GitHub Desktop，然后点一下push即可</p>
+<p><figure><a class="lightgallery" href="/obsidian-sync/Pasted%20image%2020210907174802.png" title="/obsidian-sync/Pasted%20image%2020210907174802.png" data-thumbnail="/obsidian-sync/Pasted%20image%2020210907174802.png" data-sub-html="<h2>手动push上传</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210907174802.png"
+            srcset="/obsidian-sync/Pasted%20image%2020210907174802.png, Pasted%20image%2020210907174802.png 1.5x, /obsidian-sync/Pasted%20image%2020210907174802.png 2x"
+            sizes="auto"
+            alt="/obsidian-sync/Pasted%20image%2020210907174802.png">
+    </a><figcaption class="image-caption">手动push上传</figcaption>
+    </figure></p>
+</div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-02-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/obsidian-sync/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/obsidian-sync/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/obsidian-sync/" data-title="Obsidian-免费的多设备同步"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/samba/" class="prev" rel="prev" title="用Samba来远程管理服务器上的文件"><i class="fas fa-angle-left fa-fw"></i>用Samba来远程管理服务器上的文件</a>
+            <a href="/latex/" class="next" rel="next" title="LaTeX入门指南">LaTeX入门指南<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

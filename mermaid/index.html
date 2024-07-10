@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>mermaid - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="mermaid" />
+<meta property="og:description" content="关于mermaidMermaid 可让您使用文本和代码创建图表和可视化效果。 它是一种基于 Javascript 的图表和图表工具，可呈现受 Markdown 启发的文本定义以动态创建" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/mermaid/" /><meta property="og:image" content="http://imzifeng.cn/mermaid/featured.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-16T21:11:43+08:00" />
+<meta property="article:modified_time" content="2021-09-16T21:11:43+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/mermaid/featured.png"/>
+<meta name="twitter:title" content="mermaid"/>
+<meta name="twitter:description" content="关于mermaidMermaid 可让您使用文本和代码创建图表和可视化效果。 它是一种基于 Javascript 的图表和图表工具，可呈现受 Markdown 启发的文本定义以动态创建"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/mermaid/" /><link rel="prev" href="http://imzifeng.cn/usbflashdiskantivirus/" /><link rel="next" href="http://imzifeng.cn/kkndme-tianya/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "mermaid",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/mermaid\/"
+        },"genre": "posts","wordcount":  1989 ,
+        "url": "http:\/\/imzifeng.cn\/mermaid\/","datePublished": "2021-09-16T21:11:43+08:00","dateModified": "2021-09-16T21:11:43+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">mermaid</h1><h2 class="single-subtitle">和Markdown一样简洁易用的图表绘制工具</h2><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-16">2021-09-16</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-16">2021-09-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1989 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/mermaid/" class="leancloud_visitors" data-flag-title="mermaid">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/mermaid/" class="comment_count" data-flag-title="mermaid">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        
+        loading="eager"
+        src="./featured.png"
+        srcset="./featured.png, ./featured.png 1.5x, ./featured.png 2x"
+        sizes="auto"
+        alt="./featured.png"
+        title="./featured.png" height="auto" width="auto"></div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于mermaid">关于mermaid</a></li>
+    <li><a href="#流程图">流程图</a>
+      <ul>
+        <li><a href="#基本流程图">基本流程图</a></li>
+        <li><a href="#方向">方向</a></li>
+        <li><a href="#更多形状">更多形状</a>
+          <ul>
+            <li><a href="#节点形状条件">节点形状、条件</a></li>
+            <li><a href="#子图">子图</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整文档">完整文档</a></li>
+      </ul>
+    </li>
+    <li><a href="#饼图">饼图</a></li>
+    <li><a href="#状态图">状态图</a>
+      <ul>
+        <li><a href="#基本状态图">基本状态图</a></li>
+        <li><a href="#层级">层级</a></li>
+        <li><a href="#选择">选择</a></li>
+        <li><a href="#便利贴">便利贴</a></li>
+        <li><a href="#完整文档-1">完整文档</a></li>
+      </ul>
+    </li>
+    <li><a href="#甘特图">甘特图</a>
+      <ul>
+        <li><a href="#基本甘特图">基本甘特图</a></li>
+        <li><a href="#语法">语法</a></li>
+        <li><a href="#完整文档-2">完整文档</a></li>
+      </ul>
+    </li>
+    <li><a href="#更多图表">更多图表</a>
+      <ul>
+        <li><a href="#时序图">时序图</a></li>
+        <li><a href="#类图">类图</a></li>
+        <li><a href="#实体关系图">实体关系图</a></li>
+        <li><a href="#用户旅程图">用户旅程图</a></li>
+        <li><a href="#需求图">需求图</a></li>
+      </ul>
+    </li>
+    <li><a href="#mermaid官网httpsmermaid-jsgithubiomermaid"><a href="https://mermaid-js.github.io/mermaid/#/">mermaid官网</a></a></li>
+    <li><a href="#适用于在obsidian打开的本文章md文件">适用于在Obsidian打开的本文章md文件</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="关于mermaid" class="headerLink">
+    <a href="#%e5%85%b3%e4%ba%8emermaid" class="header-mark"></a>关于mermaid</h2><p><strong>Mermaid 可让您使用文本和代码创建图表和可视化效果。</strong></p>
+<p>它是一种基于 Javascript 的图表和图表工具，可呈现受 Markdown 启发的文本定义以动态创建和修改图表。
+现已在大量支持markdown语法的程序中得到支持，包括Obsidian和Hugo。</p>
+<blockquote>
+<p>如果您熟悉 Markdown，那么学习<a href="https://mermaid-js.github.io/mermaid/#/./n00b-syntaxReference" target="_blank" rel="noopener noreferrer">Mermaid&rsquo;s Syntax</a>应该没有问题。</p>
+</blockquote>
+<h2 id="流程图" class="headerLink">
+    <a href="#%e6%b5%81%e7%a8%8b%e5%9b%be" class="header-mark"></a>流程图</h2><h3 id="基本流程图" class="headerLink">
+    <a href="#%e5%9f%ba%e6%9c%ac%e6%b5%81%e7%a8%8b%e5%9b%be" class="header-mark"></a>基本流程图</h3><div class="mermaid" id="id-1"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph TD;
+</span></span><span class="line"><span class="cl">    A--&gt;B;
+</span></span><span class="line"><span class="cl">    A--&gt;C;
+</span></span><span class="line"><span class="cl">    B--&gt;D;
+</span></span><span class="line"><span class="cl">    C--&gt;D;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="方向" class="headerLink">
+    <a href="#%e6%96%b9%e5%90%91" class="header-mark"></a>方向</h3><p>可能的流程图方向是：</p>
+<ul>
+<li>TB/TD - 从上到下</li>
+<li>BT - 自下而上</li>
+<li>RL - 从右到左</li>
+<li>LR - 从左到右</li>
+</ul>
+<h3 id="更多形状" class="headerLink">
+    <a href="#%e6%9b%b4%e5%a4%9a%e5%bd%a2%e7%8a%b6" class="header-mark"></a>更多形状</h3><h4 id="节点形状条件" class="headerLink">
+    <a href="#%e8%8a%82%e7%82%b9%e5%bd%a2%e7%8a%b6%e6%9d%a1%e4%bb%b6" class="header-mark"></a>节点形状、条件</h4><div class="mermaid" id="id-2"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">graph LR
+</span></span><span class="line"><span class="cl">A[方形] --&gt;B(圆角)
+</span></span><span class="line"><span class="cl">    B --&gt; C{条件a}
+</span></span><span class="line"><span class="cl">    C --&gt;|a=1| D[结果1]
+</span></span><span class="line"><span class="cl">    C --&gt;|a=2| E[结果2]
+</span></span><span class="line"><span class="cl">    F[横向流程图]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="子图" class="headerLink">
+    <a href="#%e5%ad%90%e5%9b%be" class="header-mark"></a>子图</h4><div class="mermaid" id="id-3"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">flowchart TB
+</span></span><span class="line"><span class="cl">    c1--&gt;a2
+</span></span><span class="line"><span class="cl">    subgraph one
+</span></span><span class="line"><span class="cl">    a1--&gt;a2
+</span></span><span class="line"><span class="cl">    end
+</span></span><span class="line"><span class="cl">    subgraph two
+</span></span><span class="line"><span class="cl">    b1--&gt;b2
+</span></span><span class="line"><span class="cl">    end
+</span></span><span class="line"><span class="cl">    subgraph three
+</span></span><span class="line"><span class="cl">    c1--&gt;c2
+</span></span><span class="line"><span class="cl">    end
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="完整文档" class="headerLink">
+    <a href="#%e5%ae%8c%e6%95%b4%e6%96%87%e6%a1%a3" class="header-mark"></a>完整文档</h3><ul>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=graph" title="图形" target="_blank" rel="noopener noreferrer">图形</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=flowchart-orientation" title="流程图方向" target="_blank" rel="noopener noreferrer">流程图方向</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=node-shapes" title="节点形状" target="_blank" rel="noopener noreferrer">节点形状</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=links-between-nodes" title="节点之间的链接" target="_blank" rel="noopener noreferrer">节点之间的链接</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=special-characters-that-break-syntax" title="破坏语法的特殊字符" target="_blank" rel="noopener noreferrer">破坏语法的特殊字符</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=subgraphs" title="子图" target="_blank" rel="noopener noreferrer">子图</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=beta-flowcharts" title="测试版：流程图" target="_blank" rel="noopener noreferrer">测试版：流程图</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=direction-in-subgraphs" title="子图中的方向" target="_blank" rel="noopener noreferrer">子图中的方向</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=interaction" title="相互作用" target="_blank" rel="noopener noreferrer">相互作用</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=styling-and-classes" title="样式和类" target="_blank" rel="noopener noreferrer">样式和类</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=basic-support-for-fontawesome" title="对 fontawesome 的基本支持" target="_blank" rel="noopener noreferrer">对 fontawesome 的基本支持</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=graph-declarations-with-spaces-between-vertices-and-link-and-without-semicolon" title="顶点和链接之间有空格且没有分号的图形声明" target="_blank" rel="noopener noreferrer">顶点和链接之间有空格且没有分号的图形声明</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/flowchart?id=configuration" title="配置..." target="_blank" rel="noopener noreferrer">配置&hellip;</a></li>
+</ul>
+<h2 id="饼图" class="headerLink">
+    <a href="#%e9%a5%bc%e5%9b%be" class="header-mark"></a>饼图</h2><div class="mermaid" id="id-4"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pie
+</span></span><span class="line"><span class="cl">    title Key elements in Product X
+</span></span><span class="line"><span class="cl">    &#34;Calcium&#34; : 42.96
+</span></span><span class="line"><span class="cl">    &#34;Potassium&#34; : 50.05
+</span></span><span class="line"><span class="cl">    &#34;Magnesium&#34; : 10.01
+</span></span><span class="line"><span class="cl">    &#34;Iron&#34; :  5
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="状态图" class="headerLink">
+    <a href="#%e7%8a%b6%e6%80%81%e5%9b%be" class="header-mark"></a>状态图</h2><blockquote>
+<p>“状态图是一种用于计算机科学和相关领域的图，用于描述系统的行为。状态图要求所描述的系统由有限数量的状态组成；有时情况确实如此，而在其他情况下有时这是一个合理的抽象。” ——维基百科</p>
+</blockquote>
+<h3 id="基本状态图" class="headerLink">
+    <a href="#%e5%9f%ba%e6%9c%ac%e7%8a%b6%e6%80%81%e5%9b%be" class="header-mark"></a>基本状态图</h3><div class="mermaid" id="id-5"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+</span></span><span class="line"><span class="cl">    [*] --&gt; Still
+</span></span><span class="line"><span class="cl">    Still --&gt; [*]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Still --&gt; Moving
+</span></span><span class="line"><span class="cl">    Moving --&gt; Still
+</span></span><span class="line"><span class="cl">    Moving --&gt; Crash
+</span></span><span class="line"><span class="cl">    Crash --&gt; [*]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="层级" class="headerLink">
+    <a href="#%e5%b1%82%e7%ba%a7" class="header-mark"></a>层级</h3><div class="mermaid" id="id-6"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">stateDiagram
+</span></span><span class="line"><span class="cl">    direction LR
+</span></span><span class="line"><span class="cl">    [*] --&gt; A
+</span></span><span class="line"><span class="cl">    A --&gt; B
+</span></span><span class="line"><span class="cl">    B --&gt; C
+</span></span><span class="line"><span class="cl">    state B {
+</span></span><span class="line"><span class="cl">      direction LR
+</span></span><span class="line"><span class="cl">      a --&gt; b
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">    B --&gt; D
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="选择" class="headerLink">
+    <a href="#%e9%80%89%e6%8b%a9" class="header-mark"></a>选择</h3><p>有时您需要对两个或多个路径之间的选择进行建模，您可以使用 <code>&lt;&lt;choice&gt;&gt; </code>来实现。</p>
+<div class="mermaid" id="id-7"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+</span></span><span class="line"><span class="cl">    state if_state &lt;&lt;choice&gt;&gt;
+</span></span><span class="line"><span class="cl">    [*] --&gt; IsPositive
+</span></span><span class="line"><span class="cl">    IsPositive --&gt; if_state
+</span></span><span class="line"><span class="cl">    if_state --&gt; False: if n &lt; 0
+</span></span><span class="line"><span class="cl">    if_state --&gt; True : if n &gt;= 0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="便利贴" class="headerLink">
+    <a href="#%e4%be%bf%e5%88%a9%e8%b4%b4" class="header-mark"></a>便利贴</h3><p>有时，没有什么比便利贴更能说明问题了。在状态图中也是如此。</p>
+<p>在这里您可以选择将注释放在节点的右侧或左侧。
+<div class="mermaid" id="id-8"></div></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">stateDiagram-v2
+</span></span><span class="line"><span class="cl">	State1: The state with a note
+</span></span><span class="line"><span class="cl">	note right of State1
+</span></span><span class="line"><span class="cl">		Important information! You can write
+</span></span><span class="line"><span class="cl">		notes.
+</span></span><span class="line"><span class="cl">	end note
+</span></span><span class="line"><span class="cl">	State1 --&gt; State2
+</span></span><span class="line"><span class="cl">	note left of State2 : This is the note to the left.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="完整文档-1" class="headerLink">
+    <a href="#%e5%ae%8c%e6%95%b4%e6%96%87%e6%a1%a3-1" class="header-mark"></a>完整文档</h3><ul>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=states" title="状态" target="_blank" rel="noopener noreferrer">状态</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=transitions" title="过渡" target="_blank" rel="noopener noreferrer">过渡</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=start-and-end" title="开始和结束" target="_blank" rel="noopener noreferrer">开始和结束</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=composite-states" title="复合状态" target="_blank" rel="noopener noreferrer">复合状态</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=choice" title="选择" target="_blank" rel="noopener noreferrer">选择</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=forks" title="货叉" target="_blank" rel="noopener noreferrer">分支</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=notes" title="笔记" target="_blank" rel="noopener noreferrer">笔记</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=concurrency" title="并发" target="_blank" rel="noopener noreferrer">并发</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=setting-the-direction-of-the-diagram" title="设置图表的方向" target="_blank" rel="noopener noreferrer">设置图表的方向</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=comments" title="注释" target="_blank" rel="noopener noreferrer">注释</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/stateDiagram?id=styling" title="造型" target="_blank" rel="noopener noreferrer">风格</a></li>
+</ul>
+<h2 id="甘特图" class="headerLink">
+    <a href="#%e7%94%98%e7%89%b9%e5%9b%be" class="header-mark"></a>甘特图</h2><blockquote>
+<p>甘特图是一种条形图，由 Karol Adamiecki 于 1896 年首次开发，1910 年代由 Henry Gantt 独立开发，用于说明项目进度和完成任何项目所需的时间。甘特图说明项目的终端元素和摘要元素的开始日期和完成日期之间的天数。</p>
+</blockquote>
+<p>甘特图将每个计划任务记录为一个从左向右延伸的连续条。x 轴代表时间，y 轴记录不同的任务及其完成的顺序。</p>
+<p>重要的是要记住，当特定于任务的日期、日期或日期集合被“排除”时，甘特图将通过向右扩展相同的天数来适应这些更改，而不是通过在内部创建间隙任务。</p>
+<p>但是，如果排除的日期在两个设置为连续开始的任务之间，则排除的日期将被图形跳过并留空，并且在排除的日期结束后将开始下一个任务。</p>
+<p>甘特图可用于跟踪项目完成前所需的时间，但它也可用于以图形方式表示“非工作日”，只需稍作调整。</p>
+<p>Mermaid 可以将甘特图呈现为 SVG、PNG 或可以粘贴到文档中的 MarkDown 链接。</p>
+<h3 id="基本甘特图" class="headerLink">
+    <a href="#%e5%9f%ba%e6%9c%ac%e7%94%98%e7%89%b9%e5%9b%be" class="header-mark"></a>基本甘特图</h3><div class="mermaid" id="id-9"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gantt
+</span></span><span class="line"><span class="cl">    title A Gantt Diagram
+</span></span><span class="line"><span class="cl">    dateFormat  YYYY-MM-DD
+</span></span><span class="line"><span class="cl">    section Section
+</span></span><span class="line"><span class="cl">    A task           :a1, 2021-01-01, 30d
+</span></span><span class="line"><span class="cl">    Another task     :after a1  , 20d
+</span></span><span class="line"><span class="cl">    section Another
+</span></span><span class="line"><span class="cl">    Task in sec      :2021-01-12  , 12d
+</span></span><span class="line"><span class="cl">    another task      : 24d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="语法" class="headerLink">
+    <a href="#%e8%af%ad%e6%b3%95" class="header-mark"></a>语法</h3><div class="mermaid" id="id-10"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="n">gantt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">dateFormat</span><span class="w">  </span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">title</span><span class="w">       </span><span class="n">Adding</span><span class="w"> </span><span class="n">GANTT</span><span class="w"> </span><span class="n">diagram</span><span class="w"> </span><span class="n">functionality</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">mermaid</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">excludes</span><span class="w">    </span><span class="n">weekends</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">%%</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">excludes</span><span class="o">`</span><span class="w"> </span><span class="n">accepts</span><span class="w"> </span><span class="k">specific</span><span class="w"> </span><span class="n">dates</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="w"> </span><span class="n">format</span><span class="p">,</span><span class="w"> </span><span class="n">days</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="nf">week</span><span class="w"> </span><span class="p">(</span><span class="s2">&#34;sunday&#34;</span><span class="p">)</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="s2">&#34;weekends&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="s2">&#34;weekdays&#34;</span><span class="p">.)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">section</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">section</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Completed</span><span class="w"> </span><span class="n">task</span><span class="w">            </span><span class="p">:</span><span class="n">done</span><span class="p">,</span><span class="w">    </span><span class="n">des1</span><span class="p">,</span><span class="w"> </span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span><span class="p">,</span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">08</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Active</span><span class="w"> </span><span class="n">task</span><span class="w">               </span><span class="p">:</span><span class="n">active</span><span class="p">,</span><span class="w">  </span><span class="n">des2</span><span class="p">,</span><span class="w"> </span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">09</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Future</span><span class="w"> </span><span class="n">task</span><span class="w">               </span><span class="p">:</span><span class="w">         </span><span class="n">des3</span><span class="p">,</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">des2</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Future</span><span class="w"> </span><span class="n">task2</span><span class="w">              </span><span class="p">:</span><span class="w">         </span><span class="n">des4</span><span class="p">,</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">des3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">section</span><span class="w"> </span><span class="n">Critical</span><span class="w"> </span><span class="n">tasks</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Completed</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">critical</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="p">:</span><span class="n">crit</span><span class="p">,</span><span class="w"> </span><span class="n">done</span><span class="p">,</span><span class="w"> </span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">06</span><span class="p">,</span><span class="mi">24</span><span class="n">h</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Implement</span><span class="w"> </span><span class="n">parser</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">jison</span><span class="w">          </span><span class="p">:</span><span class="n">crit</span><span class="p">,</span><span class="w"> </span><span class="n">done</span><span class="p">,</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">des1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Create</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">parser</span><span class="w">             </span><span class="p">:</span><span class="n">crit</span><span class="p">,</span><span class="w"> </span><span class="n">active</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Future</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">critical</span><span class="w"> </span><span class="n">line</span><span class="w">        </span><span class="p">:</span><span class="n">crit</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Create</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">renderer</span><span class="w">           </span><span class="p">:</span><span class="mi">2</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">mermaid</span><span class="w">                      </span><span class="p">:</span><span class="mi">1</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">section</span><span class="w"> </span><span class="n">Documentation</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Describe</span><span class="w"> </span><span class="n">gantt</span><span class="w"> </span><span class="n">syntax</span><span class="w">               </span><span class="p">:</span><span class="n">active</span><span class="p">,</span><span class="w"> </span><span class="n">a1</span><span class="p">,</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">des1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">gantt</span><span class="w"> </span><span class="n">diagram</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="n">page</span><span class="w">      </span><span class="p">:</span><span class="n">after</span><span class="w"> </span><span class="n">a1</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="n">h</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">diagram</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="n">page</span><span class="w">    </span><span class="p">:</span><span class="n">doc1</span><span class="p">,</span><span class="w"> </span><span class="n">after</span><span class="w"> </span><span class="n">a1</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="mi">48</span><span class="n">h</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">section</span><span class="w"> </span><span class="n">Last</span><span class="w"> </span><span class="n">section</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Describe</span><span class="w"> </span><span class="n">gantt</span><span class="w"> </span><span class="n">syntax</span><span class="w">               </span><span class="p">:</span><span class="n">after</span><span class="w"> </span><span class="n">doc1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="n">d</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">gantt</span><span class="w"> </span><span class="n">diagram</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="n">page</span><span class="w">      </span><span class="p">:</span><span class="mi">20</span><span class="n">h</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">Add</span><span class="w"> </span><span class="n">another</span><span class="w"> </span><span class="n">diagram</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">demo</span><span class="w"> </span><span class="n">page</span><span class="w">    </span><span class="p">:</span><span class="mi">48</span><span class="n">h</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="完整文档-2" class="headerLink">
+    <a href="#%e5%ae%8c%e6%95%b4%e6%96%87%e6%a1%a3-2" class="header-mark"></a>完整文档</h3><ul>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=a-note-to-users" title="给用户的注意事项" target="_blank" rel="noopener noreferrer">给用户的注意事项</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=syntax" title="句法" target="_blank" rel="noopener noreferrer">语法</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=setting-dates" title="设置日期" target="_blank" rel="noopener noreferrer">设置日期</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=comments" title="注释" target="_blank" rel="noopener noreferrer">注释</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=styling" title="造型" target="_blank" rel="noopener noreferrer">风格</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=today-marker" title="今天标记" target="_blank" rel="noopener noreferrer">当前日期标记</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=configuration" title="配置" target="_blank" rel="noopener noreferrer">配置</a></li>
+<li><a href="https://mermaid-js.github.io/mermaid/#/gantt?id=interaction" title="相互作用" target="_blank" rel="noopener noreferrer">交互</a></li>
+</ul>
+<h2 id="更多图表" class="headerLink">
+    <a href="#%e6%9b%b4%e5%a4%9a%e5%9b%be%e8%a1%a8" class="header-mark"></a>更多图表</h2><h3 id="时序图" class="headerLink">
+    <a href="#%e6%97%b6%e5%ba%8f%e5%9b%be" class="header-mark"></a>时序图</h3><blockquote>
+<p>时序图是一种交互图，它显示了进程如何相互操作以及以何种顺序运行。</p>
+</blockquote>
+<div class="mermaid" id="id-11"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sequenceDiagram
+</span></span><span class="line"><span class="cl">    Alice-&gt;&gt;John: Hello John, how are you?
+</span></span><span class="line"><span class="cl">    John--&gt;&gt;Alice: Great!
+</span></span><span class="line"><span class="cl">    Alice-)John: See you later!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mermaid-js.github.io/mermaid/#/sequenceDiagram" target="_blank" rel="noopener noreferrer">完整文档</a></p>
+<h3 id="类图" class="headerLink">
+    <a href="#%e7%b1%bb%e5%9b%be" class="header-mark"></a>类图</h3><blockquote>
+<p>“在软件工程中，统一建模语言（UML）中的类图是一种静态结构图，它通过显示系统的类、它们的属性、操作（或方法）以及对象之间的关系来描述系统的结构.” ——维基百科</p>
+</blockquote>
+<div class="mermaid" id="id-12"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">classDiagram
+</span></span><span class="line"><span class="cl">      Animal &lt;|-- Duck
+</span></span><span class="line"><span class="cl">      Animal &lt;|-- Fish
+</span></span><span class="line"><span class="cl">      Animal &lt;|-- Zebra
+</span></span><span class="line"><span class="cl">      Animal : +int age
+</span></span><span class="line"><span class="cl">      Animal : +String gender
+</span></span><span class="line"><span class="cl">      Animal: +isMammal()
+</span></span><span class="line"><span class="cl">      Animal: +mate()
+</span></span><span class="line"><span class="cl">      class Duck{
+</span></span><span class="line"><span class="cl">          +String beakColor
+</span></span><span class="line"><span class="cl">          +swim()
+</span></span><span class="line"><span class="cl">          +quack()
+</span></span><span class="line"><span class="cl">      }
+</span></span><span class="line"><span class="cl">      class Fish{
+</span></span><span class="line"><span class="cl">          -int sizeInFeet
+</span></span><span class="line"><span class="cl">          -canEat()
+</span></span><span class="line"><span class="cl">      }
+</span></span><span class="line"><span class="cl">      class Zebra{
+</span></span><span class="line"><span class="cl">          +bool is_wild
+</span></span><span class="line"><span class="cl">          +run()
+</span></span><span class="line"><span class="cl">      }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mermaid-js.github.io/mermaid/#/classDiagram" target="_blank" rel="noopener noreferrer">完整文档</a></p>
+<h3 id="实体关系图" class="headerLink">
+    <a href="#%e5%ae%9e%e4%bd%93%e5%85%b3%e7%b3%bb%e5%9b%be" class="header-mark"></a>实体关系图</h3><blockquote>
+<p>实体-关系模型（或 ER 模型）描述了特定知识领域中的相关事物。基本 ER 模型由实体类型（对感兴趣的事物进行分类）组成，并指定实体（这些实体类型的实例）之间可以存在的关系。——维基百科</p>
+</blockquote>
+<div class="mermaid" id="id-13"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">erDiagram
+</span></span><span class="line"><span class="cl">    CUSTOMER ||--o{ ORDER : places
+</span></span><span class="line"><span class="cl">    ORDER ||--|{ LINE-ITEM : contains
+</span></span><span class="line"><span class="cl">    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram" target="_blank" rel="noopener noreferrer">完整文档</a></p>
+<h3 id="用户旅程图" class="headerLink">
+    <a href="#%e7%94%a8%e6%88%b7%e6%97%85%e7%a8%8b%e5%9b%be" class="header-mark"></a>用户旅程图</h3><blockquote>
+<p>用户旅程高度详细地描述了不同用户在系统、应用程序或网站中完成特定任务所采取的具体步骤。此技术显示当前（原样）用户工作流程，并揭示未来工作流程的改进领域。——维基百科</p>
+</blockquote>
+<div class="mermaid" id="id-14"></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">erDiagram
+</span></span><span class="line"><span class="cl">    CUSTOMER ||--o{ ORDER : places
+</span></span><span class="line"><span class="cl">    ORDER ||--|{ LINE-ITEM : contains
+</span></span><span class="line"><span class="cl">    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mermaid-js.github.io/mermaid/#/user-journey" target="_blank" rel="noopener noreferrer">完整文档</a></p>
+<h3 id="需求图" class="headerLink">
+    <a href="#%e9%9c%80%e6%b1%82%e5%9b%be" class="header-mark"></a>需求图</h3><blockquote>
+<p>需求图提供了需求及其相互之间和其他文档化元素之间的联系的可视化。建模规范遵循 SysML v1.6 定义的规范。</p>
+</blockquote>
+<p><figure><a class="lightgallery" href="./requirement_graph.png" title="./requirement_graph.png" data-thumbnail="./requirement_graph.png" data-sub-html="<h2>需求图</h2>">
+        <img
+            
+            loading="lazy"
+            src="./requirement_graph.png"
+            srcset="./requirement_graph.png, ./requirement_graph.png 1.5x, ./requirement_graph.png 2x"
+            sizes="auto"
+            alt="./requirement_graph.png">
+    </a><figcaption class="image-caption">需求图</figcaption>
+    </figure></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">requirementDiagram
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    requirement test_req {
+</span></span><span class="line"><span class="cl">    id: 1
+</span></span><span class="line"><span class="cl">    text: the test text.
+</span></span><span class="line"><span class="cl">    risk: high
+</span></span><span class="line"><span class="cl">    verifymethod: test
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    element test_entity {
+</span></span><span class="line"><span class="cl">    type: simulation
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    test_entity - satisfies -&gt; test_req
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://mermaid-js.github.io/mermaid/#/requirementDiagram" target="_blank" rel="noopener noreferrer">完整文档</a></p>
+<h2 id="mermaid官网httpsmermaid-jsgithubiomermaid" class="headerLink">
+    <a href="#mermaid%e5%ae%98%e7%bd%91httpsmermaid-jsgithubiomermaid" class="header-mark"></a><a href="https://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener noreferrer">mermaid官网</a></h2><h2 id="适用于在obsidian打开的本文章md文件" class="headerLink">
+    <a href="#%e9%80%82%e7%94%a8%e4%ba%8e%e5%9c%a8obsidian%e6%89%93%e5%bc%80%e7%9a%84%e6%9c%ac%e6%96%87%e7%ab%a0md%e6%96%87%e4%bb%b6" class="header-mark"></a>适用于在Obsidian打开的本文章md文件</h2><p><a href="./markdown.md.save" rel="">下载地址</a>(请自行删除后缀名.save)</p>
+</div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-09-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/mermaid/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/mermaid/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid" data-image="./featured.png"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/mermaid/" data-title="mermaid"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/usbflashdiskantivirus/" class="prev" rel="prev" title="U盘不完全防毒"><i class="fas fa-angle-left fa-fw"></i>U盘不完全防毒</a>
+            <a href="/kkndme-tianya/" class="next" rel="next" title="【转载】kkndme天涯预言贴">【转载】kkndme天涯预言贴<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/mermaid/mermaid.min.71b2b5ed634c22290e71291baeae861b6460f44d7908a90ff09107646778cc58.css" integrity="sha256-cbK17WNMIikOcSkbrq6GG2Rg9E15CKkP8JEHZGd4zFg="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"graph TD;\n    A--\u003eB;\n    A--\u003eC;\n    B--\u003eD;\n    C--\u003eD;","id-10":"gantt\n    dateFormat  YYYY-MM-DD\n    title       Adding GANTT diagram functionality to mermaid\n    excludes    weekends\n    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (\"sunday\") or \"weekends\", but not the word \"weekdays\".)\n\n    section A section\n    Completed task            :done,    des1, 2014-01-06,2014-01-08\n    Active task               :active,  des2, 2014-01-09, 3d\n    Future task               :         des3, after des2, 5d\n    Future task2              :         des4, after des3, 5d\n\n    section Critical tasks\n    Completed task in the critical line :crit, done, 2014-01-06,24h\n    Implement parser and jison          :crit, done, after des1, 2d\n    Create tests for parser             :crit, active, 3d\n    Future task in critical line        :crit, 5d\n    Create tests for renderer           :2d\n    Add to mermaid                      :1d\n\n    section Documentation\n    Describe gantt syntax               :active, a1, after des1, 3d\n    Add gantt diagram to demo page      :after a1  , 20h\n    Add another diagram to demo page    :doc1, after a1  , 48h\n\n    section Last section\n    Describe gantt syntax               :after doc1, 3d\n    Add gantt diagram to demo page      :20h\n    Add another diagram to demo page    :48h","id-11":"sequenceDiagram\n    Alice-\u003e\u003eJohn: Hello John, how are you?\n    John--\u003e\u003eAlice: Great!\n    Alice-)John: See you later!","id-12":"classDiagram\n      Animal \u003c|-- Duck\n      Animal \u003c|-- Fish\n      Animal \u003c|-- Zebra\n      Animal : +int age\n      Animal : +String gender\n      Animal: +isMammal()\n      Animal: +mate()\n      class Duck{\n          +String beakColor\n          +swim()\n          +quack()\n      }\n      class Fish{\n          -int sizeInFeet\n          -canEat()\n      }\n      class Zebra{\n          +bool is_wild\n          +run()\n      }","id-13":"erDiagram\n    CUSTOMER ||--o{ ORDER : places\n    ORDER ||--|{ LINE-ITEM : contains\n    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses","id-14":"erDiagram\n    CUSTOMER ||--o{ ORDER : places\n    ORDER ||--|{ LINE-ITEM : contains\n    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses","id-2":"graph LR\nA[方形] --\u003eB(圆角)\n    B --\u003e C{条件a}\n    C --\u003e|a=1| D[结果1]\n    C --\u003e|a=2| E[结果2]\n    F[横向流程图]","id-3":"flowchart TB\n    c1--\u003ea2\n    subgraph one\n    a1--\u003ea2\n    end\n    subgraph two\n    b1--\u003eb2\n    end\n    subgraph three\n    c1--\u003ec2\n    end","id-4":"pie\n    title Key elements in Product X\n    \"Calcium\" : 42.96\n    \"Potassium\" : 50.05\n    \"Magnesium\" : 10.01\n    \"Iron\" :  5","id-5":"stateDiagram-v2\n    [*] --\u003e Still\n    Still --\u003e [*]\n\n    Still --\u003e Moving\n    Moving --\u003e Still\n    Moving --\u003e Crash\n    Crash --\u003e [*]","id-6":"stateDiagram\n    direction LR\n    [*] --\u003e A\n    A --\u003e B\n    B --\u003e C\n    state B {\n      direction LR\n      a --\u003e b\n    }\n    B --\u003e D","id-7":"stateDiagram-v2\n    state if_state \u003c\u003cchoice\u003e\u003e\n    [*] --\u003e IsPositive\n    IsPositive --\u003e if_state\n    if_state --\u003e False: if n \u003c 0\n    if_state --\u003e True : if n \u003e= 0","id-8":"stateDiagram-v2\n\tState1: The state with a note\n\tnote right of State1\n\t\tImportant information! You can write\n\t\tnotes.\n\tend note\n\tState1 --\u003e State2\n\tnote left of State2 : This is the note to the left.","id-9":"gantt\n    title A Gantt Diagram\n    dateFormat  YYYY-MM-DD\n    section Section\n    A task           :a1, 2021-01-01, 30d\n    Another task     :after a1  , 20d\n    section Another\n    Task in sec      :2021-01-12  , 12d\n    another task      : 24d"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"mermaid":true,"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.41d4c6d584cb2d3c03ddbf798cba85c69417f6e62e24c340b55660c0a5f8a185.js" integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" defer></script><script type="text/javascript" src="/js/mermaid.min.js" defer></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

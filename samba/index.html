@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>用Samba来远程管理服务器上的文件 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="用Samba来远程管理服务器上的文件" />
+<meta property="og:description" content="主机端安装 Ubuntu可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/samba/" /><meta property="og:image" content="http://imzifeng.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-06T20:22:59+08:00" />
+<meta property="article:modified_time" content="2022-01-06T20:22:59+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/logo.png"/>
+
+<meta name="twitter:title" content="用Samba来远程管理服务器上的文件"/>
+<meta name="twitter:description" content="主机端安装 Ubuntu可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/samba/" /><link rel="prev" href="http://imzifeng.cn/blender-diamond/" /><link rel="next" href="http://imzifeng.cn/obsidian-sync/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "用Samba来远程管理服务器上的文件",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/samba\/"
+        },"genre": "posts","wordcount":  5451 ,
+        "url": "http:\/\/imzifeng.cn\/samba\/","datePublished": "2022-01-06T20:22:59+08:00","dateModified": "2022-01-06T20:22:59+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用Samba来远程管理服务器上的文件</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5451 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/samba/" class="leancloud_visitors" data-flag-title="用Samba来远程管理服务器上的文件">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/samba/" class="comment_count" data-flag-title="用Samba来远程管理服务器上的文件">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#主机端安装">主机端安装</a>
+          <ul>
+            <li><a href="#ubuntu">Ubuntu</a></li>
+          </ul>
+        </li>
+        <li><a href="#主机端配置">主机端配置</a>
+          <ul>
+            <li><a href="#完整配置参数仅供参考不要全部都放配置文件里">完整配置参数（仅供参考，不要全部都放配置文件里）</a></li>
+            <li><a href="#验证配置是否正确">验证配置是否正确</a></li>
+            <li><a href="#配置密码">配置密码</a></li>
+            <li><a href="#重启服务">重启服务</a></li>
+          </ul>
+        </li>
+        <li><a href="#客户端配置">客户端配置</a>
+          <ul>
+            <li><a href="#windows">windows</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="主机端安装" class="headerLink">
+    <a href="#%e4%b8%bb%e6%9c%ba%e7%ab%af%e5%ae%89%e8%a3%85" class="header-mark"></a>主机端安装</h3><h4 id="ubuntu" class="headerLink">
+    <a href="#ubuntu" class="header-mark"></a>Ubuntu</h4><p>可直接用apt安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install samba
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完后运行软件确认</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ samba
+</span></span><span class="line"><span class="cl"><span class="o">[</span>2022/01/06 19:46:18.477419, 0<span class="o">]</span> ../../lib/util/debug.c:1104<span class="o">(</span>reopen_one_log<span class="o">)</span>  
+</span></span><span class="line"><span class="cl">reopen_one_log: Unable to open new log file <span class="s1">&#39;/var/log/samba/log.samba&#39;</span>: Permission denied  
+</span></span><span class="line"><span class="cl"><span class="o">[</span>2022/01/06 19:46:18.477521, 0<span class="o">]</span> ../../source4/smbd/server.c:644<span class="o">(</span>binary_smbd_main<span class="o">)</span>  
+</span></span><span class="line"><span class="cl">samba version 4.13.14-Ubuntu started.  
+</span></span><span class="line"><span class="cl">Copyright Andrew Tridgell and the Samba Team 1992-2020
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我这里因为已经在运行了所以会提示访问受限</p>
+<h3 id="主机端配置" class="headerLink">
+    <a href="#%e4%b8%bb%e6%9c%ba%e7%ab%af%e9%85%8d%e7%bd%ae" class="header-mark"></a>主机端配置</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.backup
+</span></span><span class="line"><span class="cl">sudo vim /etc/samba/smb.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加如下配置项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[global]  
+</span></span><span class="line"><span class="cl">server min protocol = CORE  
+</span></span><span class="line"><span class="cl">[My_data]  
+</span></span><span class="line"><span class="cl">comment = My_Data  
+</span></span><span class="line"><span class="cl">path = /media/dell/data/your_data_path 
+</span></span><span class="line"><span class="cl">public = no  
+</span></span><span class="line"><span class="cl">browseable = yes  
+</span></span><span class="line"><span class="cl">writeable = yes  
+</span></span><span class="line"><span class="cl">valid users = zhangsan  
+</span></span><span class="line"><span class="cl">guest ok = no
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这其中比较重要的参数为path和valid users, path指定了samba服务器的根目录，可以任意指定合法路径，不要设置在根目录； valid users表示可以访问samba服务器的合法用户，这个用户最好是你在主机端的用户名；</p>
+<h4 id="完整配置参数仅供参考不要全部都放配置文件里" class="headerLink">
+    <a href="#%e5%ae%8c%e6%95%b4%e9%85%8d%e7%bd%ae%e5%8f%82%e6%95%b0%e4%bb%85%e4%be%9b%e5%8f%82%e8%80%83%e4%b8%8d%e8%a6%81%e5%85%a8%e9%83%a8%e9%83%bd%e6%94%be%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e9%87%8c" class="header-mark"></a>完整配置参数（仅供参考，不要全部都放配置文件里）</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">主配置文件由两部分构成
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Global Settings <span class="o">(</span>55-245行<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">　　该设置都是与Samba服务整体运行环境有关的选项，它的设置项目是针对所有共享资源的。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Share Definitions （246-尾行）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">　　该设置针对的是共享目录个别的设置，只对当前的共享资源起作用。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">全局参数：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#==================Global Settings ===================</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>global<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">config <span class="nv">file</span> <span class="o">=</span> /usr/local/samba/lib/smb.conf.%m
+</span></span><span class="line"><span class="cl">说明：config file可以让你使用另一个配置文件来覆盖缺省的配置文件。如果文件不存在，则该项无效。这个参数很有用，可以使得samba配置更灵活，可以让一台 samba服务器模拟多台不同配置的服务器。比如，你想让PC1（主机名）这台电脑在访问Samba Server时使用它自己的配置文件，那么先在/etc/samba/host/下为PC1配置一个名为smb.conf.pc1的文件，然后在 smb.conf中加入：config <span class="nv">file</span> <span class="o">=</span> /etc/samba/host/smb.conf.%m。这样当PC1请求连接Samba Server时，smb.conf.%m就被替换成smb.conf.pc1。这样，对于PC1来说，它所使用的Samba服务就是由 smb.conf.pc1定义的，而其他机器访问Samba Server则还是应用smb.conf。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">workgroup</span> <span class="o">=</span> WORKGROUP
+</span></span><span class="line"><span class="cl">说明：设定 Samba Server 所要加入的工作组或者域。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">server <span class="nv">string</span> <span class="o">=</span> Samba Server Version %v
+</span></span><span class="line"><span class="cl">说明：设定 Samba Server 的注释，可以是任何字符串，也可以不填。宏%v表示显示Samba的版本号。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">netbios <span class="nv">name</span> <span class="o">=</span> smbserver
+</span></span><span class="line"><span class="cl">说明：设置Samba Server的NetBIOS名称。如果不填，则默认会使用该服务器的DNS名称的第一部分。netbios name和workgroup名字不要设置成一样了。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">interfaces</span> <span class="o">=</span> lo eth0 192.168.12.2/24 192.168.13.2/24
+</span></span><span class="line"><span class="cl">说明：设置Samba Server监听哪些网卡，可以写网卡名，也可以写该网卡的IP地址。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">hosts <span class="nv">allow</span> <span class="o">=</span> 127. 192.168.1. 192.168.10.1
+</span></span><span class="line"><span class="cl">说明：表示允许连接到Samba Server的客户端，多个参数以空格隔开。可以用一个IP表示，也可以用一个网段表示。hosts deny 与hosts allow 刚好相反。
+</span></span><span class="line"><span class="cl">例如：hosts <span class="nv">allow</span><span class="o">=</span>172.17.2.EXCEPT172.17.2.50
+</span></span><span class="line"><span class="cl">表示容许来自172.17.2.*的主机连接，但排除172.17.2.50
+</span></span><span class="line"><span class="cl">hosts <span class="nv">allow</span><span class="o">=</span>172.17.2.0/255.255.0.0
+</span></span><span class="line"><span class="cl">表示容许来自172.17.2.0/255.255.0.0子网中的所有主机连接
+</span></span><span class="line"><span class="cl">hosts <span class="nv">allow</span><span class="o">=</span>M1，M2
+</span></span><span class="line"><span class="cl">表示容许来自M1和M2两台计算机连接
+</span></span><span class="line"><span class="cl">hosts <span class="nv">allow</span><span class="o">=</span>@pega
+</span></span><span class="line"><span class="cl">表示容许来自pega网域的所有计算机连接
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max <span class="nv">connections</span> <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">说明：max connections用来指定连接Samba Server的最大连接数目。如果超出连接数目，则新的连接请求将被拒绝。0表示不限制。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">deadtime</span> <span class="o">=</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">说明：deadtime用来设置断掉一个没有打开任何文件的连接的时间。单位是分钟，0代表Samba Server不自动切断任何连接。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">time</span> <span class="nv">server</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：time server用来设置让nmdb成为windows客户端的时间服务器。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">log <span class="nv">file</span> <span class="o">=</span> /var/log/samba/log.%m
+</span></span><span class="line"><span class="cl">说明：设置Samba Server日志文件的存储位置以及日志文件名称。在文件名后加个宏%m（主机名），表示对每台访问Samba Server的机器都单独记录一个日志文件。如果pc1、pc2访问过Samba Server，就会在/var/log/samba目录下留下log.pc1和log.pc2两个日志文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">max log <span class="nv">size</span> <span class="o">=</span> <span class="m">50</span>
+</span></span><span class="line"><span class="cl">说明：设置Samba Server日志文件的最大容量，单位为kB，0代表不限制。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">security</span> <span class="o">=</span> user
+</span></span><span class="line"><span class="cl">说明：设置用户访问Samba Server的验证方式，一共有四种验证方式。
+</span></span><span class="line"><span class="cl">1. share：用户访问Samba Server不需要提供用户名和口令, 安全性能较低。
+</span></span><span class="line"><span class="cl">2. user：Samba Server共享目录只能被授权的用户访问,由Samba Server负责检查账号和密码的正确性。账号和密码要在本Samba Server中建立。
+</span></span><span class="line"><span class="cl">3. server：依靠其他Windows NT/2000或Samba Server来验证用户的账号和密码,是一种代理验证。此种安全模式下,系统管理员可以把所有的Windows用户和口令集中到一个NT系统上,使用 Windows NT进行Samba认证, 远程服务器可以自动认证全部用户和口令,如果认证失败,Samba将使用用户级安全模式作为替代的方式。
+</span></span><span class="line"><span class="cl">4. domain：域安全级别,使用主域控制器<span class="o">(</span>PDC<span class="o">)</span>来完成认证。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">passdb <span class="nv">backend</span> <span class="o">=</span> tdbsam
+</span></span><span class="line"><span class="cl">说明：passdb backend就是用户后台的意思。目前有三种后台：smbpasswd、tdbsam和ldapsam。sam应该是security account manager（安全账户管理）的简写。
+</span></span><span class="line"><span class="cl">1.smbpasswd：该方式是使用smb自己的工具smbpasswd来给系统用户（真实用户或者虚拟用户）设置一个Samba密码，客户端就用这个密码来访问Samba的资源。smbpasswd文件默认在/etc/samba目录下，不过有时候要手工建立该文件。
+</span></span><span class="line"><span class="cl">2.tdbsam： 该方式则是使用一个数据库文件来建立用户数据库。数据库文件叫passdb.tdb，默认在/etc/samba目录下。passdb.tdb用户数据库 可以使用smbpasswd –a来建立Samba用户，不过要建立的Samba用户必须先是系统用户。我们也可以使用pdbedit命令来建立Samba账户。pdbedit命令的 参数很多，我们列出几个主要的。
+</span></span><span class="line"><span class="cl">　　pdbedit –a username：新建Samba账户。
+</span></span><span class="line"><span class="cl">　　pdbedit –x username：删除Samba账户。
+</span></span><span class="line"><span class="cl">　　pdbedit –L：列出Samba用户列表，读取passdb.tdb数据库文件。
+</span></span><span class="line"><span class="cl">　　pdbedit –Lv：列出Samba用户列表的详细信息。
+</span></span><span class="line"><span class="cl">　　pdbedit –c “<span class="o">[</span>D<span class="o">]</span>” –u username：暂停该Samba用户的账号。
+</span></span><span class="line"><span class="cl">　　pdbedit –c “<span class="o">[]</span>” –u username：恢复该Samba用户的账号。
+</span></span><span class="line"><span class="cl">3.ldapsam：该方式则是基于LDAP的账户管理方式来验证用户。首先要建立LDAP服务，然后设置“passdb <span class="nv">backend</span> <span class="o">=</span> ldapsam:ldap://LDAP Server”
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">encrypt <span class="nv">passwords</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：是否将认证密码加密。因为现在windows操作系统都是使用加密密码，所以一般要开启此项。不过配置文件默认已开启。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">smb passwd <span class="nv">file</span> <span class="o">=</span> /etc/samba/smbpasswd
+</span></span><span class="line"><span class="cl">说明：用来定义samba用户的密码文件。smbpasswd文件如果没有那就要手工新建。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">username <span class="nv">map</span> <span class="o">=</span> /etc/samba/smbusers
+</span></span><span class="line"><span class="cl">说明：用来定义用户名映射，比如可以将root换成administrator、admin等。不过要事先在smbusers文件中定义好。比如：root <span class="o">=</span> administrator admin，这样就可以用administrator或admin这两个用户来代替root登陆Samba Server，更贴近windows用户的习惯。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">guest <span class="nv">account</span> <span class="o">=</span> nobody
+</span></span><span class="line"><span class="cl">说明：用来设置guest用户名。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">socket <span class="nv">options</span> <span class="o">=</span> TCP_NODELAY <span class="nv">SO_RCVBUF</span><span class="o">=</span><span class="m">8192</span> <span class="nv">SO_SNDBUF</span><span class="o">=</span><span class="m">8192</span>
+</span></span><span class="line"><span class="cl">说明：用来设置服务器和客户端之间会话的Socket选项，可以优化传输速度。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">domain <span class="nv">master</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置Samba服务器是否要成为网域主浏览器，网域主浏览器可以管理跨子网域的浏览服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">local</span> <span class="nv">master</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：local master用来指定Samba Server是否试图成为本地网域主浏览器。如果设为no，则永远不会成为本地网域主浏览器。但是即使设置为yes，也不等于该Samba Server就能成为主浏览器，还需要参加选举。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">preferred <span class="nv">master</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置Samba Server一开机就强迫进行主浏览器选举，可以提高Samba Server成为本地网域主浏览器的机会。如果该参数指定为yes时，最好把domain master也指定为yes。使用该参数时要注意：如果在本Samba Server所在的子网有其他的机器（不论是windows NT还是其他Samba Server）也指定为首要主浏览器时，那么这些机器将会因为争夺主浏览器而在网络上大发广播，影响网络性能。
+</span></span><span class="line"><span class="cl">如果同一个区域内有多台Samba Server，将上面三个参数设定在一台即可。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">os <span class="nv">level</span> <span class="o">=</span> <span class="m">200</span>
+</span></span><span class="line"><span class="cl">说明：设置samba服务器的os level。该参数决定Samba Server是否有机会成为本地网域的主浏览器。os level从0到255，winNT的os level是32，win95/98的os level是1。Windows 2000的os level是64。如果设置为0，则意味着Samba Server将失去浏览选择。如果想让Samba Server成为PDC，那么将它的os level值设大些。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">domain <span class="nv">logons</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置Samba Server是否要做为本地域控制器。主域控制器和备份域控制器都需要开启此项。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">logon <span class="nv">script</span> <span class="o">=</span> %u.bat
+</span></span><span class="line"><span class="cl">说明：当使用者用windows客户端登陆，那么Samba将提供一个登陆档。如果设置成%u.bat，那么就要为每个用户提供一个登陆档。如果人比较多， 那就比较麻烦。可以设置成一个具体的文件名，比如start.bat，那么用户登陆后都会去执行start.bat，而不用为每个用户设定一个登陆档了。 这个文件要放置在<span class="o">[</span>netlogon<span class="o">]</span>的path设置的目录路径下。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wins <span class="nv">support</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置samba服务器是否提供wins服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wins <span class="nv">server</span> <span class="o">=</span> wins服务器IP地址
+</span></span><span class="line"><span class="cl">说明：设置Samba Server是否使用别的wins服务器提供wins服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wins <span class="nv">proxy</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置Samba Server是否开启wins代理服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">dns <span class="nv">proxy</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置Samba Server是否开启dns代理服务。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">load <span class="nv">printers</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：设置是否在启动Samba时就共享打印机。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">printcap <span class="nv">name</span> <span class="o">=</span> cups
+</span></span><span class="line"><span class="cl">说明：设置共享打印机的配置文件。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">printing</span> <span class="o">=</span> cups
+</span></span><span class="line"><span class="cl">说明：设置Samba共享打印机的类型。现在支持的打印系统有：bsd, sysv, plp, lprng, aix, hpux, qnx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">共享参数：
+</span></span><span class="line"><span class="cl"><span class="c1">#================== Share Definitions ==================</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>共享名<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">comment</span> <span class="o">=</span> 任意字符串
+</span></span><span class="line"><span class="cl">说明：comment是对该共享的描述，可以是任意字符串。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> 共享目录路径
+</span></span><span class="line"><span class="cl">说 明：path用来指定共享目录的路径。可以用%u、%m这样的宏来代替路径里的unix用户和客户机的Netbios名，用宏表示主要用于<span class="o">[</span>homes<span class="o">]</span> 共享域。例如：如果我们不打算用home段做为客户的共享，而是在/home/share/下为每个Linux用户以他的用户名建个目录，作为他的共享目 录，这样path就可以写成：path <span class="o">=</span> /home/share/%u<span class="p">;</span> 。用户在连接到这共享时具体的路径会被他的用户名代替，要注意这个用户名路径一定要存在，否则，客户机在访问时会找不到网络路径。同样，如果我们不是以用 户来划分目录，而是以客户机来划分目录，为网络上每台可以访问samba的机器都各自建个以它的netbios名的路径，作为不同机器的共享资源，就可以 这样写：path <span class="o">=</span> /home/share/%m 。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">browseable</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：browseable用来指定该共享是否可以浏览。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">writable</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：writable用来指定该共享路径是否可写。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">available</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：available用来指定该共享资源是否可用。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">admin <span class="nv">users</span> <span class="o">=</span> 该共享的管理者
+</span></span><span class="line"><span class="cl">说明：admin users用来指定该共享的管理员（对该共享具有完全控制权限）。在samba 3.0中，如果用户验证方式设置成“security<span class="o">=</span>share”时，此项无效。
+</span></span><span class="line"><span class="cl">例如：admin <span class="nv">users</span> <span class="o">=</span>david，sandy（多个用户中间用逗号隔开）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">valid <span class="nv">users</span> <span class="o">=</span> 允许访问该共享的用户
+</span></span><span class="line"><span class="cl">说明：valid users用来指定允许访问该共享资源的用户。
+</span></span><span class="line"><span class="cl">例如：valid <span class="nv">users</span> <span class="o">=</span> david，@dave，@tech（多个用户或者组中间用逗号隔开，如果要加入一个组就用“@组名”表示。）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">invalid <span class="nv">users</span> <span class="o">=</span> 禁止访问该共享的用户
+</span></span><span class="line"><span class="cl">说明：invalid users用来指定不允许访问该共享资源的用户。
+</span></span><span class="line"><span class="cl">例如：invalid <span class="nv">users</span> <span class="o">=</span> root，@bob（多个用户或者组中间用逗号隔开。）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">write <span class="nv">list</span> <span class="o">=</span> 允许写入该共享的用户
+</span></span><span class="line"><span class="cl">说明：write list用来指定可以在该共享下写入文件的用户。
+</span></span><span class="line"><span class="cl">例如：write <span class="nv">list</span> <span class="o">=</span> david，@dave
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">public</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：public用来指定该共享是否允许guest账户访问。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">guest <span class="nv">ok</span> <span class="o">=</span> yes/no
+</span></span><span class="line"><span class="cl">说明：意义同“public”。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">几个特殊共享：
+</span></span><span class="line"><span class="cl"><span class="o">[</span>homes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">comment</span> <span class="o">=</span> Home Directories
+</span></span><span class="line"><span class="cl"><span class="nv">browseable</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nv">writable</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">valid <span class="nv">users</span> <span class="o">=</span> %S
+</span></span><span class="line"><span class="cl"><span class="p">;</span> valid <span class="nv">users</span> <span class="o">=</span> MYDOMAIN<span class="se">\%</span>S
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>printers<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">comment</span> <span class="o">=</span> All Printers
+</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> /var/spool/samba
+</span></span><span class="line"><span class="cl"><span class="nv">browseable</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl">guest <span class="nv">ok</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nv">writable</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl"><span class="nv">printable</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>netlogon<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">comment</span> <span class="o">=</span> Network Logon Service
+</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> /var/lib/samba/netlogon
+</span></span><span class="line"><span class="cl">guest <span class="nv">ok</span> <span class="o">=</span> yes
+</span></span><span class="line"><span class="cl"><span class="nv">writable</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl">share <span class="nv">modes</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Profiles<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">path</span> <span class="o">=</span> /var/lib/samba/profiles
+</span></span><span class="line"><span class="cl"><span class="nv">browseable</span> <span class="o">=</span> no
+</span></span><span class="line"><span class="cl">guest <span class="nv">ok</span> <span class="o">=</span> yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="验证配置是否正确" class="headerLink">
+    <a href="#%e9%aa%8c%e8%af%81%e9%85%8d%e7%bd%ae%e6%98%af%e5%90%a6%e6%ad%a3%e7%a1%ae" class="header-mark"></a>验证配置是否正确</h4><p>Samba配置好后，使用testparm命令可以测试smb.conf配置是否正确。使用testparm –v命令可以详细的列出smb.conf支持的配置参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ testparm  
+</span></span><span class="line"><span class="cl">Load smb config files from /etc/samba/smb.conf  
+</span></span><span class="line"><span class="cl">Loaded services file OK.  
+</span></span><span class="line"><span class="cl">Weak crypto is allowed  
+</span></span><span class="line"><span class="cl">Server role: ROLE_STANDALONE  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">Press enter to see a dump of your service definitions
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>确认无误后重启服务</p>
+<h4 id="配置密码" class="headerLink">
+    <a href="#%e9%85%8d%e7%bd%ae%e5%af%86%e7%a0%81" class="header-mark"></a>配置密码</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo smbpasswd -a zhangsan
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="重启服务" class="headerLink">
+    <a href="#%e9%87%8d%e5%90%af%e6%9c%8d%e5%8a%a1" class="header-mark"></a>重启服务</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service smbd restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="客户端配置" class="headerLink">
+    <a href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e9%85%8d%e7%bd%ae" class="header-mark"></a>客户端配置</h3><h4 id="windows" class="headerLink">
+    <a href="#windows" class="header-mark"></a>windows</h4><p>确定你的服务器内网IP
+打开浏览器
+在地址栏中输入主机端ip，如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//192.168.0.101
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>回车，输入你在主机端配置的用户名和密码，即可访问你的路径。</p>
+<p>默认由客户端传入的文件默认权限为rwxr&ndash;r&ndash;，可在配置文件中添加如下配置项修改这一默认文件权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">create <span class="nv">mask</span> <span class="o">=</span> <span class="m">0777</span>  
+</span></span><span class="line"><span class="cl">directory <span class="nv">mask</span> <span class="o">=</span> <span class="m">0777</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-01-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/samba/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/samba/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/blender-diamond/" class="prev" rel="prev" title="Blender五分钟出图"><i class="fas fa-angle-left fa-fw"></i>Blender五分钟出图</a>
+            <a href="/obsidian-sync/" class="next" rel="next" title="Obsidian-免费的多设备同步">Obsidian-免费的多设备同步<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

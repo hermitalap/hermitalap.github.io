@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Blender五分钟出图 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="Blender五分钟出图" />
+<meta property="og:description" content="下载并安装blenderhttps://www.blender.org/download/ 仅200M 从diamond里导出格式为.obj 导入" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/blender-diamond/" /><meta property="og:image" content="http://imzifeng.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-04T15:24:24+08:00" />
+<meta property="article:modified_time" content="2022-01-04T15:24:24+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/logo.png"/>
+
+<meta name="twitter:title" content="Blender五分钟出图"/>
+<meta name="twitter:description" content="下载并安装blenderhttps://www.blender.org/download/ 仅200M 从diamond里导出格式为.obj 导入"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/blender-diamond/" /><link rel="prev" href="http://imzifeng.cn/kkndme-tianya/" /><link rel="next" href="http://imzifeng.cn/samba/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Blender五分钟出图",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/blender-diamond\/"
+        },"genre": "posts","wordcount":  756 ,
+        "url": "http:\/\/imzifeng.cn\/blender-diamond\/","datePublished": "2022-01-04T15:24:24+08:00","dateModified": "2022-01-04T15:24:24+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Blender五分钟出图</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-04">2022-01-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-04">2022-01-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 756 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/blender-diamond/" class="leancloud_visitors" data-flag-title="Blender五分钟出图">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/blender-diamond/" class="comment_count" data-flag-title="Blender五分钟出图">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        
+        loading="eager"
+        src="/blender-diamond/Pasted%20image%2020220104144841.png"
+        srcset="/blender-diamond/Pasted%20image%2020220104144841.png, /blender-diamond/Pasted%20image%2020220104144841.png 1.5x, /blender-diamond/Pasted%20image%2020220104144841.png 2x"
+        sizes="auto"
+        alt="/blender-diamond/Pasted%20image%2020220104144841.png"
+        title="/blender-diamond/Pasted%20image%2020220104144841.png" height="1055" width="1646"></div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#下载并安装blender">下载并安装blender</a></li>
+        <li><a href="#从diamond里导出格式为obj">从diamond里导出格式为.obj</a></li>
+        <li><a href="#导入模型到blender">导入模型到blender</a></li>
+        <li><a href="#调整-视角灯光和材质">调整 视角，灯光，和材质</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="下载并安装blender" class="headerLink">
+    <a href="#%e4%b8%8b%e8%bd%bd%e5%b9%b6%e5%ae%89%e8%a3%85blender" class="header-mark"></a>下载并安装blender</h3><p><a href="https://www.blender.org/download/" target="_blank" rel="noopener noreferrer">https://www.blender.org/download/</a> 仅200M</p>
+<h3 id="从diamond里导出格式为obj" class="headerLink">
+    <a href="#%e4%bb%8ediamond%e9%87%8c%e5%af%bc%e5%87%ba%e6%a0%bc%e5%bc%8f%e4%b8%baobj" class="header-mark"></a>从diamond里导出格式为.obj</h3><h3 id="导入模型到blender" class="headerLink">
+    <a href="#%e5%af%bc%e5%85%a5%e6%a8%a1%e5%9e%8b%e5%88%b0blender" class="header-mark"></a>导入模型到blender</h3><p>打开blender，如果是第一打开，可以在初始页面更改软件语言为中文</p>
+<p>然后你会进入到如图的初始场景</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104144841.png" title="/blender-diamond/Pasted%20image%2020220104144841.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104144841.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104144841.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104144841.png, Pasted%20image%2020220104144841.png 1.5x, /blender-diamond/Pasted%20image%2020220104144841.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104144841.png">
+    </a></p>
+<p>单击中间的正方体，按键盘Del删除</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104144937.png" title="/blender-diamond/Pasted%20image%2020220104144937.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104144937.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104144937.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104144937.png, Pasted%20image%2020220104144937.png 1.5x, /blender-diamond/Pasted%20image%2020220104144937.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104144937.png">
+    </a></p>
+<p>然后在如图位置导入你上一步导出的模型</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145049.png" title="/blender-diamond/Pasted%20image%2020220104145049.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145049.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145049.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145049.png, Pasted%20image%2020220104145049.png 1.5x, /blender-diamond/Pasted%20image%2020220104145049.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145049.png">
+    </a></p>
+<p>然后就来了</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145157.png" title="/blender-diamond/Pasted%20image%2020220104145157.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145157.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145157.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145157.png, Pasted%20image%2020220104145157.png 1.5x, /blender-diamond/Pasted%20image%2020220104145157.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145157.png">
+    </a></p>
+<p>和之前一样，删除不需要的原子</p>
+<p>然后看界面右上角</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145319.png" title="/blender-diamond/Pasted%20image%2020220104145319.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145319.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145319.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145319.png, Pasted%20image%2020220104145319.png 1.5x, /blender-diamond/Pasted%20image%2020220104145319.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145319.png">
+    </a></p>
+<p>包含你所有的原子
+首先单击第一个</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145337.png" title="/blender-diamond/Pasted%20image%2020220104145337.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145337.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145337.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145337.png, Pasted%20image%2020220104145337.png 1.5x, /blender-diamond/Pasted%20image%2020220104145337.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145337.png">
+    </a></p>
+<p>然后按下shift，再单击最后一个原子</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145419.png" title="/blender-diamond/Pasted%20image%2020220104145419.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145419.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145419.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145419.png, Pasted%20image%2020220104145419.png 1.5x, /blender-diamond/Pasted%20image%2020220104145419.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145419.png">
+    </a></p>
+<p>这样就选中了所有原子</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145437.png" title="/blender-diamond/Pasted%20image%2020220104145437.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145437.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145437.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145437.png, Pasted%20image%2020220104145437.png 1.5x, /blender-diamond/Pasted%20image%2020220104145437.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145437.png">
+    </a></p>
+<p>在场景中的原子上右键，选中平滑着色</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145512.png" title="/blender-diamond/Pasted%20image%2020220104145512.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145512.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145512.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145512.png, Pasted%20image%2020220104145512.png 1.5x, /blender-diamond/Pasted%20image%2020220104145512.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145512.png">
+    </a></p>
+<p>这样原子就变光滑了。</p>
+<h3 id="调整-视角灯光和材质" class="headerLink">
+    <a href="#%e8%b0%83%e6%95%b4-%e8%a7%86%e8%a7%92%e7%81%af%e5%85%89%e5%92%8c%e6%9d%90%e8%b4%a8" class="header-mark"></a>调整 视角，灯光，和材质</h3><p>现在按下F12，进行渲染</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145626.png" title="/blender-diamond/Pasted%20image%2020220104145626.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145626.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145626.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145626.png, Pasted%20image%2020220104145626.png 1.5x, /blender-diamond/Pasted%20image%2020220104145626.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145626.png">
+    </a></p>
+<p>可以看到视角，灯光，和材质都有问题</p>
+<p>在整个界面的右下角</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145727.png" title="/blender-diamond/Pasted%20image%2020220104145727.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145727.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145727.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145727.png, Pasted%20image%2020220104145727.png 1.5x, /blender-diamond/Pasted%20image%2020220104145727.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145727.png">
+    </a></p>
+<p>点这个像相机一样的图标，进入渲染属性中</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145759.png" title="/blender-diamond/Pasted%20image%2020220104145759.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145759.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145759.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145759.png, Pasted%20image%2020220104145759.png 1.5x, /blender-diamond/Pasted%20image%2020220104145759.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145759.png">
+    </a></p>
+<p>选中这三个复选框</p>
+<p>然后在下面的胶片中选中透明</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150718.png" title="/blender-diamond/Pasted%20image%2020220104150718.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150718.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150718.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150718.png, Pasted%20image%2020220104150718.png 1.5x, /blender-diamond/Pasted%20image%2020220104150718.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150718.png">
+    </a></p>
+<p>完成以后，看到场景框的左上角</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104145845.png" title="/blender-diamond/Pasted%20image%2020220104145845.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104145845.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104145845.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104145845.png, Pasted%20image%2020220104145845.png 1.5x, /blender-diamond/Pasted%20image%2020220104145845.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104145845.png">
+    </a>单击最右侧的视图着色方式，即进入实时渲染界面</p>
+<blockquote>
+<p>现在你所见的场景就是你最终得到的效果，方便你调整</p>
+</blockquote>
+<p>点击左下角像地球一样的图标，进入世界属性</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150146.png" title="/blender-diamond/Pasted%20image%2020220104150146.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150146.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150146.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150146.png, Pasted%20image%2020220104150146.png 1.5x, /blender-diamond/Pasted%20image%2020220104150146.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150146.png">
+    </a></p>
+<p>把颜色改成白色光，强度降到0.2（最终的亮度，如果觉得不够亮可以再加）</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150234.png" title="/blender-diamond/Pasted%20image%2020220104150234.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150234.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150234.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150234.png, Pasted%20image%2020220104150234.png 1.5x, /blender-diamond/Pasted%20image%2020220104150234.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150234.png">
+    </a></p>
+<p>然后现在开始改材质</p>
+<p>单击一个原子选中</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150829.png" title="/blender-diamond/Pasted%20image%2020220104150829.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150829.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150829.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150829.png, Pasted%20image%2020220104150829.png 1.5x, /blender-diamond/Pasted%20image%2020220104150829.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150829.png">
+    </a></p>
+<p>然后点击右下角的材质属性</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150846.png" title="/blender-diamond/Pasted%20image%2020220104150846.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150846.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150846.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150846.png, Pasted%20image%2020220104150846.png 1.5x, /blender-diamond/Pasted%20image%2020220104150846.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150846.png">
+    </a></p>
+<p>更改基础色</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150912.png" title="/blender-diamond/Pasted%20image%2020220104150912.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150912.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150912.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150912.png, Pasted%20image%2020220104150912.png 1.5x, /blender-diamond/Pasted%20image%2020220104150912.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150912.png">
+    </a></p>
+<p>由于同一种类型的原子是绑定的，所以只需要更改一次，所有的同类型原子颜色都会变</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104150957.png" title="/blender-diamond/Pasted%20image%2020220104150957.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104150957.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104150957.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104150957.png, Pasted%20image%2020220104150957.png 1.5x, /blender-diamond/Pasted%20image%2020220104150957.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104150957.png">
+    </a></p>
+<p>然后同样的方法改其他颜色</p>
+<p>还可以改改金属度什么的</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151138.png" title="/blender-diamond/Pasted%20image%2020220104151138.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151138.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151138.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151138.png, Pasted%20image%2020220104151138.png 1.5x, /blender-diamond/Pasted%20image%2020220104151138.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151138.png">
+    </a></p>
+<p>改好以后，你所看到的样子就是最终出图的样子</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151203.png" title="/blender-diamond/Pasted%20image%2020220104151203.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151203.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151203.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151203.png, Pasted%20image%2020220104151203.png 1.5x, /blender-diamond/Pasted%20image%2020220104151203.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151203.png">
+    </a></p>
+<p>然后就是最后一步渲染出图了</p>
+<p>按F12渲染，可以看到视角不对</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151339.png" title="/blender-diamond/Pasted%20image%2020220104151339.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151339.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151339.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151339.png, Pasted%20image%2020220104151339.png 1.5x, /blender-diamond/Pasted%20image%2020220104151339.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151339.png">
+    </a></p>
+<p>关掉渲染框，然后按住鼠标中键旋转视图调到合适的位置，在右上角的场景物体列表里选中摄像机，</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151601.png" title="/blender-diamond/Pasted%20image%2020220104151601.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151601.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151601.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151601.png, Pasted%20image%2020220104151601.png 1.5x, /blender-diamond/Pasted%20image%2020220104151601.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151601.png">
+    </a></p>
+<p>再按下“<strong>ctrl+alt+0</strong>”</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151754.png" title="/blender-diamond/Pasted%20image%2020220104151754.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151754.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151754.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151754.png, Pasted%20image%2020220104151754.png 1.5x, /blender-diamond/Pasted%20image%2020220104151754.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151754.png">
+    </a></p>
+<p>把摄像头视角确定为当前视角，</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151825.png" title="/blender-diamond/Pasted%20image%2020220104151825.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151825.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151825.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151825.png, Pasted%20image%2020220104151825.png 1.5x, /blender-diamond/Pasted%20image%2020220104151825.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151825.png">
+    </a></p>
+<p>在右边调一下焦距,把整个结构放进去，按下F12渲染</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151900.png" title="/blender-diamond/Pasted%20image%2020220104151900.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151900.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151900.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151900.png, Pasted%20image%2020220104151900.png 1.5x, /blender-diamond/Pasted%20image%2020220104151900.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151900.png">
+    </a></p>
+<p>然后保存就可以了</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104151934.png" title="/blender-diamond/Pasted%20image%2020220104151934.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104151934.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104151934.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104151934.png, Pasted%20image%2020220104151934.png 1.5x, /blender-diamond/Pasted%20image%2020220104151934.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104151934.png">
+    </a></p>
+<p>背景是透明的，可以直接放进文档</p>
+<p><a class="lightgallery" href="/blender-diamond/Pasted%20image%2020220104152038.png" title="/blender-diamond/Pasted%20image%2020220104152038.png" data-thumbnail="/blender-diamond/Pasted%20image%2020220104152038.png">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020220104152038.png"
+            srcset="/blender-diamond/Pasted%20image%2020220104152038.png, Pasted%20image%2020220104152038.png 1.5x, /blender-diamond/Pasted%20image%2020220104152038.png 2x"
+            sizes="auto"
+            alt="/blender-diamond/Pasted%20image%2020220104152038.png">
+    </a></p>
+<p>然后具体效果你再慢慢调，尤其是亮度和金属光泽度什么的</p>
+</div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-01-04</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/blender-diamond/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/blender-diamond/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/blender-diamond/" data-title="Blender五分钟出图"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/kkndme-tianya/" class="prev" rel="prev" title="【转载】kkndme天涯预言贴"><i class="fas fa-angle-left fa-fw"></i>【转载】kkndme天涯预言贴</a>
+            <a href="/samba/" class="next" rel="next" title="用Samba来远程管理服务器上的文件">用Samba来远程管理服务器上的文件<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

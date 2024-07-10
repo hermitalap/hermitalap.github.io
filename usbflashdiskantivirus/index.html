@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>U盘不完全防毒 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="U盘不完全防毒" />
+<meta property="og:description" content="前言最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/usbflashdiskantivirus/" /><meta property="og:image" content="http://imzifeng.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-04T16:33:34+08:00" />
+<meta property="article:modified_time" content="2021-09-04T16:33:34+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/logo.png"/>
+
+<meta name="twitter:title" content="U盘不完全防毒"/>
+<meta name="twitter:description" content="前言最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/usbflashdiskantivirus/" /><link rel="prev" href="http://imzifeng.cn/git/" /><link rel="next" href="http://imzifeng.cn/mermaid/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "U盘不完全防毒",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/usbflashdiskantivirus\/"
+        },"genre": "posts","wordcount":  1518 ,
+        "url": "http:\/\/imzifeng.cn\/usbflashdiskantivirus\/","datePublished": "2021-09-04T16:33:34+08:00","dateModified": "2021-09-04T16:33:34+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">U盘不完全防毒</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/%E6%9D%82%E8%B0%88/"><i class="far fa-folder fa-fw"></i>杂谈</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-04">2021-09-04</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-04">2021-09-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1518 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/usbflashdiskantivirus/" class="leancloud_visitors" data-flag-title="U盘不完全防毒">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/usbflashdiskantivirus/" class="comment_count" data-flag-title="U盘不完全防毒">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        
+        loading="eager"
+        src="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png"
+        srcset="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png, /usbflashdiskantivirus/Pasted%20image%2020210904154551.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904154551.png 2x"
+        sizes="auto"
+        alt="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png"
+        title="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" height="828" width="1051"></div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a>
+      <ul>
+        <li><a href="#使用带有写保护功能的u盘">使用带有写保护功能的U盘</a></li>
+        <li><a href="#关闭自动播放功能">关闭自动播放功能</a></li>
+        <li><a href="#构建不可修改的autoruninf">构建不可修改的autorun.inf</a></li>
+        <li><a href="#各类u盘保险箱程序">各类U盘保险箱程序</a></li>
+        <li><a href="#反正不是我的电脑">反正不是我的电脑</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言" class="headerLink">
+    <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>最近实验室出现大量U盘感染事件，不少师兄师姐珍贵的实验数据灰飞烟灭，因为显微镜室的电脑并未联网，所需每次进行镜检后使用U盘拷贝是必须的步骤。加上显微镜室的电脑还有其他实验室的在使用，众多使用者的U盘很容易出现交叉感染的情况。</p>
+<p>现将本人收集的除了安装杀毒软件以外的U盘防毒方法整理如下</p>
+<h3 id="使用带有写保护功能的u盘" class="headerLink">
+    <a href="#%e4%bd%bf%e7%94%a8%e5%b8%a6%e6%9c%89%e5%86%99%e4%bf%9d%e6%8a%a4%e5%8a%9f%e8%83%bd%e7%9a%84u%e7%9b%98" class="header-mark"></a>使用带有写保护功能的U盘</h3><p>病毒植入U盘必然伴随着写入，带有硬件写保护功能的U盘能够有效防御学校打印店，公共演示电脑上带有的病毒。可以说是目前唯一能够100%防御病毒的方法，缺点是但是款式较少，且主要面向商务用户，价格较高。且不适用于需要向U盘内拷贝文件的场合。</p>
+<h3 id="关闭自动播放功能" class="headerLink">
+    <a href="#%e5%85%b3%e9%97%ad%e8%87%aa%e5%8a%a8%e6%92%ad%e6%94%be%e5%8a%9f%e8%83%bd" class="header-mark"></a>关闭自动播放功能</h3><p>部分U盘病毒的传播方法是伪造autorun.inf文件，该文件定义了硬件被接入电脑后会以何种方式自动运行哪个程序，打开自动播放可能会导致病毒程序被系统自动运行。
+以win10为例，依次打开设置-&gt;设备-&gt;自动播放-&gt;关闭自动播放
+<figure><a class="lightgallery" href="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" title="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" data-thumbnail="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png" data-sub-html="<h2>设置-&gt;设备-&gt;自动播放-&gt;关闭自动播放</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210904154551.png"
+            srcset="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png, Pasted%20image%2020210904154551.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904154551.png 2x"
+            sizes="auto"
+            alt="/usbflashdiskantivirus/Pasted%20image%2020210904154551.png">
+    </a><figcaption class="image-caption">设置->设备->自动播放->关闭自动播放</figcaption>
+    </figure></p>
+<h3 id="构建不可修改的autoruninf" class="headerLink">
+    <a href="#%e6%9e%84%e5%bb%ba%e4%b8%8d%e5%8f%af%e4%bf%ae%e6%94%b9%e7%9a%84autoruninf" class="header-mark"></a>构建不可修改的autorun.inf</h3><p>即便是关闭了自动播放，在资源管理器双击U盘图标时，系统也会按照autorun.inf中的指示自动运行病毒程序，所以安全的做法是右键U盘图标然后点击“打开”，并注意是否有可疑的自动播放选项。考虑到使用个人U盘的过程中很少会用到autorun.inf，所以我们可以创建一个不可被病毒程序修改的“autorun.inf”来抵御所有依赖这种传播方式的病毒。</p>
+<p>我在网上看到有人说，“既然病毒需要使用autorun.inf，那我们预先创建一个autorun.inf，病毒就无法传播了”，这完全是来搞笑的，凭什么你会觉得病毒不会覆盖或者删除原有的antorun.inf文件？不过这个馊主意也给了我一些灵感，经过尝试和使用一些骚操作，我还是实现对autorun.inf的被动防御。</p>
+<p>这里主要运用了两种机制</p>
+<ul>
+<li>windows下，同一目录下不可出现相同名称的文件和文件夹</li>
+<li>如果目录下存在畸形目录，那么父目录不可被删除。</li>
+</ul>
+<p>首先在U盘根目录下创建“autorun.inf”文件夹，当这个文件夹存在的时候，病毒就无法创建“autorun.inf”文件了
+<figure><a class="lightgallery" href="/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" title="/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" data-thumbnail="/usbflashdiskantivirus/Pasted%20image%2020210904161411.png" data-sub-html="<h2>windows下，同一目录下不可出现相同名称的文件和文件夹</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210904161411.png"
+            srcset="/usbflashdiskantivirus/Pasted%20image%2020210904161411.png, Pasted%20image%2020210904161411.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904161411.png 2x"
+            sizes="auto"
+            alt="/usbflashdiskantivirus/Pasted%20image%2020210904161411.png">
+    </a><figcaption class="image-caption">windows下，同一目录下不可出现相同名称的文件和文件夹</figcaption>
+    </figure>
+但是病毒可能会删除这个文件夹，所以我们要让这个文件夹不可被删除。
+首先进入“autorun.inf”文件夹，右键，点击“在终端/cmd中打开”，你也可以说win+r，输入cmd后回车，然后手动cd到U盘的这个目录下。然后</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\a</span>utorun.inf&gt;md imzifeng.cn..<span class="se">\
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在该目录下创建一个文件夹，在任意名称的后面跟上两个或多个点（.）,这种带有两个或多个点的目录就是一个畸形目录，它无法通过常规方法删除
+<figure><a class="lightgallery" href="/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" title="/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-thumbnail="/usbflashdiskantivirus/Pasted%20image%2020210904161957.png" data-sub-html="<h2>常规删除方法</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210904161957.png"
+            srcset="/usbflashdiskantivirus/Pasted%20image%2020210904161957.png, Pasted%20image%2020210904161957.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904161957.png 2x"
+            sizes="auto"
+            alt="/usbflashdiskantivirus/Pasted%20image%2020210904161957.png">
+    </a><figcaption class="image-caption">常规删除方法</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" title="/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" data-thumbnail="/usbflashdiskantivirus/Pasted%20image%2020210904162005.png" data-sub-html="<h2>无法删除</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210904162005.png"
+            srcset="/usbflashdiskantivirus/Pasted%20image%2020210904162005.png, Pasted%20image%2020210904162005.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904162005.png 2x"
+            sizes="auto"
+            alt="/usbflashdiskantivirus/Pasted%20image%2020210904162005.png">
+    </a><figcaption class="image-caption">无法删除</figcaption>
+    </figure>
+同样的，由于它是“autorun.inf”目录的子目录，导致“autorun.inf”也无法正常删除和访问。
+<figure><a class="lightgallery" href="/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" title="/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" data-thumbnail="/usbflashdiskantivirus/Pasted%20image%2020210904162147.png" data-sub-html="<h2>无法删除的autorun.inf</h2>">
+        <img
+            
+            loading="lazy"
+            src="Pasted%20image%2020210904162147.png"
+            srcset="/usbflashdiskantivirus/Pasted%20image%2020210904162147.png, Pasted%20image%2020210904162147.png 1.5x, /usbflashdiskantivirus/Pasted%20image%2020210904162147.png 2x"
+            sizes="auto"
+            alt="/usbflashdiskantivirus/Pasted%20image%2020210904162147.png">
+    </a><figcaption class="image-caption">无法删除的autorun.inf</figcaption>
+    </figure>
+这样就构建了一个不可删除的“autorun.inf”目录</p>
+<p>如果之后需要删除，可以在终端中输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\a</span>utorun.inf&gt;rd imzifeng.cn..<span class="se">\
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要注意的是，这个方法只能阻止利用了autorun.inf文件的病毒，现在很多病毒都比较高级，比如把U盘下的文件全部隐藏，然后复刻一个一摸一样的目录，不过把所有文件以及文件夹都替换为exe可执行文件，一点就中招，不过我一般都是开启了显示隐藏文件以及显示文件扩展名。</p>
+<h3 id="各类u盘保险箱程序" class="headerLink">
+    <a href="#%e5%90%84%e7%b1%bbu%e7%9b%98%e4%bf%9d%e9%99%a9%e7%ae%b1%e7%a8%8b%e5%ba%8f" class="header-mark"></a>各类U盘保险箱程序</h3><p>治标不治本，还有可能导致重要文件团灭。</p>
+<h3 id="反正不是我的电脑" class="headerLink">
+    <a href="#%e5%8f%8d%e6%ad%a3%e4%b8%8d%e6%98%af%e6%88%91%e7%9a%84%e7%94%b5%e8%84%91" class="header-mark"></a>反正不是我的电脑</h3><p>拷贝几个杀毒软件的安装包，遇到没有安装杀毒软件的可疑电脑，就给他安排上，然后拔U盘前把U盘查杀一遍。不过这年头，电脑上有好几个杀毒软件炼蛊的一定是小白，但是一个杀毒软件都没装的也可能是高手，所以做好被打的准备。不过装火绒可能被打得轻一点。</p>
+</div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-09-04</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/usbflashdiskantivirus/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/usbflashdiskantivirus/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/usbflashdiskantivirus/" data-title="U盘不完全防毒"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/git/" class="prev" rel="prev" title="Git"><i class="fas fa-angle-left fa-fw"></i>Git</a>
+            <a href="/mermaid/" class="next" rel="next" title="mermaid">mermaid<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

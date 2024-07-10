@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">用Samba来远程管理服务器上的文件 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="用Samba来远程管理服务器上的文件" />
-<meta property="og:description" content="主机端安装 Ubuntu 可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the Samba Team 1992-2020 我这" />
+    <title>用Samba来远程管理服务器上的文件 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="用Samba来远程管理服务器上的文件" />
+<meta property="og:description" content="主机端安装 Ubuntu可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://imzifeng.cn/posts/samba/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-06T20:22:59+08:00" />
@@ -14,15 +14,15 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用Samba来远程管理服务器上的文件"/>
-<meta name="twitter:description" content="主机端安装 Ubuntu 可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the Samba Team 1992-2020 我这"/>
+<meta name="twitter:description" content="主机端安装 Ubuntu可直接用apt安装 1 sudo apt-get install samba 安装完后运行软件确认 1 2 3 4 5 6 $ samba [2022/01/06 19:46:18.477419, 0] ../../lib/util/debug.c:1104(reopen_one_log) reopen_one_log: Unable to open new log file &#39;/var/log/samba/log.samba&#39;: Permission denied [2022/01/06 19:46:18.477521, 0] ../../source4/smbd/server.c:644(binary_smbd_main) samba version 4.13.14-Ubuntu started. Copyright Andrew Tridgell and the"/>
 <meta name="application-name" content="imzifeng">
 <meta name="apple-mobile-web-app-title" content="imzifeng">
 
-<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://imzifeng.cn/posts/samba/" /><link rel="prev" href="http://imzifeng.cn/posts/blender-diamond/" /><link rel="next" href="http://imzifeng.cn/posts/obsidian-sync/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://imzifeng.cn/posts/samba/" /><link rel="prev" href="http://imzifeng.cn/posts/blender-diamond/" /><link rel="next" href="http://imzifeng.cn/posts/obsidian-sync/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/imzifeng.cn\/posts\/samba\/"
-        },"genre": "posts","wordcount":  5440 ,
+        },"genre": "posts","wordcount":  5451 ,
         "url": "http:\/\/imzifeng.cn\/posts\/samba\/","datePublished": "2022-01-06T20:22:59+08:00","dateModified": "2022-01-06T20:22:59+08:00","publisher": {
             "@type": "Organization",
             "name": "zifeng"},"author": {
@@ -39,15 +39,16 @@
                 "name": "zifeng"
             },"description": ""
     }
-    </script></head>
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
 
 <body header-desktop="" header-mobile=""><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let themeColorMeta = getMeta('theme-color');
-        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
     <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -58,16 +59,16 @@
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    </span><a href="#" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a></div>
         </div>
@@ -85,20 +86,20 @@
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
                     </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -112,14 +113,24 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#主机端安装">主机端安装</a></li>
+        <li><a href="#主机端配置">主机端配置</a></li>
+        <li><a href="#客户端配置">客户端配置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用Samba来远程管理服务器上的文件</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">zifeng</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5440 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-01-06">2022-01-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5451 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/posts/samba/" class="leancloud_visitors" data-flag-title="用Samba来远程管理服务器上的文件">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count id=twikoo_visitors></span>&nbsp;次阅读
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -137,9 +148,9 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="主机端安装">主机端安装</h3>
-<h4 id="ubuntu">Ubuntu</h4>
-<p>可直接用apt安装</p>
+            </div><div class="content" id="content"><h3 id="主机端安装" class="headerLink">
+    <a href="#%e4%b8%bb%e6%9c%ba%e7%ab%af%e5%ae%89%e8%a3%85" class="header-mark"></a>主机端安装</h3><h4 id="ubuntu" class="headerLink">
+    <a href="#ubuntu" class="header-mark"></a>Ubuntu</h4><p>可直接用apt安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -168,8 +179,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>我这里因为已经在运行了所以会提示访问受限</p>
-<h3 id="主机端配置">主机端配置</h3>
-<div class="highlight"><div class="chroma">
+<h3 id="主机端配置" class="headerLink">
+    <a href="#%e4%b8%bb%e6%9c%ba%e7%ab%af%e9%85%8d%e7%bd%ae" class="header-mark"></a>主机端配置</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -207,8 +218,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这其中比较重要的参数为path和valid users, path指定了samba服务器的根目录，可以任意指定合法路径，不要设置在根目录； valid users表示可以访问samba服务器的合法用户，这个用户最好是你在主机端的用户名；</p>
-<h4 id="完整配置参数仅供参考不要全部都放配置文件里">完整配置参数（仅供参考，不要全部都放配置文件里）</h4>
-<div class="highlight"><div class="chroma">
+<h4 id="完整配置参数仅供参考不要全部都放配置文件里" class="headerLink">
+    <a href="#%e5%ae%8c%e6%95%b4%e9%85%8d%e7%bd%ae%e5%8f%82%e6%95%b0%e4%bb%85%e4%be%9b%e5%8f%82%e8%80%83%e4%b8%8d%e8%a6%81%e5%85%a8%e9%83%a8%e9%83%bd%e6%94%be%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e9%87%8c" class="header-mark"></a>完整配置参数（仅供参考，不要全部都放配置文件里）</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -610,8 +621,8 @@
 </span></span><span class="line"><span class="cl">guest <span class="nv">ok</span> <span class="o">=</span> yes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="验证配置是否正确">验证配置是否正确</h4>
-<p>Samba配置好后，使用testparm命令可以测试smb.conf配置是否正确。使用testparm –v命令可以详细的列出smb.conf支持的配置参数。</p>
+</div><h4 id="验证配置是否正确" class="headerLink">
+    <a href="#%e9%aa%8c%e8%af%81%e9%85%8d%e7%bd%ae%e6%98%af%e5%90%a6%e6%ad%a3%e7%a1%ae" class="header-mark"></a>验证配置是否正确</h4><p>Samba配置好后，使用testparm命令可以测试smb.conf配置是否正确。使用testparm –v命令可以详细的列出smb.conf支持的配置参数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -633,8 +644,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>确认无误后重启服务</p>
-<h4 id="配置密码">配置密码</h4>
-<div class="highlight"><div class="chroma">
+<h4 id="配置密码" class="headerLink">
+    <a href="#%e9%85%8d%e7%bd%ae%e5%af%86%e7%a0%81" class="header-mark"></a>配置密码</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -642,8 +653,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo smbpasswd -a zhangsan
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="重启服务">重启服务</h4>
-<div class="highlight"><div class="chroma">
+</div><h4 id="重启服务" class="headerLink">
+    <a href="#%e9%87%8d%e5%90%af%e6%9c%8d%e5%8a%a1" class="header-mark"></a>重启服务</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -651,9 +662,9 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo service smbd restart
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="客户端配置">客户端配置</h3>
-<h4 id="windows">windows</h4>
-<p>确定你的服务器内网IP
+</div><h3 id="客户端配置" class="headerLink">
+    <a href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e9%85%8d%e7%bd%ae" class="header-mark"></a>客户端配置</h3><h4 id="windows" class="headerLink">
+    <a href="#windows" class="header-mark"></a>windows</h4><p>确定你的服务器内网IP
 打开浏览器
 在地址栏中输入主机端ip，如</p>
 <div class="highlight"><div class="chroma">
@@ -676,7 +687,9 @@
 </span></span><span class="line"><span class="cl">directory <span class="nv">mask</span> <span class="o">=</span> <span class="m">0777</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div></div>
+
+        <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -685,11 +698,10 @@
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/posts/samba/index.md" target="_blank" rel="noopener noreferrer">阅读原始文档</a>
-                        </span></div>
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/posts/samba/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/samba/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/samba/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/samba/" data-title="用Samba来远程管理服务器上的文件"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -697,7 +709,7 @@
     <div class="post-info-more">
         <section class="post-tags"></section>
         <section>
-            <span><a href="#" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
@@ -708,8 +720,12 @@
                 Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
@@ -717,9 +733,7 @@
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
-
-<div class="pjax-assets"><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></div>
+    </div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 </body>
 
 </html>

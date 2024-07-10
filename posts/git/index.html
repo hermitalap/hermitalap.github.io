@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">Git - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="Git" />
-<meta property="og:description" content="Git 是一个分布式版本控制系统. 文本，脚本，以及各种基于文本信息的文件可被Git管理 各软件私有格式、二进制文件、媒体不可被Git管理 安装 官方下载" />
+    <title>Git - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="Git" />
+<meta property="og:description" content="Git 是一个分布式版本控制系统.文本，脚本，以及各种基于文本信息的文件可被Git管理 各软件私有格式、二进制文件、媒体不可被Git管理 安装官方下载" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://imzifeng.cn/posts/git/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-01T16:36:49+08:00" />
@@ -14,15 +14,15 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git"/>
-<meta name="twitter:description" content="Git 是一个分布式版本控制系统. 文本，脚本，以及各种基于文本信息的文件可被Git管理 各软件私有格式、二进制文件、媒体不可被Git管理 安装 官方下载"/>
+<meta name="twitter:description" content="Git 是一个分布式版本控制系统.文本，脚本，以及各种基于文本信息的文件可被Git管理 各软件私有格式、二进制文件、媒体不可被Git管理 安装官方下载"/>
 <meta name="application-name" content="imzifeng">
 <meta name="apple-mobile-web-app-title" content="imzifeng">
 
-<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://imzifeng.cn/posts/git/" /><link rel="prev" href="http://imzifeng.cn/posts/rnaseq-1/" /><link rel="next" href="http://imzifeng.cn/posts/usbflashdiskantivirus/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
-    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
-    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://imzifeng.cn/posts/git/" /><link rel="prev" href="http://imzifeng.cn/posts/rnaseq-1/" /><link rel="next" href="http://imzifeng.cn/posts/usbflashdiskantivirus/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/color.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -31,7 +31,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/imzifeng.cn\/posts\/git\/"
-        },"genre": "posts","wordcount":  6438 ,
+        },"genre": "posts","wordcount":  6485 ,
         "url": "http:\/\/imzifeng.cn\/posts\/git\/","datePublished": "2021-09-01T16:36:49+08:00","dateModified": "2021-09-01T16:36:49+08:00","publisher": {
             "@type": "Organization",
             "name": "zifeng"},"author": {
@@ -39,15 +39,16 @@
                 "name": "zifeng"
             },"description": ""
     }
-    </script></head>
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
 
 <body header-desktop="" header-mobile=""><script type="text/javascript">
-        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
         function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
         function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
         if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
-        let themeColorMeta = getMeta('theme-color');
-        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
     </script>
     <div id="back-to-top"></div>
     <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
@@ -58,16 +59,16 @@
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    </span><a href="#" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a></div>
         </div>
@@ -85,20 +86,20 @@
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
-                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
                     </div>
-                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -112,23 +113,66 @@
 <main class="main">
             <div class="container"><div class="toc" id="toc-auto">
         <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"></div>
+        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#gui管理器">GUI管理器</a></li>
+      </ul>
+    </li>
+    <li><a href="#基本使用">基本使用</a>
+      <ul>
+        <li><a href="#基本配置">基本配置</a></li>
+        <li><a href="#init创建版本库-repository">(init）创建版本库 Repository</a></li>
+        <li><a href="#add添加文件管理">(add）添加文件管理</a></li>
+        <li><a href="#commit提交改变">(commit）提交改变</a></li>
+        <li><a href="#log修改记录">(log）修改记录</a></li>
+        <li><a href="#diff查看-unstaged">(diff）查看 unstaged</a></li>
+        <li><a href="#diff---cached查看-staged">(diff &ndash;cached）查看 staged</a></li>
+        <li><a href="#diff-head查看-staged--unstaged">(diff HEAD）查看 staged &amp; unstaged</a></li>
+        <li><a href="#commit---amend修改已-commit-的版本">(commit &ndash;amend）修改已 commit 的版本</a></li>
+        <li><a href="#reset回到unstaged状态">(reset）回到unstaged状态</a></li>
+        <li><a href="#reset---hard-xxxxxx回到-commit-之前">(reset &ndash;hard xxxxxx）回到 commit 之前</a></li>
+        <li><a href="#checkout改写文件">(checkout）改写文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#分支管理">分支管理</a>
+      <ul>
+        <li><a href="#branch-dev使用branch创建分支">(branch dev）使用branch创建分支</a></li>
+        <li><a href="#log---oneline---graph使用graph观看分支">(log &ndash;oneline &ndash;graph）使用graph观看分支</a></li>
+        <li><a href="#checkout--b直接创建并切换到新建的分支">(checkout -b）直接创建并切换到新建的分支</a></li>
+        <li><a href="#merge将-dev-的修改推送到-master">(merge）将 dev 的修改推送到 master</a></li>
+        <li><a href="#commit解决冲突">(commit）解决冲突</a></li>
+        <li><a href="#rebase变基">(rebase）变基</a></li>
+        <li><a href="#stash临时修改">(stash）临时修改</a></li>
+      </ul>
+    </li>
+    <li><a href="#merge和rebase的区别">merge和rebase的区别</a>
+      <ul>
+        <li><a href="#merge">merge</a></li>
+        <li><a href="#rebase">rebase</a></li>
+        <li><a href="#区别">区别</a></li>
+      </ul>
+    </li>
+    <li><a href="#补充">补充</a></li>
+  </ul>
+</nav></div>
     </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Git</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author">zifeng</a>
                 </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6438 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-01">2021-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6485 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;<span id="/posts/git/" class="leancloud_visitors" data-flag-title="Git">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count id=twikoo_visitors></span>&nbsp;次阅读
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="featured-image"><img
-        class="lazyload"
-        data-src="/posts/git/Pasted%20image%2020210901175904.png"
-        data-srcset="/posts/git/Pasted%20image%2020210901175904.png, /posts/git/Pasted%20image%2020210901175904.png 1.5x, /posts/git/Pasted%20image%2020210901175904.png 2x"
-        data-sizes="auto"
+        
+        loading="eager"
+        src="/posts/git/Pasted%20image%2020210901175904.png"
+        srcset="/posts/git/Pasted%20image%2020210901175904.png, /posts/git/Pasted%20image%2020210901175904.png 1.5x, /posts/git/Pasted%20image%2020210901175904.png 2x"
+        sizes="auto"
         alt="/posts/git/Pasted%20image%2020210901175904.png"
-        title="/posts/git/Pasted%20image%2020210901175904.png" height="98" width="340"
-    /></div><div class="details toc" id="toc-static"  kept="">
+        title="/posts/git/Pasted%20image%2020210901175904.png" height="98" width="340"></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
@@ -177,17 +221,17 @@
     <li><a href="#补充">补充</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="git-是一个分布式版本控制系统">Git 是一个分布式版本控制系统.</h1>
-<p>文本，脚本，以及各种基于文本信息的文件可被Git管理</p>
+            </div><div class="content" id="content"><h1 id="git-是一个分布式版本控制系统" class="headerLink">
+    <a href="#git-%e6%98%af%e4%b8%80%e4%b8%aa%e5%88%86%e5%b8%83%e5%bc%8f%e7%89%88%e6%9c%ac%e6%8e%a7%e5%88%b6%e7%b3%bb%e7%bb%9f" class="header-mark"></a>Git 是一个分布式版本控制系统.</h1><p>文本，脚本，以及各种基于文本信息的文件可被Git管理</p>
 <p>各软件私有格式、二进制文件、媒体不可被Git管理</p>
-<h2 id="安装">安装</h2>
-<p>官方下载地址，<a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer">Git</a></p>
-<h3 id="gui管理器">GUI管理器</h3>
-<p><a href="https://desktop.github.com/" target="_blank" rel="noopener noreffer">GitHub Desktop</a>
-<a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener noreffer">Sourcetree</a></p>
-<h2 id="基本使用">基本使用</h2>
-<h3 id="基本配置">基本配置</h3>
-<p>设置个人信息，用于将修改与人对应</p>
+<h2 id="安装" class="headerLink">
+    <a href="#%e5%ae%89%e8%a3%85" class="header-mark"></a>安装</h2><p>官方下载地址，<a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">Git</a></p>
+<h3 id="gui管理器" class="headerLink">
+    <a href="#gui%e7%ae%a1%e7%90%86%e5%99%a8" class="header-mark"></a>GUI管理器</h3><p><a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer">GitHub Desktop</a>
+<a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener noreferrer">Sourcetree</a></p>
+<h2 id="基本使用" class="headerLink">
+    <a href="#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" class="header-mark"></a>基本使用</h2><h3 id="基本配置" class="headerLink">
+    <a href="#%e5%9f%ba%e6%9c%ac%e9%85%8d%e7%bd%ae" class="header-mark"></a>基本配置</h3><p>设置个人信息，用于将修改与人对应</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -198,8 +242,8 @@
 </span></span><span class="line"><span class="cl">$ git config --global user.email &#34;email@example.com&#34;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="init创建版本库-repository">(init）创建版本库 Repository</h3>
-<p>首先cd到你要管理的文件夹
+</div><h3 id="init创建版本库-repository" class="headerLink">
+    <a href="#init%e5%88%9b%e5%bb%ba%e7%89%88%e6%9c%ac%e5%ba%93-repository" class="header-mark"></a>(init）创建版本库 Repository</h3><p>首先cd到你要管理的文件夹
 然后创建</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -232,8 +276,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>git 创建的管理库文件 <code>.git</code> 是被隐藏起来的</p>
-<h3 id="add添加文件管理">(add）添加文件管理</h3>
-<p>建立一个新的 1.py 文件:</p>
+<h3 id="add添加文件管理" class="headerLink">
+    <a href="#add%e6%b7%bb%e5%8a%a0%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86" class="header-mark"></a>(add）添加文件管理</h3><p>建立一个新的 1.py 文件:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -280,8 +324,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git add .
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="commit提交改变">(commit）提交改变</h3>
-<p>我们已经添加好了 <code>first.py</code> 文件, 最后一步就是提交这次的改变, 并在 <code>-m</code> 自定义这次改变的信息:</p>
+</div><h3 id="commit提交改变" class="headerLink">
+    <a href="#commit%e6%8f%90%e4%ba%a4%e6%94%b9%e5%8f%98" class="header-mark"></a>(commit）提交改变</h3><p>我们已经添加好了 <code>first.py</code> 文件, 最后一步就是提交这次的改变, 并在 <code>-m</code> 自定义这次改变的信息:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -304,8 +348,8 @@
 </span></span><span class="line"><span class="cl">$ git commit -am <span class="s2">&#34;change 3 in dev&#34;</span> <span class="c1"># &#34;-am&#34;: add 所有改变 并直接 commit</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="log修改记录">(log）修改记录</h3>
-<p>查看</p>
+</div><h3 id="log修改记录" class="headerLink">
+    <a href="#log%e4%bf%ae%e6%94%b9%e8%ae%b0%e5%bd%95" class="header-mark"></a>(log）修改记录</h3><p>查看</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -338,8 +382,8 @@
 </span></span><span class="line"><span class="cl">d722a66 create first.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="diff查看-unstaged">(diff）查看 unstaged</h3>
-<p>如果想要查看这次还没 <code>add</code> (unstaged) 的修改部分 和上个已经 <code>commit</code> 的文件有何不同, 我们将使用 <code>$ git diff</code>:</p>
+</div><h3 id="diff查看-unstaged" class="headerLink">
+    <a href="#diff%e6%9f%a5%e7%9c%8b-unstaged" class="header-mark"></a>(diff）查看 unstaged</h3><p>如果想要查看这次还没 <code>add</code> (unstaged) 的修改部分 和上个已经 <code>commit</code> 的文件有何不同, 我们将使用 <code>$ git diff</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -365,8 +409,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意这里不会显示你还没有追踪的文件，也就是还没有add的文件修改并不会被显示</p>
-<h3 id="diff---cached查看-staged">(diff &ndash;cached）查看 staged</h3>
-<p>如果你已经 <code>add</code> 了这次修改, 文件变成了 “可提交状态 (staged)”, 我们可以在 <code>diff</code> 中添加参数 <code>--cached</code> 来查看修改:</p>
+<h3 id="diff---cached查看-staged" class="headerLink">
+    <a href="#diff---cached%e6%9f%a5%e7%9c%8b-staged" class="header-mark"></a>(diff &ndash;cached）查看 staged</h3><p>如果你已经 <code>add</code> 了这次修改, 文件变成了 “可提交状态 (staged)”, 我们可以在 <code>diff</code> 中添加参数 <code>--cached</code> 来查看修改:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -397,8 +441,8 @@
 </span></span><span class="line"><span class="cl">+b <span class="o">=</span> <span class="m">1</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="diff-head查看-staged--unstaged">(diff HEAD）查看 staged &amp; unstaged</h3>
-<p>显示所有的修改，不管是否为staged（已add）或unstaged（未add）</p>
+</div><h3 id="diff-head查看-staged--unstaged" class="headerLink">
+    <a href="#diff-head%e6%9f%a5%e7%9c%8b-staged--unstaged" class="header-mark"></a>(diff HEAD）查看 staged &amp; unstaged</h3><p>显示所有的修改，不管是否为staged（已add）或unstaged（未add）</p>
 <p>目前 <code>a = 2</code> 和 <code>b = 1</code> 已被 <code>add</code>, <code>c = b</code> 是新的修改, 还没被 <code>add</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -450,8 +494,8 @@
 </span></span><span class="line"><span class="cl">+b <span class="o">=</span> <span class="m">1</span>  <span class="c1"># 已 staged</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="commit---amend修改已-commit-的版本">(commit &ndash;amend）修改已 commit 的版本</h3>
-<p>有时候我们总会忘了什么, 比如已经提交了 <code>commit</code> 却发现在这个 <code>commit</code> 中忘了附上另一个文件. 接下来我们模拟这种情况. 上节内容中, 我们最后一个 <code>commit</code> 是 <code>change 2</code>, 我们将要添加另外一个文件, 将这个修改也 <code>commit</code> 进 <code>change 2</code>. 所以我们复制 <code>1.py</code> 这个文件, 改名为 <code>2.py</code>. 并把 <code>2.py</code> 变成 <code>staged</code>, 然后使用 <code>--amend</code> 将这次改变合并到之前的 <code>change 2</code> 中.</p>
+</div><h3 id="commit---amend修改已-commit-的版本" class="headerLink">
+    <a href="#commit---amend%e4%bf%ae%e6%94%b9%e5%b7%b2-commit-%e7%9a%84%e7%89%88%e6%9c%ac" class="header-mark"></a>(commit &ndash;amend）修改已 commit 的版本</h3><p>有时候我们总会忘了什么, 比如已经提交了 <code>commit</code> 却发现在这个 <code>commit</code> 中忘了附上另一个文件. 接下来我们模拟这种情况. 上节内容中, 我们最后一个 <code>commit</code> 是 <code>change 2</code>, 我们将要添加另外一个文件, 将这个修改也 <code>commit</code> 进 <code>change 2</code>. 所以我们复制 <code>1.py</code> 这个文件, 改名为 <code>2.py</code>. 并把 <code>2.py</code> 变成 <code>staged</code>, 然后使用 <code>--amend</code> 将这次改变合并到之前的 <code>change 2</code> 中.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -474,8 +518,8 @@
 </span></span><span class="line"><span class="cl">13be9a7 create 1.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="reset回到unstaged状态">(reset）回到unstaged状态</h3>
-<p>有时我们添加 <code>add</code> 了修改, 但是又后悔, 并想补充一些内容再 <code>add</code>. 这时, 我们有一种方式可以回到 <code>add</code> 之前. 比如在 <code>1.py</code> 文件中添加这一行:</p>
+</div><h3 id="reset回到unstaged状态" class="headerLink">
+    <a href="#reset%e5%9b%9e%e5%88%b0unstaged%e7%8a%b6%e6%80%81" class="header-mark"></a>(reset）回到unstaged状态</h3><p>有时我们添加 <code>add</code> 了修改, 但是又后悔, 并想补充一些内容再 <code>add</code>. 这时, 我们有一种方式可以回到 <code>add</code> 之前. 比如在 <code>1.py</code> 文件中添加这一行:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -517,46 +561,46 @@
 </span></span><span class="line"><span class="cl"> M 1.py     <span class="c1"># unstaged，红色M</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="reset---hard-xxxxxx回到-commit-之前">(reset &ndash;hard xxxxxx）回到 commit 之前</h3>
-<p>在穿梭到过去的 <code>commit</code> 之前, 我们必须了解 git 是如何一步一步累加更改的. 我们截取网上的一些图片</p>
+</div><h3 id="reset---hard-xxxxxx回到-commit-之前" class="headerLink">
+    <a href="#reset---hard-xxxxxx%e5%9b%9e%e5%88%b0-commit-%e4%b9%8b%e5%89%8d" class="header-mark"></a>(reset &ndash;hard xxxxxx）回到 commit 之前</h3><p>在穿梭到过去的 <code>commit</code> 之前, 我们必须了解 git 是如何一步一步累加更改的. 我们截取网上的一些图片</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210903164629.png" title="/posts/git/Pasted%20image%2020210903164629.png" data-thumbnail="/posts/git/Pasted%20image%2020210903164629.png" data-sub-html="<h2> </h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210903164629.png"
-            data-srcset="/posts/git/Pasted%20image%2020210903164629.png, Pasted%20image%2020210903164629.png 1.5x, /posts/git/Pasted%20image%2020210903164629.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210903164629.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210903164629.png"
+            srcset="/posts/git/Pasted%20image%2020210903164629.png, Pasted%20image%2020210903164629.png 1.5x, /posts/git/Pasted%20image%2020210903164629.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210903164629.png">
     </a><figcaption class="image-caption"> </figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210903164635.png" title="/posts/git/Pasted%20image%2020210903164635.png" data-thumbnail="/posts/git/Pasted%20image%2020210903164635.png" data-sub-html="<h2> </h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210903164635.png"
-            data-srcset="/posts/git/Pasted%20image%2020210903164635.png, Pasted%20image%2020210903164635.png 1.5x, /posts/git/Pasted%20image%2020210903164635.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210903164635.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210903164635.png"
+            srcset="/posts/git/Pasted%20image%2020210903164635.png, Pasted%20image%2020210903164635.png 1.5x, /posts/git/Pasted%20image%2020210903164635.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210903164635.png">
     </a><figcaption class="image-caption"> </figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210903164641.png" title="/posts/git/Pasted%20image%2020210903164641.png" data-thumbnail="/posts/git/Pasted%20image%2020210903164641.png" data-sub-html="<h2> </h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210903164641.png"
-            data-srcset="/posts/git/Pasted%20image%2020210903164641.png, Pasted%20image%2020210903164641.png 1.5x, /posts/git/Pasted%20image%2020210903164641.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210903164641.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210903164641.png"
+            srcset="/posts/git/Pasted%20image%2020210903164641.png, Pasted%20image%2020210903164641.png 1.5x, /posts/git/Pasted%20image%2020210903164641.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210903164641.png">
     </a><figcaption class="image-caption"> </figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210903164647.png" title="/posts/git/Pasted%20image%2020210903164647.png" data-thumbnail="/posts/git/Pasted%20image%2020210903164647.png" data-sub-html="<h2> </h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210903164647.png"
-            data-srcset="/posts/git/Pasted%20image%2020210903164647.png, Pasted%20image%2020210903164647.png 1.5x, /posts/git/Pasted%20image%2020210903164647.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210903164647.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210903164647.png"
+            srcset="/posts/git/Pasted%20image%2020210903164647.png, Pasted%20image%2020210903164647.png 1.5x, /posts/git/Pasted%20image%2020210903164647.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210903164647.png">
     </a><figcaption class="image-caption"> </figcaption>
     </figure></p>
 <p>每个 <code>commit</code> 都有自己的 <code>id</code> 数字号, <code>HEAD</code> 是一个指针, 指引当前的状态是在哪个 <code>commit</code>. 最近的一次 <code>commit</code> 在最右边, 我们如果要回到过去, 就是让 <code>HEAD</code> 回到过去并 <code>reset</code> 此时的 <code>HEAD</code> 到过去的位置.</p>
@@ -655,8 +699,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>我们又再次回到了 <code>change 2</code>.</p>
-<h3 id="checkout改写文件">(checkout）改写文件</h3>
-<p>其实 <code>checkout</code> 最主要的用途并不是让单个文件回到过去, 我们之后会继续讲 <code>checkout</code> 在分支 <code>branch</code> 中的应用, 这一节主要讲 <code>checkout</code> 让文件回到过去.</p>
+<h3 id="checkout改写文件" class="headerLink">
+    <a href="#checkout%e6%94%b9%e5%86%99%e6%96%87%e4%bb%b6" class="header-mark"></a>(checkout）改写文件</h3><p>其实 <code>checkout</code> 最主要的用途并不是让单个文件回到过去, 我们之后会继续讲 <code>checkout</code> 在分支 <code>branch</code> 中的应用, 这一节主要讲 <code>checkout</code> 让文件回到过去.</p>
 <p>我们现在的版本库中有两个文件:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -726,9 +770,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看出, 不像 <code>reset</code> 时那样, 我们的 <code>change 2</code> 并没有消失, 但是 <code>1.py</code> 却已经回去了过去, 并改写了未来.</p>
-<h2 id="分支管理">分支管理</h2>
-<h3 id="branch-dev使用branch创建分支">(branch dev）使用branch创建分支</h3>
-<p>我们建立另一个分支 <code>dev</code>, 并查看所有分支:</p>
+<h2 id="分支管理" class="headerLink">
+    <a href="#%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" class="header-mark"></a>分支管理</h2><h3 id="branch-dev使用branch创建分支" class="headerLink">
+    <a href="#branch-dev%e4%bd%bf%e7%94%a8branch%e5%88%9b%e5%bb%ba%e5%88%86%e6%94%af" class="header-mark"></a>(branch dev）使用branch创建分支</h3><p>我们建立另一个分支 <code>dev</code>, 并查看所有分支:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -762,8 +806,8 @@
 </span></span><span class="line"><span class="cl">Switched to branch <span class="s1">&#39;dev&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="log---oneline---graph使用graph观看分支">(log &ndash;oneline &ndash;graph）使用graph观看分支</h3>
-<div class="highlight"><div class="chroma">
+</div><h3 id="log---oneline---graph使用graph观看分支" class="headerLink">
+    <a href="#log---oneline---graph%e4%bd%bf%e7%94%a8graph%e8%a7%82%e7%9c%8b%e5%88%86%e6%94%af" class="header-mark"></a>(log &ndash;oneline &ndash;graph）使用graph观看分支</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -793,8 +837,8 @@
 </span></span><span class="line"><span class="cl">* d722a66 create first.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="checkout--b直接创建并切换到新建的分支">(checkout -b）直接创建并切换到新建的分支</h3>
-<p>使用 <code>checkout -b</code> + 分支名, 就能直接创建和切换到新建的分支:</p>
+</div><h3 id="checkout--b直接创建并切换到新建的分支" class="headerLink">
+    <a href="#checkout--b%e7%9b%b4%e6%8e%a5%e5%88%9b%e5%bb%ba%e5%b9%b6%e5%88%87%e6%8d%a2%e5%88%b0%e6%96%b0%e5%bb%ba%e7%9a%84%e5%88%86%e6%94%af" class="header-mark"></a>(checkout -b）直接创建并切换到新建的分支</h3><p>使用 <code>checkout -b</code> + 分支名, 就能直接创建和切换到新建的分支:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -821,8 +865,8 @@
 </span></span><span class="line"><span class="cl">  master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="merge将-dev-的修改推送到-master">(merge）将 dev 的修改推送到 master</h3>
-<p>们 <code>dev</code> 中的修改推送到 <code>master</code> 中，首先要切换到 <code>master</code>, 再将 <code>dev</code> 推送过来.</p>
+</div><h3 id="merge将-dev-的修改推送到-master" class="headerLink">
+    <a href="#merge%e5%b0%86-dev-%e7%9a%84%e4%bf%ae%e6%94%b9%e6%8e%a8%e9%80%81%e5%88%b0-master" class="header-mark"></a>(merge）将 dev 的修改推送到 master</h3><p>们 <code>dev</code> 中的修改推送到 <code>master</code> 中，首先要切换到 <code>master</code>, 再将 <code>dev</code> 推送过来.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -882,8 +926,8 @@
 </span></span><span class="line"><span class="cl">* 13be9a7 create 1.py
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="commit解决冲突">(commit）解决冲突</h3>
-<p>如果对于同一个文件，master和dev进行了不同的修改，也就是说在 <code>master</code> 和 <code>dev</code> 上的版本是不同的，此时<code>merge</code> 就会有冲突，提示为</p>
+</div><h3 id="commit解决冲突" class="headerLink">
+    <a href="#commit%e8%a7%a3%e5%86%b3%e5%86%b2%e7%aa%81" class="header-mark"></a>(commit）解决冲突</h3><p>如果对于同一个文件，master和dev进行了不同的修改，也就是说在 <code>master</code> 和 <code>dev</code> 上的版本是不同的，此时<code>merge</code> 就会有冲突，提示为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -955,58 +999,58 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以看到，第一次merge时，并没有产生版本号，也就是出现冲突后产生了一个“待解决”过渡版本，随后我们解决完冲突后进行commit才可以产生正确的唯一分支。</p>
-<h3 id="rebase变基">(rebase）变基</h3>
-<p>同样是合并， <code>rebase</code> 的做法和 <code>merge</code> 不一样.</p>
+<h3 id="rebase变基" class="headerLink">
+    <a href="#rebase%e5%8f%98%e5%9f%ba" class="header-mark"></a>(rebase）变基</h3><p>同样是合并， <code>rebase</code> 的做法和 <code>merge</code> 不一样.</p>
 <p>假设共享的 branch 是 <code>branch B</code>, 而我在 <code>branch A</code> 上工作, 有一天我发现<code>branch B</code>已经有一些小更新, 我也想试试我的程序和这些小更新兼不兼容, 但我并不想直接合并我的未完成版本到 <code>branch A</code>上, 这时就可以用 <code>rebase</code> 来补充我的分支<code>branch B</code>的内容. 补充完以后, 和后面那张图的 <code>merge</code> 不同, 我还是继续在 <code>C3</code> 上工作, 不过此时的 <code>C3</code> 的本质却不一样了, 因为吸收了那些小更新. 所以我们用 <code>C3'</code> 来代替.</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901175904.png" title="/posts/git/Pasted%20image%2020210901175904.png" data-thumbnail="/posts/git/Pasted%20image%2020210901175904.png" data-sub-html="<h2>原分支</h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901175904.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901175904.png, Pasted%20image%2020210901175904.png 1.5x, /posts/git/Pasted%20image%2020210901175904.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901175904.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901175904.png"
+            srcset="/posts/git/Pasted%20image%2020210901175904.png, Pasted%20image%2020210901175904.png 1.5x, /posts/git/Pasted%20image%2020210901175904.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901175904.png">
     </a><figcaption class="image-caption">原分支</figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901175908.png" title="/posts/git/Pasted%20image%2020210901175908.png" data-thumbnail="/posts/git/Pasted%20image%2020210901175908.png" data-sub-html="<h2>将C3变为变基状态</h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901175908.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901175908.png, Pasted%20image%2020210901175908.png 1.5x, /posts/git/Pasted%20image%2020210901175908.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901175908.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901175908.png"
+            srcset="/posts/git/Pasted%20image%2020210901175908.png, Pasted%20image%2020210901175908.png 1.5x, /posts/git/Pasted%20image%2020210901175908.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901175908.png">
     </a><figcaption class="image-caption">将C3变为变基状态</figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901175912.png" title="/posts/git/Pasted%20image%2020210901175912.png" data-thumbnail="/posts/git/Pasted%20image%2020210901175912.png" data-sub-html="<h2>将C3的基变为C4</h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901175912.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901175912.png, Pasted%20image%2020210901175912.png 1.5x, /posts/git/Pasted%20image%2020210901175912.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901175912.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901175912.png"
+            srcset="/posts/git/Pasted%20image%2020210901175912.png, Pasted%20image%2020210901175912.png 1.5x, /posts/git/Pasted%20image%2020210901175912.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901175912.png">
     </a><figcaption class="image-caption">将C3的基变为C4</figcaption>
     </figure></p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901175916.png" title="/posts/git/Pasted%20image%2020210901175916.png" data-thumbnail="/posts/git/Pasted%20image%2020210901175916.png" data-sub-html="<h2>以C4为新的基，原分支A上的修改被合并</h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901175916.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901175916.png, Pasted%20image%2020210901175916.png 1.5x, /posts/git/Pasted%20image%2020210901175916.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901175916.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901175916.png"
+            srcset="/posts/git/Pasted%20image%2020210901175916.png, Pasted%20image%2020210901175916.png 1.5x, /posts/git/Pasted%20image%2020210901175916.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901175916.png">
     </a><figcaption class="image-caption">以C4为新的基，原分支A上的修改被合并</figcaption>
     </figure></p>
 <p>可以看出 <code>rebase</code> 改变了 <code>C3</code> 的属性, <code>C3</code> 已经不是从 <code>C1</code> 衍生而来的了. 这一点和 <code>merge</code> 不一样. <code>merge</code> 在合并的时候创建了一个新的 <code>C5</code> <code>commit</code>. 这一点不同, 使得在共享分支中使用 <code>rebase</code> 变得危险. 如果是共享分支的历史被改写. 别人之前共享内容的 <code>commit</code> 就被你的 <code>rebase</code> 修改掉了.</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901175926.png" title="/posts/git/Pasted%20image%2020210901175926.png" data-thumbnail="/posts/git/Pasted%20image%2020210901175926.png" data-sub-html="<h2>改写历史</h2>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901175926.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901175926.png, Pasted%20image%2020210901175926.png 1.5x, /posts/git/Pasted%20image%2020210901175926.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901175926.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901175926.png"
+            srcset="/posts/git/Pasted%20image%2020210901175926.png, Pasted%20image%2020210901175926.png 1.5x, /posts/git/Pasted%20image%2020210901175926.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901175926.png">
     </a><figcaption class="image-caption">改写历史</figcaption>
     </figure></p>
 <p>此外，需要注意的是， <strong>!!! 只能在你自己的分支中使用 rebase, 和别人共享的部分是不能用的 !!!</strong></p>
@@ -1206,8 +1250,8 @@
 </span></span><span class="line"><span class="cl">f1e708f create <span class="m">1</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="stash临时修改">(stash）临时修改</h3>
-<p>假如我们正在进行任务A，但是突然有一个紧急bug修改任务B，但是我并不想把我现在的未完成任务A一起提交或者丢弃，此时我们就可以使用<code>stash</code></p>
+</div><h3 id="stash临时修改" class="headerLink">
+    <a href="#stash%e4%b8%b4%e6%97%b6%e4%bf%ae%e6%94%b9" class="header-mark"></a>(stash）临时修改</h3><p>假如我们正在进行任务A，但是突然有一个紧急bug修改任务B，但是我并不想把我现在的未完成任务A一起提交或者丢弃，此时我们就可以使用<code>stash</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1297,19 +1341,19 @@
 </span></span><span class="line"><span class="cl"> M 1.py     <span class="c1"># 和最开始一样了</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="merge和rebase的区别">merge和rebase的区别</h2>
-<p>参考<a href="https://www.jianshu.com/p/39c45f990c99" target="_blank" rel="noopener noreffer">git rebase的一点理解</a></p>
-<h3 id="merge">merge</h3>
-<p>merge是我们常用的合并分支的命令：
+</div><h2 id="merge和rebase的区别" class="headerLink">
+    <a href="#merge%e5%92%8crebase%e7%9a%84%e5%8c%ba%e5%88%ab" class="header-mark"></a>merge和rebase的区别</h2><p>参考<a href="https://www.jianshu.com/p/39c45f990c99" target="_blank" rel="noopener noreferrer">git rebase的一点理解</a></p>
+<h3 id="merge" class="headerLink">
+    <a href="#merge" class="header-mark"></a>merge</h3><p>merge是我们常用的合并分支的命令：
 假如开发中：分叉到两个不同的分支，右各自有新的提交：</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901183914.png" title="image" data-thumbnail="/posts/git/Pasted%20image%2020210901183914.png" data-sub-html="<h2>原分支</h2><p>image</p>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901183914.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901183914.png, Pasted%20image%2020210901183914.png 1.5x, /posts/git/Pasted%20image%2020210901183914.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901183914.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901183914.png"
+            srcset="/posts/git/Pasted%20image%2020210901183914.png, Pasted%20image%2020210901183914.png 1.5x, /posts/git/Pasted%20image%2020210901183914.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901183914.png">
     </a><figcaption class="image-caption">原分支</figcaption>
     </figure></p>
 <p>当我们使用merge命令合并时，它会把两个分支的最新提交历史（<code>C3</code> 和 <code>C4</code>）和这个两个分支的最近的祖先（<code>C2</code>）进行三方合并，合并的结果就是生成一个新的提交历史。
@@ -1320,18 +1364,18 @@
 而后进行merge，基于C2来进行三方合并，于是在A中删除部分代码，在B中新增代码，然后讨论解决一下C中的冲突，创建了C5版本，完成合并</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901183921.png" title="image" data-thumbnail="/posts/git/Pasted%20image%2020210901183921.png" data-sub-html="<h2>基于共同历史C2，进行三方合并</h2><p>image</p>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901183921.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901183921.png, Pasted%20image%2020210901183921.png 1.5x, /posts/git/Pasted%20image%2020210901183921.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901183921.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901183921.png"
+            srcset="/posts/git/Pasted%20image%2020210901183921.png, Pasted%20image%2020210901183921.png 1.5x, /posts/git/Pasted%20image%2020210901183921.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901183921.png">
     </a><figcaption class="image-caption">基于共同历史C2，进行三方合并</figcaption>
     </figure></p>
 <p>通过合并操作来整合分叉了的历史。</p>
 <p>在将三方合并的时候，总是需要以一个提交历史作为依据的，在这个提交历史的基础上增加其他两个的修改，merge上使用的就是这个两个分支的最近的祖先（<code>C2</code>）作为依据。</p>
-<h3 id="rebase">rebase</h3>
-<p>首先我们要理解git的版本管理方式，基于上一个历史版本，存储现在的更改，而后现在的版本又作为下一个版本的历史版本。所以，回溯版本相当于把每一个历史版本的更改依次进行还原，跳转之后的版本相当于把每一次更改再重新做一遍。</p>
+<h3 id="rebase" class="headerLink">
+    <a href="#rebase" class="header-mark"></a>rebase</h3><p>首先我们要理解git的版本管理方式，基于上一个历史版本，存储现在的更改，而后现在的版本又作为下一个版本的历史版本。所以，回溯版本相当于把每一个历史版本的更改依次进行还原，跳转之后的版本相当于把每一次更改再重新做一遍。</p>
 <p>rebase这个命令在官方的翻译中意思是：变基。</p>
 <p>额，怎么说都有点怪是不是，最后查了几个词典，我觉得把rebase翻译为：重定基底</p>
 <p>重定基底有两词语组成：</p>
@@ -1344,12 +1388,12 @@
 <p>这个过程就相当于改变<code>C4</code>的基底为<code>C3</code>，并将<code>C4</code>上的修改依序应用于<code>C3</code> 上，生成新的<code>C4'</code>, 这个过程就改变了<code>C4</code>的基底，也就是所谓的<strong>变基</strong>。</p>
 <p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901184802.png" title="image" data-thumbnail="/posts/git/Pasted%20image%2020210901184802.png" data-sub-html="<h2>改变C4的基底为C3，并将C4上的修改依序应用于C3 上，生成新的C4&#39;</h2><p>image</p>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901184802.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901184802.png, Pasted%20image%2020210901184802.png 1.5x, /posts/git/Pasted%20image%2020210901184802.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901184802.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901184802.png"
+            srcset="/posts/git/Pasted%20image%2020210901184802.png, Pasted%20image%2020210901184802.png 1.5x, /posts/git/Pasted%20image%2020210901184802.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901184802.png">
     </a><figcaption class="image-caption">改变C4的基底为C3，并将C4上的修改依序应用于C3 上，生成新的C4'</figcaption>
     </figure></p>
 <p>将 <code>C4</code> 中的修改变基到 <code>C3</code> 上。</p>
@@ -1382,24 +1426,26 @@
 </div>
 </div><p><figure><a class="lightgallery" href="/posts/git/Pasted%20image%2020210901184906.png" title="image" data-thumbnail="/posts/git/Pasted%20image%2020210901184906.png" data-sub-html="<h2>变基合并可以让最后只剩下一条主线分支</h2><p>image</p>">
         <img
-            class="lazyload"
-            data-src="Pasted%20image%2020210901184906.png"
-            data-srcset="/posts/git/Pasted%20image%2020210901184906.png, Pasted%20image%2020210901184906.png 1.5x, /posts/git/Pasted%20image%2020210901184906.png 2x"
-            data-sizes="auto"
-            alt="/posts/git/Pasted%20image%2020210901184906.png"
-        />
+            
+            loading="lazy"
+            src="Pasted%20image%2020210901184906.png"
+            srcset="/posts/git/Pasted%20image%2020210901184906.png, Pasted%20image%2020210901184906.png 1.5x, /posts/git/Pasted%20image%2020210901184906.png 2x"
+            sizes="auto"
+            alt="/posts/git/Pasted%20image%2020210901184906.png">
     </a><figcaption class="image-caption">变基合并可以让最后只剩下一条主线分支</figcaption>
     </figure></p>
 <p>此时，C4&rsquo; 指向的快照就和上面使用 merge 命令的例子中 C5 指向的快照一模一样了。</p>
 <p>这两种整合方法的最终结果没有任何区别，但是变基使得提交历史更加整洁。如果开发中使用rebase，可以使得最终的开发版本历史只有一条清晰的主分支，在分支上进行的修改也呈现线性记录。</p>
-<h3 id="区别">区别</h3>
-<p>无论是通过变基，还是通过三方合并，最后所生成的结果是一样的，只是他们所生成体提交历史不同。</p>
+<h3 id="区别" class="headerLink">
+    <a href="#%e5%8c%ba%e5%88%ab" class="header-mark"></a>区别</h3><p>无论是通过变基，还是通过三方合并，最后所生成的结果是一样的，只是他们所生成体提交历史不同。</p>
 <p>变基：将一个分支的一系列的提交按顺序应用到另一分支上，前者的所有历史更改被合并为一个大的历史更改保存在历史中。</p>
 <p>三方合并：把两方的最后提交合并在一起，因为他们分别的最后提交的版本是基于他们的共同祖先依次迭代更改生成的，所以合并后，每一个分支的所有历史都会被保留。</p>
 <p>变基操作的实际是：丢弃一个分支上现有的提交，在另一个分支上新建这些内容但实际上不同的提交。</p>
-<h2 id="补充">补充</h2>
-<p>当你进行了修改，但是没有add和commit时，此时切换到其他分支，如果当前的修改会被覆盖，git会进行警告。</p>
-</div><div class="post-footer" id="post-footer">
+<h2 id="补充" class="headerLink">
+    <a href="#%e8%a1%a5%e5%85%85" class="header-mark"></a>补充</h2><p>当你进行了修改，但是没有add和commit时，此时切换到其他分支，如果当前的修改会被覆盖，git会进行警告。</p>
+</div>
+
+        <div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -1408,11 +1454,10 @@
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/posts/git/index.md" target="_blank" rel="noopener noreferrer">阅读原始文档</a>
-                        </span></div>
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/posts/git/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/git/" data-title="Git"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/git/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/git/" data-title="Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/git/" data-title="Git"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/posts/git/" data-title="Git"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/posts/git/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/posts/git/" data-title="Git" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/posts/git/" data-title="Git"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -1420,7 +1465,7 @@
     <div class="post-info-more">
         <section class="post-tags"></section>
         <section>
-            <span><a href="#" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
@@ -1431,8 +1476,12 @@
                 Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreffer" title="DoIt 0.2.10"><i class="far fa-edit fa-fw"></i> DoIt</a>
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer">zifeng</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
         </div></footer></div>
 
     <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
@@ -1440,9 +1489,7 @@
         </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
             <i class="fas fa-comment fa-fw"></i>
         </a>
-    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
-
-<div class="pjax-assets"><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"></div>
+    </div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.js" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
 </body>
 
 </html>

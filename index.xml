@@ -3,9 +3,16 @@
         <title>imzifeng</title>
         <link>http://imzifeng.cn/</link>
         <description>无名的自留地.</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 02 Feb 2023 15:47:39 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Jun 2025 18:21:43 &#43;0800</lastBuildDate>
             <atom:link href="http://imzifeng.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Day 1 Linux基本命令</title>
+    <link>http://imzifeng.cn/bio-info-1/</link>
+    <pubDate>Sat, 28 Jun 2025 18:21:43 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/bio-info-1/</guid>
+    <description><![CDATA[⚠️ 小提示：脚本中的相对路径如果你在脚本中用的是相对路径（比如 ./data/input.txt），那么脚本运行时的“当前工作目录”就会影响它]]></description>
+</item><item>
     <title>转：《第一次是正剧，第二次是闹剧，第三次是CCTV的狗血连续剧——近年左派和民族主义，乌有之乡和张宏良的变化观感》</title>
     <link>http://imzifeng.cn/dugong/</link>
     <pubDate>Thu, 02 Feb 2023 15:47:39 &#43;0800</pubDate><author>
@@ -72,12 +79,5 @@
         <name>zifeng</name>
     </author><guid>http://imzifeng.cn/git/</guid>
     <description><![CDATA[Git 是一个分布式版本控制系统.文本，脚本，以及各种基于文本信息的文件可被Git管理 各软件私有格式、二进制文件、媒体不可被Git管理 安装官方下载]]></description>
-</item><item>
-    <title>RNA-seq基础-1-环境配置</title>
-    <link>http://imzifeng.cn/rnaseq-1/</link>
-    <pubDate>Fri, 13 Aug 2021 16:36:49 &#43;0800</pubDate><author>
-        <name>zifeng</name>
-    </author><guid>http://imzifeng.cn/rnaseq-1/</guid>
-    <description><![CDATA[<p>Miniconda是Anaconda的基础版，提供环境管理</p>]]></description>
 </item></channel>
 </rss>

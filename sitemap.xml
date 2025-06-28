@@ -2,11 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://imzifeng.cn/categories/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://imzifeng.cn/categories/doc/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://imzifeng.cn/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://imzifeng.cn/posts/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>http://imzifeng.cn/dugong/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>http://imzifeng.cn/categories/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/bio-info-1/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/categories/doc/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/posts/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/tags/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/tags/%E7%94%9F%E4%BF%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc><lastmod>2025-06-28T18:21:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://imzifeng.cn/dugong/</loc><lastmod>2023-02-02T15:47:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://imzifeng.cn/latex/</loc><lastmod>2022-04-10T02:41:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://imzifeng.cn/obsidian-sync/</loc><lastmod>2022-02-23T16:49:45&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://imzifeng.cn/samba/</loc><lastmod>2022-01-06T20:22:59&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -23,5 +26,4 @@
             <loc>http://imzifeng.cn/qinghai/</loc><lastmod>2021-07-13T17:53:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://imzifeng.cn/glass/</loc><lastmod>2021-07-12T21:21:52&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://imzifeng.cn/authors/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://imzifeng.cn/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://imzifeng.cn/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://imzifeng.cn/series/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

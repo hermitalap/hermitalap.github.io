@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title>Day 1 Linux基本命令 - imzifeng</title><meta name="Description" content="无名的自留地."><meta property="og:title" content="Day 1 Linux基本命令" />
+<meta property="og:description" content="⚠️ 小提示：脚本中的相对路径如果你在脚本中用的是相对路径（比如 ./data/input.txt），那么脚本运行时的“当前工作目录”就会影响它" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://imzifeng.cn/bio-info-1/" /><meta property="og:image" content="http://imzifeng.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-06-28T18:21:43+08:00" />
+<meta property="article:modified_time" content="2025-06-28T18:21:43+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://imzifeng.cn/logo.png"/>
+
+<meta name="twitter:title" content="Day 1 Linux基本命令"/>
+<meta name="twitter:description" content="⚠️ 小提示：脚本中的相对路径如果你在脚本中用的是相对路径（比如 ./data/input.txt），那么脚本运行时的“当前工作目录”就会影响它"/>
+<meta name="application-name" content="imzifeng">
+<meta name="apple-mobile-web-app-title" content="imzifeng">
+
+<meta name="theme-color" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://imzifeng.cn/bio-info-1/" /><link rel="prev" href="http://imzifeng.cn/dugong/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/color.b0a0f8c429ce52dfa2805b5f9e99ccdae1e8fbfd9adf4f3ddb409d8201fc0c5a.css" integrity="sha256-sKD4xCnOUt&#43;igFtfnpnM2uHo&#43;/2a308920CdggH8DFo="><link rel="stylesheet" href="/css/style.min.170817c5f6babf922e8cb71a623f7f90fe49da4ccfa9cea20a271770d3f54fe6.css" integrity="sha256-FwgXxfa6v5IujLcaYj9/kP5J2kzPqc6iCicXcNP1T&#43;Y="><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc=">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.43202d5486e011f9684a17bd6846b5c16a2619002bfc783f7e32e20dfb6bf857.css" integrity="sha256-QyAtVIbgEfloShe9aEa1wWomGQAr/Hg/fjLiDftr&#43;Fc="></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.5fbaeb9f8e25d7e0143bae61d4b1802c16ce7390b96ceb2d498b0d96ff4c853f.css" integrity="sha256-X7rrn44l1&#43;AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8="></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Day 1 Linux基本命令",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/imzifeng.cn\/bio-info-1\/"
+        },"genre": "posts","keywords": "生信学习笔记","wordcount":  1101 ,
+        "url": "http:\/\/imzifeng.cn\/bio-info-1\/","datePublished": "2025-06-28T18:21:43+08:00","dateModified": "2025-06-28T18:21:43+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "zifeng"
+            },"description": ""
+    }
+    </script><script src="//instant.page/5.1.1" defer type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+</head>
+
+<body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('auto' === 'light' || 'auto' === 'dark' || 'auto' === 'black') setTheme('auto'), saveTheme('auto'); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="imzifeng">imzifeng</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-desktop">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" class="menu-item theme-select" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                    <select class="color-theme-select" id="theme-select-desktop" title="切换主题">
+                        <option value="light">浅色</option>
+                        <option value="dark">深色</option>
+                        <option value="black">黑色</option>
+                        <option value="auto">跟随系统</option>
+                    </select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="imzifeng">imzifeng</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容…" id="search-input-mobile">
+                        <a href="#" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="#" class="menu-item theme-select" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+                <select class="color-theme-select" id="theme-select-mobile" title="切换主题">
+                    <option value="light">浅色</option>
+                    <option value="dark">深色</option>
+                    <option value="black">黑色</option>
+                    <option value="auto">跟随系统</option>
+                </select>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Day 1 Linux基本命令</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="imzifeng.cn" title="Author" rel=" author" class="author">zifeng</a>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/doc/"><i class="far fa-folder fa-fw"></i>Doc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2025-06-28">2025-06-28</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2025-06-28">2025-06-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1101 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/bio-info-1/" class="leancloud_visitors" data-flag-title="Day 1 Linux基本命令">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class="leancloud-visitors-count" id=twikoo_visitors></span>&nbsp;次阅读
+                    </span>&nbsp;<span id="/bio-info-1/" class="comment_count" data-flag-title="Day 1 Linux基本命令">
+                        <i class="far fa-comments fa-fw"></i>&nbsp;<span class="twikoo-comment-count" id="twikoo-comment-count"></span>&nbsp;条评论
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-小提示脚本中的相对路径">⚠️ 小提示：脚本中的相对路径</a></li>
+        <li><a href="#在-终端命令行如-bashzsh">在 <strong>终端命令行（如 bash/zsh）</strong>：</a></li>
+        <li><a href="#示例一键删除整行">示例：一键删除整行</a></li>
+        <li><a href="#-文件目录查看与导航">🧭 文件/目录查看与导航</a></li>
+        <li><a href="#-文件与目录操作">🔁 文件与目录操作</a></li>
+        <li><a href="#-文件查看与编辑">📄 文件查看与编辑</a></li>
+        <li><a href="#-示例场景">📝 示例场景</a></li>
+        <li><a href="#-文件目录操作">🔁 文件/目录操作</a></li>
+        <li><a href="#-文件内容处理与编辑">🛠️ 文件内容处理与编辑</a></li>
+        <li><a href="#-mkdir--创建目录文件夹">📁 <code>mkdir</code> – 创建目录（文件夹）</a></li>
+        <li><a href="#-基本用法">✅ 基本用法：</a></li>
+      </ul>
+    </li>
+    <li><a href="#通配符的作用">*通配符的作用</a>
+      <ul>
+        <li><a href="#-举例说明">✅ 举例说明：</a></li>
+        <li><a href="#-假设当前目录下有这些文件">📁 假设当前目录下有这些文件：</a></li>
+        <li><a href="#示例-1匹配所有-fastqgz-文件">示例 1：匹配所有 <code>.fastq.gz</code> 文件</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="-小提示脚本中的相对路径" class="headerLink">
+    <a href="#-%e5%b0%8f%e6%8f%90%e7%a4%ba%e8%84%9a%e6%9c%ac%e4%b8%ad%e7%9a%84%e7%9b%b8%e5%af%b9%e8%b7%af%e5%be%84" class="header-mark"></a>⚠️ 小提示：脚本中的相对路径</h3><p>如果你在脚本中用的是相对路径（比如 <code>./data/input.txt</code>），那么脚本运行时的“当前工作目录”就会影响它的行为。</p>
+<p>为避免出错，可以在脚本开头加一句让路径自动转为脚本自身所在目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash
+</span></span><span class="line"><span class="cl">复制编辑
+</span></span><span class="line"><span class="cl"><span class="nv">DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span><span class="nb">cd</span> <span class="s2">&#34;</span><span class="k">$(</span>dirname <span class="s2">&#34;</span><span class="nv">$0</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">&amp;&amp;</span> <span class="nb">pwd</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后用 <code>${DIR}/data/input.txt</code> 来引用脚本目录下的文件。</p>
+<h3 id="在-终端命令行如-bashzsh" class="headerLink">
+    <a href="#%e5%9c%a8-%e7%bb%88%e7%ab%af%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%a6%82-bashzsh" class="header-mark"></a>在 <strong>终端命令行（如 bash/zsh）</strong>：</h3><ul>
+<li><strong><code>Ctrl + U</code></strong>：删除光标前的所有字符</li>
+<li><strong><code>Ctrl + K</code></strong>：删除光标后的所有字符</li>
+<li><strong><code>Ctrl + A</code></strong>：移动到行首（可搭配 Ctrl+K）</li>
+<li><strong><code>Ctrl + E</code></strong>：移动到行尾</li>
+</ul>
+<h3 id="示例一键删除整行" class="headerLink">
+    <a href="#%e7%a4%ba%e4%be%8b%e4%b8%80%e9%94%ae%e5%88%a0%e9%99%a4%e6%95%b4%e8%a1%8c" class="header-mark"></a>示例：一键删除整行</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Ctrl + A → Ctrl + K
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="-文件目录查看与导航" class="headerLink">
+    <a href="#-%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95%e6%9f%a5%e7%9c%8b%e4%b8%8e%e5%af%bc%e8%88%aa" class="header-mark"></a>🧭 文件/目录查看与导航</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>全称</th>
+<th>作用</th>
+<th>常见用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td><strong>list</strong></td>
+<td>列出目录内容</td>
+<td><code>ls -l</code> 查看详细信息<code>ls -a</code> 显示隐藏文件</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td><strong>change directory</strong></td>
+<td>切换当前工作目录</td>
+<td><code>cd /path/to/dircd ..</code> 返回上一级</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>print work directory</td>
+<td>打印当前工作目录</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-文件与目录操作" class="headerLink">
+    <a href="#-%e6%96%87%e4%bb%b6%e4%b8%8e%e7%9b%ae%e5%bd%95%e6%93%8d%e4%bd%9c" class="header-mark"></a>🔁 文件与目录操作</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>全称</th>
+<th>作用</th>
+<th>常见用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mv</code></td>
+<td><strong>move</strong></td>
+<td>移动或重命名文件/目录</td>
+<td><code>mv a.txt b.txt</code> 重命名<code>mv a.txt dir/</code> 移动</td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td><strong>copy</strong></td>
+<td>复制文件或目录</td>
+<td><code>cp a.txt b.txtcp -r dir1 dir2</code> 递归复制目录</td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td><strong>remove</strong></td>
+<td>删除文件或目录</td>
+<td><code>rm a.txt</code> 删除文件<code>rm -rf dir/</code> 强制删除目录</td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td><strong>make directory</strong></td>
+<td>创建目录</td>
+<td><code>mkdir newdirmkdir -p a/b/c</code> 创建多级目录</td>
+</tr>
+<tr>
+<td><code>rename</code></td>
+<td><strong>rename</strong>（并非 GNU 标准一部分）</td>
+<td>批量重命名文件（需安装）</td>
+<td><code>rename 's/.txt/.bak/' *.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-文件查看与编辑" class="headerLink">
+    <a href="#-%e6%96%87%e4%bb%b6%e6%9f%a5%e7%9c%8b%e4%b8%8e%e7%bc%96%e8%be%91" class="header-mark"></a>📄 文件查看与编辑</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>全称</th>
+<th>作用</th>
+<th>常见用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat</code></td>
+<td><strong>concatenate</strong></td>
+<td>查看、连接文件内容</td>
+<td><code>cat file.txt</code> 查看文件<code>cat a b &gt; c</code> 合并</td>
+</tr>
+<tr>
+<td><code>nano</code></td>
+<td><strong>Nano text editor</strong></td>
+<td>命令行文本编辑器</td>
+<td><code>nano file.txt</code> 编辑文件</td>
+</tr>
+<tr>
+<td><code>touch</code></td>
+<td><strong>touch file timestamp</strong></td>
+<td>创建空文件或更新修改时间</td>
+<td><code>touch new.txt</code> 创建新文件或刷新时间戳</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-示例场景" class="headerLink">
+    <a href="#-%e7%a4%ba%e4%be%8b%e5%9c%ba%e6%99%af" class="header-mark"></a>📝 示例场景</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash
+</span></span><span class="line"><span class="cl">复制编辑
+</span></span><span class="line"><span class="cl">mkdir projects              <span class="c1"># 创建目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> projects                 <span class="c1"># 进入目录</span>
+</span></span><span class="line"><span class="cl">touch README.md             <span class="c1"># 创建文件</span>
+</span></span><span class="line"><span class="cl">nano README.md              <span class="c1"># 编辑文件</span>
+</span></span><span class="line"><span class="cl">ls -l                       <span class="c1"># 查看当前目录内容</span>
+</span></span><span class="line"><span class="cl">cp README.md copy.md        <span class="c1"># 复制文件</span>
+</span></span><span class="line"><span class="cl">mv copy.md docs.md          <span class="c1"># 重命名文件</span>
+</span></span><span class="line"><span class="cl">rm docs.md                  <span class="c1"># 删除文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li></li>
+<li>
+<p><code>ls</code></p>
+<p>查看当前目录下的文件和目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls            <span class="c1"># 简单列出</span>
+</span></span><span class="line"><span class="cl">ls -l         <span class="c1"># 详细信息（权限、大小、修改时间）</span>
+</span></span><span class="line"><span class="cl">ls -a         <span class="c1"># 显示隐藏文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>cd</code></p>
+<p>切换目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /path/to/directory
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..         <span class="c1"># 返回上一级目录#cd后有一个空格</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~          <span class="c1"># 回到当前用户主目录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<hr>
+<h3 id="-文件目录操作" class="headerLink">
+    <a href="#-%e6%96%87%e4%bb%b6%e7%9b%ae%e5%bd%95%e6%93%8d%e4%bd%9c" class="header-mark"></a>🔁 文件/目录操作</h3><ul>
+<li>
+<p><code>cp</code></p>
+<p>复制文件或目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cp file1.txt file2.txt                 <span class="c1"># 复制文件</span>
+</span></span><span class="line"><span class="cl">cp file1.txt /path/to/destination/     <span class="c1"># 复制到指定目录</span>
+</span></span><span class="line"><span class="cl">cp -r dir1/ dir2/                      <span class="c1"># 递归复制目录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>mv</code></p>
+<p>移动或重命名文件/目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mv file.txt /path/to/destination/      <span class="c1"># 移动</span>
+</span></span><span class="line"><span class="cl">mv oldname.txt newname.txt             <span class="c1"># 重命名</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>rm</code></p>
+<p>删除文件或目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rm file.txt             <span class="c1"># 删除文件</span>
+</span></span><span class="line"><span class="cl">rm -r folder/           <span class="c1"># 递归删除目录</span>
+</span></span><span class="line"><span class="cl">rm -rf folder/          <span class="c1"># 强制删除，不提示</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>rename</code></p>
+<p>批量重命名文件（需安装 <code>rename</code> 工具）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rename <span class="s1">&#39;s/.txt/.bak/&#39;</span> *.txt  <span class="c1"># 将所有 .txt 文件扩展名改为 .bak</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<hr>
+<h3 id="-文件内容处理与编辑" class="headerLink">
+    <a href="#-%e6%96%87%e4%bb%b6%e5%86%85%e5%ae%b9%e5%a4%84%e7%90%86%e4%b8%8e%e7%bc%96%e8%be%91" class="header-mark"></a>🛠️ 文件内容处理与编辑</h3><ul>
+<li>
+<p><code>cat</code></p>
+<p>查看文件内容（或合并文件）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat file.txt
+</span></span><span class="line"><span class="cl">cat file1.txt file2.txt &gt; merged.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>nano</code></p>
+<p>终端内简单文本编辑器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nano file.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>touch</code></p>
+<p>创建空文件，或更新已有文件的时间戳</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">touch newfile.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="-mkdir--创建目录文件夹" class="headerLink">
+    <a href="#-mkdir--%e5%88%9b%e5%bb%ba%e7%9b%ae%e5%bd%95%e6%96%87%e4%bb%b6%e5%a4%b9" class="header-mark"></a>📁 <code>mkdir</code> – 创建目录（文件夹）</h3><p><code>mkdir</code>（<strong>make directory</strong>）用于在 Linux 中创建一个或多个新目录。</p>
+<h3 id="-基本用法" class="headerLink">
+    <a href="#-%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95" class="header-mark"></a>✅ 基本用法：</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir my_folder         <span class="c1"># 创建一个名为 my_folder 的新目录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="通配符的作用" class="headerLink">
+    <a href="#%e9%80%9a%e9%85%8d%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8" class="header-mark"></a>*通配符的作用</h2><ul>
+<li>匹配 <strong>0个或多个任意字符</strong></li>
+<li>常用于匹配文件名、路径名、样本名等</li>
+</ul>
+<hr>
+<h3 id="-举例说明" class="headerLink">
+    <a href="#-%e4%b8%be%e4%be%8b%e8%af%b4%e6%98%8e" class="header-mark"></a>✅ 举例说明：</h3><h3 id="-假设当前目录下有这些文件" class="headerLink">
+    <a href="#-%e5%81%87%e8%ae%be%e5%bd%93%e5%89%8d%e7%9b%ae%e5%bd%95%e4%b8%8b%e6%9c%89%e8%bf%99%e4%ba%9b%e6%96%87%e4%bb%b6" class="header-mark"></a>📁 假设当前目录下有这些文件：</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sample1_R1.fastq.gz
+</span></span><span class="line"><span class="cl">sample1_R2.fastq.gz
+</span></span><span class="line"><span class="cl">sample2_R1.fastq.gz
+</span></span><span class="line"><span class="cl">sample2_R2.fastq.gz
+</span></span><span class="line"><span class="cl">notes.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-1匹配所有-fastqgz-文件" class="headerLink">
+    <a href="#%e7%a4%ba%e4%be%8b-1%e5%8c%b9%e9%85%8d%e6%89%80%e6%9c%89-fastqgz-%e6%96%87%e4%bb%b6" class="header-mark"></a>示例 1：匹配所有 <code>.fastq.gz</code> 文件</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ls *.fastq.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>➡️ 输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sample1_R1.fastq.gz
+</span></span><span class="line"><span class="cl">sample1_R2.fastq.gz
+</span></span><span class="line"><span class="cl">sample2_R1.fastq.gz
+</span></span><span class="line"><span class="cl">sample2_R2.fastq.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-06-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span><a class="link-to-mardown" href=/bio-info-1/index.md target="_blank" rel="noopener noreferrer">阅读原始文档</a>
+                    </span></div>
+            <div class="post-info-share">
+                <span><a href="#" title="分享到 Twitter" data-sharer="twitter" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令" data-hashtags="生信学习笔记"><i class="fab fa-twitter fa-fw"></i></a><a href="#" title="分享到 Facebook" data-sharer="facebook" data-url="http://imzifeng.cn/bio-info-1/" data-hashtag="生信学习笔记"><i class="fab fa-facebook-square fa-fw"></i></a><a href="#" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="#" title="分享到 Line" data-sharer="line" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="#" title="分享到 微博" data-sharer="weibo" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令"><i class="fab fa-weibo fa-fw"></i></a><a href="#" title="分享到 Myspace" data-sharer="myspace" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="#" title="分享到 Blogger" data-sharer="blogger" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="#" title="分享到 Evernote" data-sharer="evernote" data-url="http://imzifeng.cn/bio-info-1/" data-title="Day 1 Linux基本命令"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%94%9F%E4%BF%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">生信学习笔记</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/dugong/" class="prev" rel="prev" title="转：《第一次是正剧，第二次是闹剧，第三次是CCTV的狗血连续剧——近年左派和民族主义，乌有之乡和张宏良的变化观感》"><i class="fas fa-angle-left fa-fw"></i>转：《第一次是正剧，第二次是闹剧，第三次是CCTV的狗血连续剧——近年左派和民族主义，乌有之乡和张宏良的变化观感》</a></div>
+</div>
+<div id="comments"><div id="twikoo"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://twikoo.js.org/">Twikoo</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.105.0">Hugo</a> 强力驱动&nbsp;|&nbsp;托管在 <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a> 上&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 0.3.0"><i class="far fa-edit fa-fw"></i> DoIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="imzifeng.cn" target="_blank" rel="noopener noreferrer">zifeng</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+            <div class="footer-line"></div>
+            <div class="footer-line">
+            </div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div id="cookieconsent-container"></div><div class="assets"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.b38ee65d6456beb2d034bf554505f4ca47e421548b7cd26e8a7805fd2673b6c3.css" integrity="sha256-s47mXWRWvrLQNL9VRQX0ykfkIVSLfNJuingF/SZztsM="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"twikoo":{"commentCount":true,"el":"#twikoo","envId":"https://twikoo-comment-for-blog-4nu21org3-hermitalap.vercel.app/","lang":"zh-cn","region":"ap-shanghai"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/twikoo/twikoo.all.min.62ebcab3f704ba6085932afa456e361b8d9509862676c79b833d2c3894daef3d.js" integrity="sha256-YuvKs/cEumCFkyr6RW42G42VCYYmdsebgz0sOJTa7z0=" defer></script><script type="text/javascript" src="/js/twikoo.min.js" defer></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.92de6dec051677787aed63503575b2f9be73f21f2745574e59647bc139a92d40.js" integrity="sha256-kt5t7AUWd3h67WNQNXWy&#43;b5z8h8nRVdOWWR7wTmpLUA="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.0c4d9db673dd19489cfa134ab15ef8b9237ae72aaa65d8490d55658442b3a2d3.js" integrity="sha256-DE2dtnPdGUic&#43;hNKsV74uSN65yqqZdhJDVVlhEKzotM="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.72ceb0f87691041e9e0bea2f2468b9aa3ed544e8f7f6dc9f76d8c8f997699e41.js" integrity="sha256-cs6w&#43;HaRBB6eC&#43;ovJGi5qj7VROj39tyfdtjI&#43;ZdpnkE="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.5b0e82e9a1ae0b52d07a52da1eb4640da77eb3ca7e78c3a428c1f3b712858d3c.js" integrity="sha256-Ww6C6aGuC1LQelLaHrRkDad&#43;s8p&#43;eMOkKMHztxKFjTw="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.11be927cda59c8b6019ebbea838285c5beaf21183ea4b83dbd4e4fbf9413ce4a.js" integrity="sha256-Eb6SfNpZyLYBnrvqg4KFxb6vIRg&#43;pLg9vU5Pv5QTzko="></script><script type="text/javascript" src="/lib/sharer/sharer.min.8fe10eb615eb163a20f795484430a012805ec7c8c11df52df54ddb7a46084254.js" integrity="sha256-j&#43;EOthXrFjog95VIRDCgEoBex8jBHfUt9U3bekYIQlQ="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" defer></script><script type="text/javascript" src="/js/cookieconsent.min.js" defer></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>生信学习笔记 - 标签 - imzifeng</title>
+        <link>http://imzifeng.cn/tags/%E7%94%9F%E4%BF%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <description>生信学习笔记 - 标签 - imzifeng</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Jun 2025 18:21:43 &#43;0800</lastBuildDate><atom:link href="http://imzifeng.cn/tags/%E7%94%9F%E4%BF%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>Day 1 Linux基本命令</title>
+    <link>http://imzifeng.cn/bio-info-1/</link>
+    <pubDate>Sat, 28 Jun 2025 18:21:43 &#43;0800</pubDate><author>
+        <name>zifeng</name>
+    </author><guid>http://imzifeng.cn/bio-info-1/</guid>
+    <description><![CDATA[⚠️ 小提示：脚本中的相对路径如果你在脚本中用的是相对路径（比如 ./data/input.txt），那么脚本运行时的“当前工作目录”就会影响它]]></description>
+</item></channel>
+</rss>
